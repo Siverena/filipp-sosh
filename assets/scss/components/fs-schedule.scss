@@ -1,0 +1,50 @@
+.fs-schedule {
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 226px);
+        justify-content: space-between;
+        row-gap: 50px;
+    }
+}
+.fs-schedule-day {
+    color: $text_primary;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    background-color: $background_1;
+    &__title {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 24px;
+        text-transform: uppercase;
+    }
+    &__list {
+        border-left: 6px solid $green-normal;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        height: 100%;
+    }
+    &__name {
+    }
+}
+@media (max-width: grid-width($tablet)) {
+    .fs-schedule {
+        &__items {
+            grid-template-columns: repeat(auto-fill, 155px);
+        }
+    }
+    .fs-schedule-day {
+        padding: 8px;
+        row-gap: 0px;
+        &__title {
+            font-size: 16px;
+            line-height: 19px;
+        }
+        &__list {
+            border-left-width: 3px;
+        }
+    }
+}

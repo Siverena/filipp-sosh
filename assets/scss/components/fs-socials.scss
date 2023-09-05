@@ -1,0 +1,84 @@
+.ps-socials {
+    &__link {
+        margin-right: 8px;
+        &--dark {
+            svg {
+                rect {
+                    transition: all 1s;
+                    fill: $background_2;
+                }
+                path {
+                    transition: all 1s;
+                    fill: $white;
+                }
+            }
+            &:hover {
+                svg {
+                    rect {
+                        transition: all 1s;
+                        fill: #146949;
+                    }
+                    path {
+                        transition: all 1s;
+                        fill: $white;
+                    }
+                }
+            }
+            &:active {
+                svg {
+                    rect {
+                        fill: #022619;
+                    }
+                }
+            }
+            &:disabled {
+                svg {
+                    rect {
+                        fill: $text_disabled;
+                    }
+                }
+            }
+        }
+        &--light {
+            svg {
+                rect {
+                    transition: all 1s;
+                    fill: $white;
+                }
+                path {
+                    transition: all 1s;
+                    fill: $background_2;
+                }
+            }
+            &:hover {
+                svg {
+                    rect {
+                        transition: all 1s;
+                        fill: $background_2;
+                        stroke-width: 1px;
+                        stroke: #ffffff;
+                    }
+                    path {
+                        transition: all 1s;
+                        fill: $white;
+                    }
+                }
+            }
+            &:active {
+                svg {
+                    rect {
+                        fill: #022619;
+                        stroke-width: 0px;
+                    }
+                }
+            }
+            &:disabled {
+                svg {
+                    rect {
+                        fill: $text_disabled;
+                    }
+                }
+            }
+        }
+    }
+}

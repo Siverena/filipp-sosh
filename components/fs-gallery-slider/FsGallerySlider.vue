@@ -1,0 +1,50 @@
+<template>
+  <div class="fs-gallery-slider">
+    <div class="fs-gallery-slider__content">
+      <div class="fs-gallery-slider__top">
+        <div class="fs-gallery-slider__close" @click="closeSlider">
+          <fsCross />
+        </div>
+      </div>
+      <div class="fs-gallery-slider__center">
+        <div class="fs-gallery-slider__image-wrapper">
+          <img
+            :src="getStaticImageUrl(images[currentImage])"
+            class="fs-gallery-slider__image"
+            alt=""
+          />
+        </div>
+        <div class="fs-gallery-slider__nav">
+          <div
+            class="fs-gallery-slider__btn fs-gallery-slider__prev"
+            @click="prevSlide"
+          >
+            <fsCheckMarkLeft />
+          </div>
+          <div
+            class="fs-gallery-slider__btn fs-gallery-slider__next"
+            @click="nextSlide"
+          >
+            <fsCheckMarkRight />
+          </div>
+        </div>
+      </div>
+      <div class="fs-gallery-slider__bottom">
+        <div class="fs-gallery-slider__bottom-cont">
+          <div
+            class="fs-gallery-slider__small"
+            v-for="(img, key) in thumbnails"
+            :key="key"
+            :class="{
+              'fs-gallery-slider__small--active': img === images[currentImage],
+            }"
+            @click="setCurrentImage(key + firstThumbnailsIndex)"
+          >
+            <img :src="getStaticImageUrl(img)" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script src="./fs-gallery-slider.js"></script>

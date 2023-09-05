@@ -1,0 +1,60 @@
+.fs-btn {
+    text-decoration: none;
+    width: fit-content;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 33px;
+    box-sizing: border-box;
+    &--orange {
+        transition: background-color 1s;
+        color: $text-color;
+        background-color: $green-normal;
+        border: none;
+        &:hover {
+            transition: background-color 1s;
+            background-color: $green-hover;
+        }
+        &:active {
+            background-color: $green-active;
+        }
+        &:focus {
+            background-color: $green-active;
+            outline: none;
+        }
+        &:disabled {
+            background-color: $text_disabled;
+        }
+    }
+
+    &--transparent {
+        color: $text-color;
+        background-color: transparent;
+        border: 2px solid $text-color;
+        transition: all 1s;
+        &:hover {
+            transition: all 1s;
+            background-color: $text-color;
+            color: $text_primary;
+        }
+        &:active {
+            background-color: $green-active;
+            border-color: $green-active;
+            color: $text_primary;
+        }
+        &:focus {
+            background-color: $green-active;
+            border-color: $green-active;
+            color: $text_primary;
+            outline: none;
+        }
+        &:disabled {
+            background-color: $text_disabled;
+            color: $text-color;
+            border-color: $text_disabled;
+        }
+    }
+}

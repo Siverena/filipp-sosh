@@ -1,0 +1,32 @@
+.fs-page-titles {
+    position: relative;
+
+    &__path {
+        &--white {
+            fill: $white;
+        }
+        &--green {
+            fill: $background_2;
+        }
+    }
+}
+@media (max-width: grid-width($desktop)) {
+    .fs-page-titles {
+        &__path {
+            &--white {
+                fill: $background_2;
+            }
+        }
+    }
+}
+@media (max-width: grid-width($laptop)) {
+    .fs-page-titles {
+    }
+}
+@media (max-width: grid-width($tablet)) {
+    .fs-page-titles {
+        &__logo {
+            display: none;
+        }
+    }
+}

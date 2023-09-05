@@ -1,0 +1,28 @@
+<template>
+  <clientOnly>
+    <header class="fs-header">
+      <div class="fs-header__top container">
+        <FsLogotype class="fs-header__logo" />
+        <FsNav class="fs-header__nav" />
+        <a
+          class="fs-header__phone fs-link fs-link--green"
+          href="tel:+74923771273"
+          >+7 (492) 377-12-73</a
+        >
+        <FsBtn class="fs-header__btn fs-btn--orange" @click.stop="openOrder"
+          >Задать вопрос
+        </FsBtn>
+        <FsLogin class="fs-header__login" />
+        <FsBurger
+          class="fs-header__burger"
+          tabindex="0"
+          @click.stop="openMobMenu"
+        />
+      </div>
+      <div class="fs-header__bottom" v-if="currentUrl === 'index'">
+        <FsInfo />
+      </div>
+    </header>
+  </clientOnly>
+</template>
+<script src="./fs-header.js"></script>

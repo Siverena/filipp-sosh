@@ -1,0 +1,131 @@
+.fs-footer {
+    padding: 112px 0;
+    background-color: $green-normal;
+    font-size: 16px;
+    &__logo {
+        display: block;
+        margin-bottom: 10px;
+        height: auto;
+        width: 214px;
+        stroke: $text-color;
+        fill: $text-color;
+        margin-bottom: 32px;
+    }
+    &__row {
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: repeat(auto-fill, 288px);
+        margin-bottom: 72px;
+    }
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+    }
+    &__contact {
+        display: flex;
+        align-items: baseline;
+        line-height: 17px;
+        letter-spacing: 0.02em;
+        color: $text-color;
+        svg {
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+    }
+    &__contact-link {
+        text-decoration: none;
+        color: inherit;
+        margin-bottom: 19px;
+    }
+    &__copyright {
+        display: flex;
+        align-items: center;
+        color: $text-color;
+        svg {
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+    }
+    &__nav {
+        flex-direction: column;
+        color: $text-color;
+        fill: $text-color;
+    }
+    &__links {
+        display: flex;
+        flex-direction: column;
+        color: $text-color;
+    }
+    &__link {
+        line-height: 17px;
+        letter-spacing: 0.02em;
+        margin-bottom: 23px;
+        text-decoration: underline;
+        color: inherit;
+    }
+    &__subscribe {
+        margin-bottom: 30px;
+        font-weight: 700;
+        line-height: 17px;
+        letter-spacing: 0.02em;
+        color: $text-color;
+        p {
+            margin-bottom: 18px;
+        }
+    }
+    &__subscribe-btn {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+    }
+}
+@media (max-width: grid-width($desktop)) {
+    .fs-footer {
+        padding: 26px 0;
+        margin-top: 120px;
+        &__row {
+            grid-template-columns: repeat(auto-fill, 234px);
+        }
+        &__logo {
+            margin-bottom: 20px;
+        }
+        &__link {
+            margin-bottom: 9px;
+        }
+        &__contact-link {
+            margin-bottom: 12px;
+        }
+        &__subscribe {
+            p {
+                margin-bottom: 9px;
+            }
+        }
+    }
+}
+@media (max-width: grid-width($laptop)) {
+    .fs-footer {
+        padding: 46px 0 23px;
+        background-size: 731px;
+        margin-top: 100px;
+        &__row {
+            grid-template-columns: repeat(auto-fill, 356px);
+            row-gap: 40px;
+        }
+    }
+}
+@media (max-width: grid-width($tablet)) {
+    .fs-footer {
+        padding: 54px 0;
+        &__copyright {
+            font-size: 12px;
+        }
+        &__subscribe-btn {
+            width: 100%;
+        }
+        &__row {
+            grid-template-columns: repeat(auto-fill, 100%);
+        }
+    }
+}

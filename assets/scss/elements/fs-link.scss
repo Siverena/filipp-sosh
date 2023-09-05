@@ -1,0 +1,37 @@
+.fs-link {
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.02em;
+    &--white {
+        color: $text-color;
+        &:hover {
+            color: #ffffffa1;
+        }
+        &:active {
+            color: #146949;
+        }
+        &:disabled {
+            color: $text_disabled;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+    &--green {
+        color: $green-normal;
+        &:hover {
+            color: $green-hover;
+        }
+        &:active {
+            color: $green-active;
+        }
+        &:disabled {
+            color: $text_disabled;
+        }
+        &:focus {
+            color: $green-active;
+        }
+    }
+}

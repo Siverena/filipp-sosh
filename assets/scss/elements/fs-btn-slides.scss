@@ -1,0 +1,34 @@
+.fs-btn-slides {
+    border: none;
+    background-color: transparent;
+    svg {
+        width: 56px;
+        height: 56px;
+    }
+    path {
+        fill: $text_secondary;
+    }
+    rect {
+        stroke: $text_secondary;
+        stroke-width: 2px;
+    }
+    &:hover {
+        path {
+            transition: all 1s;
+            fill: $white;
+        }
+        rect {
+            transition: all 1s;
+            stroke: $primary_green;
+            fill: $primary_green;
+        }
+    }
+}
+@media (max-width: grid-width($tablet)) {
+    .fs-btn-slides {
+        svg {
+            width: 56px;
+            height: 56px;
+        }
+    }
+}

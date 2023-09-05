@@ -1,0 +1,104 @@
+.fs-nav {
+    &--footer {
+        flex-direction: column;
+    }
+    display: flex;
+    margin-left: auto;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &__item {
+        font-size: 14px;
+
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    &__link {
+        color: inherit;
+        text-decoration: none;
+        font-weight: 400;
+        position: relative;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        &:hover {
+            opacity: 0.5;
+        }
+        &.router-link-active {
+            font-weight: 700;
+        }
+        svg {
+            height: 6px;
+            fill: inherit;
+            width: 11px;
+        }
+    }
+    &__child-list {
+        width: fit-content;
+        position: absolute;
+        top: 34px;
+        list-style: none;
+        padding: 8px;
+        background-color: $primary_orange;
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+        color: $text_primary;
+        &--index {
+            background-color: transparent;
+        }
+        &--error {
+            background-color: transparent;
+        }
+    }
+    &__child-item {
+        line-height: 15px;
+        font-size: 12px;
+    }
+    &__child-link {
+        white-space: nowrap;
+        color: $text_primary;
+        text-decoration: none;
+        font-weight: 400;
+        position: relative;
+        &:hover {
+            opacity: 0.5;
+        }
+        &--index {
+            color: $text_primary;
+        }
+    }
+    &__header {
+        display: none;
+    }
+    &__arrow {
+        fill: inherit;
+        &--index {
+            path {
+                fill: $text_primary !important;
+            }
+        }
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
+        transition: transform linear 0.3s;
+        cursor: pointer;
+        &--open {
+            transform: rotateX(-180deg);
+            transition: transform linear 0.3s;
+        }
+        svg {
+            width: 12px;
+            height: 7px;
+        }
+        path {
+            fill: inherit;
+        }
+    }
+}

@@ -1,0 +1,49 @@
+/**********
+/* VARIABLES */
+@import "./variables.scss";
+/**********
+/* NORMALIZE */
+@import "./normalize.scss";
+
+/**********
+/* MIXINS */
+
+/**********
+/* FUNCTIONS */
+@import "./functions.scss";
+
+/**********
+/* BASE */
+@import "./base";
+
+/**********
+/* ELEMENTS */
+
+@import "./elements/fs-btn.scss";
+@import "./elements/fs-logotype.scss";
+@import "./elements/fs-link.scss";
+@import "./elements/fs-section-titles.scss";
+
+/**********
+/* PLUGINS */
+@import "./plugins/accordion.scss";
+
+/**********
+/* COMPONENTS */
+@import "./components/fs-header.scss";
+@import "./components/fs-info.scss";
+@import "./components/fs-nav.scss";
+@import "./components/fs-login.scss";
+@import "./components/fs-footer.scss";
+@import "./components/fs-nav-column.scss";
+@import "./components/fs-mob-menu.scss";
+@import "./components/fs-order.scss";
+@import "./components/fs-schedule.scss";
+@import "./components/fs-breadcrumbs.scss";
+@import "./components/fs-contacts.scss";
+@import "./components/fs-gallery.scss";
+@import "./components/fs-gallery-slider.scss";
+
+/**********
+/* PAGES */
+// @import "./pages/gr-rules.scss";

@@ -1,0 +1,16 @@
+.fs-logotype {
+    svg {
+        stroke: inherit;
+        fill: inherit;
+        width: 100%;
+        height: auto;
+    }
+    &__image {
+        stroke: inherit;
+        fill: none;
+    }
+    &__text {
+        fill: inherit;
+        stroke: none;
+    }
+}

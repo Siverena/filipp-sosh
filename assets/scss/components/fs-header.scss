@@ -1,0 +1,91 @@
+.fs-header {
+    &__top {
+        display: flex;
+        padding-top: 29px;
+        padding-bottom: 29px;
+        // justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.2);
+        z-index: 1;
+        position: relative;
+    }
+    &__bottom {
+        z-index: 1;
+        position: relative;
+        position: relative;
+        // background-image: url(@/assets/img/fs-header/header.jpeg);
+        background-image: url(@/assets/img/fs-header/header.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    &__logo {
+        stroke: $green-normal;
+        fill: $green-normal;
+        width: 150px;
+        margin-right: auto;
+    }
+    &__nav {
+        display: flex;
+        width: fit-content;
+        column-gap: 25px;
+        color: $text_primary;
+    }
+    &__phone {
+        color: $text_primary;
+        font-size: 18px;
+        font-weight: 400;
+        margin-left: 55px;
+        text-decoration: none;
+    }
+    &__btn {
+        margin-left: 20px;
+    }
+    &__login {
+        margin-left: 20px;
+    }
+    &__burger {
+        display: none;
+        margin-left: 20px;
+        cursor: pointer;
+
+        &:hover {
+            rect {
+                fill: $green-hover;
+            }
+        }
+        &:active {
+            rect {
+                fill: $green-active;
+            }
+        }
+        &:focus {
+            outline: none;
+            rect {
+                fill: $green-active;
+            }
+        }
+    }
+}
+
+@media (max-width: grid-width($desktop)) {
+    .fs-header {
+        &__nav {
+            display: none !important;
+        }
+        &__burger {
+            display: block;
+        }
+    }
+}
+@media (max-width: grid-width($laptop)) {
+    .fs-header {
+        &__phone {
+            display: none;
+        }
+        &__btn {
+            display: none;
+        }
+    }
+}
