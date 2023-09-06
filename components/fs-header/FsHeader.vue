@@ -9,7 +9,7 @@
           href="tel:+74923771273"
           >+7 (492) 377-12-73</a
         >
-        <FsBtn class="fs-header__btn fs-btn--orange" @click.stop="openOrder"
+        <FsBtn class="fs-header__btn fs-btn--green" @click.stop="openOrder"
           >Задать вопрос
         </FsBtn>
         <FsLogin class="fs-header__login" />

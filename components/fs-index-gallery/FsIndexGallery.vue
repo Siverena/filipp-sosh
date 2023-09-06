@@ -26,8 +26,8 @@
       </div>
       <NuxtLink
         class="Fs-btn Fs-btn--Fseen fs-index-gallery__link fs-index-gallery__link--mobile"
-        to="/services"
-        >Посмотреть все услуги</NuxtLink
+        to="/gallery"
+        >Посмотреть все фото</NuxtLink
       >
     </div>
   </section>

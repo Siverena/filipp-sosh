@@ -3,11 +3,12 @@
   <Head>
     <Title>МКОУ ФИЛИППОВСКАЯ СОШ</Title>
   </Head>
-  <div class="no-tab">
-    <FsHeader />
-    <div class="container"><FsBreadCrumbs /></div>
-  </div>
-  <div class="gap">
+
+  <div class="fs-content">
+    <div class="no-tab">
+      <FsHeader />
+      <div class="container"><FsBreadCrumbs /></div>
+    </div>
     <NuxtPage />
     <div class="no-tab">
       <FsFooter />
