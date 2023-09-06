@@ -14,7 +14,7 @@
         <FsNavColumn :mobMenu="mobMenu" />
         <hr />
         <FsBtn
-          class="fs-btn--orange fs-mob-menu__btn"
+          class="fs-btn--green fs-mob-menu__btn"
           @click="openOrder"
           @keydown.enter="openOrder"
           >Задать вопрос</FsBtn

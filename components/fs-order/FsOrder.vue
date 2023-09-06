@@ -74,7 +74,7 @@
             placeholder="Введите вопрос"
           ></textarea>
         </div>
-        <button class="fs-btn fs-btn--orange fs-order__btn">Отправить</button>
+        <button class="fs-btn fs-btn--green fs-order__btn">Отправить</button>
         <div class="fs-order__field fs-order__field--agree">
           <label for="agree" class="fs-order__label fs-order__label--agree">
             <div
