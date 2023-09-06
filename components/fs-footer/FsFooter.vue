@@ -34,6 +34,9 @@
           <NuxtLink to="/agree" class="fs-link fs-link--white fs-footer__link"
             >Политика обработки персональных данных</NuxtLink
           >
+          <NuxtLink to="/cookie" class="fs-link fs-link--white fs-footer__link"
+            >Условия использования файлов cookie</NuxtLink
+          >
         </div>
         <div class="fs-footer__col fs-footer__layout">
           <div class="fs-footer__subscribe">

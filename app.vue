@@ -1,4 +1,5 @@
 <template>
+  <!-- <link href="dist/css/bvi.min.css" rel="stylesheet" /> -->
   <Head>
     <Title>МКОУ ФИЛИППОВСКАЯ СОШ</Title>
   </Head>
@@ -16,6 +17,7 @@
   <FsMobMenu v-if="getIsShowMob" />
   <FsOrder v-if="getIsShowOrder" />
 </template>
+
 <script>
 import { mapActions, mapState } from 'pinia';
 import { useAdaptiveStore } from '@/stores/adaptiveStore.js';
@@ -45,10 +47,12 @@ export default {
   },
   beforeMount() {
     this.updateWidth();
+
     window.addEventListener('resize', () => {
       this.updateWidth();
     });
     this.setHtmlClass();
   },
+  mounted() {},
 };
 </script>

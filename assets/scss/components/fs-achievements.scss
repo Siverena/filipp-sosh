@@ -1,0 +1,46 @@
+.fs-achievements {
+    background-color: $green-normal;
+    padding: 90px 0;
+    &__content {
+        display: flex;
+
+        flex-direction: column;
+        justify-content: space-between;
+        row-gap: 54px;
+        flex-shrink: 0;
+        color: $text-color;
+    }
+    &__titles {
+        color: $text-color;
+    }
+    &__item-title {
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 30.8px;
+    }
+    &__item-text {
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 24px;
+    }
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 370px);
+        // display: flex;
+        justify-content: space-between;
+
+        row-gap: 30px;
+    }
+    &__item {
+        width: 370px;
+        display: flex;
+        padding: 20px 11px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        row-gap: 20px;
+        text-align: center;
+    }
+}

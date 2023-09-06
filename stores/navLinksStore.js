@@ -10,7 +10,7 @@ export const useNavLinksStore = defineStore('NavLinksStore', {
           child: [
             {
               name: 'Сведения об образовательной организации',
-              link: '/information-about-the-educational-organization',
+              link: '/sveden',
               visibleInMenu: true,
             },
           ],
@@ -43,6 +43,11 @@ export const useNavLinksStore = defineStore('NavLinksStore', {
         {
           name: 'Авторизация',
           link: '/login',
+          visibleInMenu: false,
+        },
+        {
+          name: 'Условия использования файлов cookie ',
+          link: '/cookie',
           visibleInMenu: false,
         },
       ],
