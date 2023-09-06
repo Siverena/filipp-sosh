@@ -1,0 +1,42 @@
+.fs-history-school {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        column-gap: 30px;
+    }
+    &__item {
+        height: 400px;
+    }
+    &__item-title {
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 30.8px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    &__item-content {
+        img {
+            width: 312px;
+            height: 226px;
+            float: left;
+            margin-right: 10px;
+        }
+        p {
+            text-indent: 20px;
+            margin-bottom: 10px;
+        }
+        ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 45%);
+            justify-content: space-between;
+            padding: 0;
+            margin: 0;
+        }
+    }
+    &__btns {
+        display: flex;
+        column-gap: 30px;
+        justify-content: flex-end;
+    }
+}

@@ -14,6 +14,16 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
+      script: [
+        {
+          // hid: 'stripe',
+          // src: 'https://lidrekon.ru/slep/js/jquery.js',
+          // defer: true,
+        },
+      ],
+      link: [
+        // { rel: 'stylesheet', href: '/letsee/letsee.css' },
+      ],
     },
   },
 

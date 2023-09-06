@@ -1,34 +1,31 @@
 .fs-btn-slides {
     border: none;
     background-color: transparent;
-    svg {
-        width: 56px;
-        height: 56px;
-    }
+    width: 60px;
+    height: 60px;
+    background-color: $green-normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     path {
-        fill: $text_secondary;
+        fill: $text_color;
     }
-    rect {
-        stroke: $text_secondary;
-        stroke-width: 2px;
-    }
+
     &:hover {
+        background-color: $green-hover;
         path {
             transition: all 1s;
-            fill: $white;
+            fill: $text-color;
         }
-        rect {
-            transition: all 1s;
-            stroke: $primary_green;
-            fill: $primary_green;
-        }
+    }
+    &:active {
+        background-color: $green-active;
+    }
+    &:focus {
+        background-color: $green-hover;
     }
 }
 @media (max-width: grid-width($tablet)) {
     .fs-btn-slides {
-        svg {
-            width: 56px;
-            height: 56px;
-        }
     }
 }
