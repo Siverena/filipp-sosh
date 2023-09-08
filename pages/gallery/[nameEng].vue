@@ -1,8 +1,8 @@
 <template>
-  <Head>
-    <Title>{{ getGallery.name }} | Громово парк</Title>
-  </Head>
   <section class="fs-gallery" v-if="!loading && widthComputed">
+    <Head>
+      <Title>{{ getGallery.name }} | Громово парк</Title>
+    </Head>
     <div class="container no-tab">
       <FsSectionTitles>
         <template v-slot:h1> {{ getGallery.name }} </template>

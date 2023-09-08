@@ -1,6 +1,6 @@
 <template>
   <section class="fs-auth">
-    <div class="container">
+    <div class="container" v-if="false">
       <FsSectionTitles class="fs-auth__title">
         <template v-slot:h1>Регистрация</template>
       </FsSectionTitles>
