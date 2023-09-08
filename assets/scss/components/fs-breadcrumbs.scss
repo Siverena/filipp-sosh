@@ -11,14 +11,14 @@
         font-weight: 400;
         line-height: 15px;
 
-        color: $text_primary;
+        color: $text-primary;
         white-space: nowrap;
     }
     &__delimiter {
         width: 4px;
         height: 4px;
         border-radius: 50%;
-        background-color: $text_primary;
+        background-color: $text-primary;
         margin-right: 18px;
     }
     &__link {

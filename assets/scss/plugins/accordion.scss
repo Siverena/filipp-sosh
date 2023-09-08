@@ -5,13 +5,13 @@
             padding: 40px 0;
             background-color: transparent;
             border: none;
-            border-bottom: 2px solid $text_primary;
+            border-bottom: 2px solid $text-primary;
             border-radius: 0;
             font-size: 24px;
             font-weight: 700;
             line-height: 29px;
             letter-spacing: 0.02em;
-            color: $text_primary;
+            color: $text-primary;
             svg.p-accordion-toggle-icon {
                 order: 2;
                 margin-left: auto;
@@ -32,18 +32,18 @@
                 background: transparent;
                 border: none;
                 color: #0d5297;
-                border-bottom: 2px solid $text_primary;
+                border-bottom: 2px solid $text-primary;
             }
         }
         &:not(.p-disabled) {
             a.p-accordion-header-link {
-                border-bottom: 2px solid $text_primary;
+                border-bottom: 2px solid $text-primary;
                 &:focus {
                     outline: none;
                     outline-offset: 0;
                     border-bottom: none;
                     box-shadow: 0 0 0 0 transparent;
-                    border-bottom: 2px solid $text_primary;
+                    border-bottom: 2px solid $text-primary;
                 }
                 &[aria-expanded="true"] {
                     border-bottom: none;
@@ -62,19 +62,19 @@
                 padding: 40px 0;
                 background-color: transparent;
                 border: none;
-                border-bottom: 2px solid $text_primary;
+                border-bottom: 2px solid $text-primary;
                 border-radius: 0;
                 font-size: 24px;
                 font-weight: 700;
                 line-height: 29px;
                 letter-spacing: 0.02em;
-                color: $text_primary;
+                color: $text-primary;
                 &:focus {
                     outline: none;
                     outline-offset: 0;
                     border-bottom: none;
                     box-shadow: 0 0 0 0 transparent;
-                    border-bottom: 2px solid $text_primary;
+                    border-bottom: 2px solid $text-primary;
                 }
                 &[aria-expanded="true"] {
                     border-bottom: none;
@@ -92,19 +92,19 @@
                     padding: 40px 0;
                     background-color: transparent;
                     border: none;
-                    border-bottom: 2px solid $text_primary;
+                    border-bottom: 2px solid $text-primary;
                     border-radius: 0;
                     font-size: 24px;
                     font-weight: 700;
                     line-height: 29px;
                     letter-spacing: 0.02em;
-                    color: $text_primary;
+                    color: $text-primary;
                     &:focus {
                         outline: none;
                         outline-offset: 0;
                         border-bottom: none;
                         box-shadow: 0 0 0 0 transparent;
-                        border-bottom: 2px solid $text_primary;
+                        border-bottom: 2px solid $text-primary;
                     }
                     &[aria-expanded="true"] {
                         border-bottom: none;
@@ -125,13 +125,13 @@
                     padding: 40px 0;
                     background-color: transparent;
                     border: none;
-                    border-bottom: 2px solid $text_primary;
+                    border-bottom: 2px solid $text-primary;
                     border-radius: 0;
                     font-size: 24px;
                     font-weight: 700;
                     line-height: 29px;
                     letter-spacing: 0.02em;
-                    color: $text_primary;
+                    color: $text-primary;
                     &[aria-expanded="true"] {
                         border-bottom: none;
                     }
@@ -140,7 +140,7 @@
                         outline-offset: 0;
                         border-bottom: none;
                         box-shadow: 0 0 0 0 transparent;
-                        border-bottom: 2px solid $text_primary;
+                        border-bottom: 2px solid $text-primary;
                     }
                     &[aria-expanded="true"] {
                         border-bottom: none;
@@ -156,7 +156,7 @@
         padding: 24px 0 44px;
         border: none;
         background-color: transparent;
-        border-bottom: 2px solid $text_primary;
+        border-bottom: 2px solid $text-primary;
         border-radius: 0;
     }
 

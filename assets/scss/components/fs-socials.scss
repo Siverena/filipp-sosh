@@ -34,7 +34,7 @@
             &:disabled {
                 svg {
                     rect {
-                        fill: $text_disabled;
+                        fill: $text-disabled;
                     }
                 }
             }
@@ -75,7 +75,7 @@
             &:disabled {
                 svg {
                     rect {
-                        fill: $text_disabled;
+                        fill: $text-disabled;
                     }
                 }
             }
