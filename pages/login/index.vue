@@ -1,5 +1,5 @@
 <template>
-  <section class="fs-auth">
+  <section class="fs-auth" v-if="false">
     <div class="container">
       <FsSectionTitles class="fs-auth__title">
         <template v-slot:h1>Вход в личный кабинет</template>

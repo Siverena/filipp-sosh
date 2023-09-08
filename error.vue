@@ -3,7 +3,7 @@
     <Title>{{ statusCode }}</Title>
   </Head>
   <FsHeader />
-  <section class="fs-error">
+  <section class="fs-error" v-if="false">
     <div class="container">
       <div class="fs-error__content">
         <p class="fs-error__code">{{ pageContent.code }}</p>
