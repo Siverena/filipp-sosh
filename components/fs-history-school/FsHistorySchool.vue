@@ -6,7 +6,9 @@
     <div class="fs-history-school__container">
       <template v-for="(slide, key) in slides" :key="key">
         <div class="fs-history-school__item" v-if="key === currentSlide">
-          <div class="fs-history-school__item-title">{{ slide.title }}</div>
+          <div class="fs-history-school__item-title fs-h2">
+            {{ slide.title }}
+          </div>
           <div
             class="fs-history-school__item-content"
             v-html="slide.text"

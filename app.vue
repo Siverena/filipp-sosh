@@ -8,8 +8,9 @@
     <div class="no-tab">
       <FsHeader />
       <div class="container"><FsBreadCrumbs /></div>
+      <NuxtPage />
     </div>
-    <NuxtPage />
+
     <div class="no-tab">
       <FsFooter />
     </div>
