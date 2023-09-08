@@ -2,7 +2,7 @@
   <Head>
     <Title>Галерея | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
   </Head>
-  <section class="fs-gallery" v-if="false">
+  <section class="fs-gallery">
     <div class="container no-tab" v-if="!loading">
       <FsSectionTitles>
         <template v-slot:h1> Галерея </template>
