@@ -3,7 +3,6 @@
         display: flex;
         padding-top: 29px;
         padding-bottom: 29px;
-        // justify-content: space-between;
         align-items: center;
         background: rgba(255, 255, 255, 0.2);
         z-index: 1;
@@ -13,7 +12,6 @@
         z-index: 1;
         position: relative;
         position: relative;
-        // background-image: url(@/assets/img/fs-header/header.jpeg);
         background-image: url(@/assets/img/fs-header/header.jpg);
         background-repeat: no-repeat;
         background-position: center;
@@ -34,13 +32,14 @@
     }
     &__phone {
         color: $text_primary;
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 400;
         margin-left: 55px;
         text-decoration: none;
     }
     &__btn {
         margin-left: 20px;
+        font-size: 16px;
     }
     &__login {
         margin-left: 20px;

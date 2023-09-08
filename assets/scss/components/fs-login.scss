@@ -7,14 +7,17 @@
     }
     &__icon {
         stroke: $text_primary;
-        width: 30px;
+        width: 23px;
     }
     &__text {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 400;
         color: inherit;
     }
     path {
         stroke: inherit;
+    }
+    &:hover {
+        stroke: $green-hover;
     }
 }

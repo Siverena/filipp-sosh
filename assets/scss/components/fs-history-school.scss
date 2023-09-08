@@ -1,4 +1,8 @@
 .fs-history-school {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
     &__container {
         display: flex;
         flex-direction: column;
@@ -9,11 +13,7 @@
         height: 400px;
     }
     &__item-title {
-        font-size: 28px;
-        font-weight: 700;
-        line-height: 30.8px;
         margin-bottom: 20px;
-        text-align: center;
     }
     &__item-content {
         img {
@@ -31,7 +31,7 @@
             grid-template-columns: repeat(auto-fill, 45%);
             justify-content: space-between;
             padding: 0;
-            margin: 0;
+            margin-left: 28px;
         }
     }
     &__btns {
