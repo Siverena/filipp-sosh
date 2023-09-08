@@ -123,7 +123,7 @@
         width: 12px;
         height: 12px;
         margin-right: 4px;
-        border: 1px solid $text_primary;
+        border: 1px solid $text-primary;
         border-radius: 2px;
         svg {
             margin: auto;
@@ -155,7 +155,7 @@
         line-height: 16.8px; /* 140% */
     }
     &__input {
-        border: 1px solid $text_secondary;
+        border: 1px solid $text-secondary;
         padding: 16px;
         border-radius: 2px;
         width: 100%;
@@ -164,10 +164,10 @@
             font-size: 18px;
             font-weight: 400;
             line-height: 18px;
-            color: $text_secondary;
+            color: $text-secondary;
         }
         &:focus {
-            color: $text_primary;
+            color: $text-primary;
             border: 1px solid $green-normal;
             outline: none;
         }
@@ -182,7 +182,7 @@
         font-size: 12px;
         border-radius: 2px;
         box-shadow: none;
-        border: 1px solid $text_secondary;
+        border: 1px solid $text-secondary;
         padding: 16px;
         &--error {
             border-color: $mistake;
@@ -191,10 +191,10 @@
             font-size: 18px;
             font-weight: 400;
             line-height: 18px;
-            color: $text_secondary;
+            color: $text-secondary;
         }
         &:focus {
-            color: $text_primary;
+            color: $text-primary;
             border: 1px solid $green-active;
             outline: none;
         }

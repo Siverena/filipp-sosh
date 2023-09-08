@@ -1,17 +1,17 @@
 /**********
 /* SITE BASE COLORS */
-// $green-normal: #283618;
 
-$text_primary: #222222;
-$text_secondary: #aaaaaa;
+$text-primary: #222222;
+$text-secondary: #aaaaaa;
 $text-color: #ffffff;
-$text_disabled: #d9d9d9;
+$text-disabled: #d9d9d9;
+
+$green-normal: #344c11;
+$green-hover: #778d45;
+$green-active: #aec670;
 
 $background_1: #f9f9f9;
 
-$link_hover: #606c38;
-$link_active: #52611f;
-// $border_2: #093e2a;
 $mistake: #e5160b;
 $attention: #e87b0e;
 $success: #379e13;
@@ -20,7 +20,3 @@ $desktop: 1280px;
 $laptop: 1024px;
 $tablet: 768px;
 $mobile: 360px;
-
-$green-normal: #344c11;
-$green-hover: #778d45;
-$green-active: #aec670;

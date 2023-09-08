@@ -2,22 +2,24 @@
   <Head>
     <Title>{{ statusCode }}</Title>
   </Head>
-  <section class="ps-404">
-    <!-- <GrHeader class="ps-404__header"></GrHeader> -->
+  <FsHeader />
+  <section class="fs-error">
     <div class="container">
-      <div class="ps-404__content">
-        <p class="ps-404__code">{{ pageContent.code }}</p>
-        <p class="ps-404__error">{{ pageContent.error }}</p>
-        <p class="ps-404__text">
+      <div class="fs-error__content">
+        <p class="fs-error__code">{{ pageContent.code }}</p>
+        <p class="fs-error__error" v-if="pageContent.error">
+          {{ pageContent.error }}
+        </p>
+        <p class="fs-error__text" v-if="pageContent.text">
           {{ pageContent.text }}
         </p>
-        <NuxtLink to="/" class="ps-404__link gr-btn gr-btn--transparent"
+        <NuxtLink to="/" class="fs-error__link fs-btn fs-btn--white"
           >Перейти на главную</NuxtLink
         >
       </div>
     </div>
   </section>
-  <!-- <GrMobMenu v-if="getIsShowMob" /> -->
+  <FsFooter />
 </template>
 <script>
 import { mapState } from 'pinia';
@@ -51,9 +53,9 @@ export default {
   methods: {
     getBodyClass() {
       if (this.$attrs.error.statusCode) {
-        document.querySelector('html').classList.add('ps-404__html');
+        document.querySelector('html').classList.add('fs-error__html');
       } else {
-        document.querySelector('html').classList.remove('ps-404__html');
+        document.querySelector('html').classList.remove('fs-error__html');
       }
     },
   },

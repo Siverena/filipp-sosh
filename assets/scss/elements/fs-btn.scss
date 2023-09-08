@@ -26,7 +26,7 @@
             outline: none;
         }
         &:disabled {
-            background-color: $text_disabled;
+            background-color: $text-disabled;
         }
     }
 
@@ -38,23 +38,50 @@
         &:hover {
             transition: all 1s;
             background-color: $text-color;
-            color: $text_primary;
+            color: $text-primary;
         }
         &:active {
             background-color: $green-active;
             border-color: $green-active;
-            color: $text_primary;
+            color: $text-primary;
         }
         &:focus {
             background-color: $green-active;
             border-color: $green-active;
-            color: $text_primary;
+            color: $text-primary;
             outline: none;
         }
         &:disabled {
-            background-color: $text_disabled;
+            background-color: $text-disabled;
             color: $text-color;
-            border-color: $text_disabled;
+            border-color: $text-disabled;
+        }
+    }
+    &--white {
+        color: $green-hover;
+        background-color: transparent;
+        border: 2px solid $green-hover;
+        transition: all 1s;
+        &:hover {
+            transition: all 1s;
+            background-color: $text-color;
+            color: $text-primary;
+        }
+        &:active {
+            background-color: $green-active;
+            border-color: $green-active;
+            color: $text-primary;
+        }
+        &:focus {
+            background-color: $green-active;
+            border-color: $green-active;
+            color: $text-primary;
+            outline: none;
+        }
+        &:disabled {
+            background-color: $text-disabled;
+            color: $text-color;
+            border-color: $text-disabled;
         }
     }
 }
