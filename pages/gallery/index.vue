@@ -1,26 +1,28 @@
 <template>
-  <Head>
-    <Title>Галерея | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
-  </Head>
   <section class="fs-gallery">
+    <Head>
+      <Title>Галерея | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
+    </Head>
     <div class="container no-tab" v-if="!loading">
-      <FsSectionTitles>
-        <template v-slot:h1> Галерея </template>
-      </FsSectionTitles>
-      <div class="fs-gallery__list">
-        <NuxtLink
-          v-for="(item, key) in getGallery"
-          :key="key"
-          :to="`/gallery/${item?.nameEng}`"
-          class="fs-gallery__item"
-          :style="
-            `background-image: url(` + getStaticImageUrl(item.mainImg) + `);`
-          "
-        >
-          <div class="fs-gallery__item-bg">
-            {{ item.name }}
-          </div>
-        </NuxtLink>
+      <div class="fs-gallery__content">
+        <FsSectionTitles>
+          <template v-slot:h1> Галерея </template>
+        </FsSectionTitles>
+        <div class="fs-gallery__list">
+          <NuxtLink
+            v-for="(item, key) in getGallery"
+            :key="key"
+            :to="`/gallery/${item?.nameEng}`"
+            class="fs-gallery__item"
+            :style="
+              `background-image: url(` + getStaticImageUrl(item.mainImg) + `);`
+            "
+          >
+            <div class="fs-gallery__item-bg">
+              {{ item.name }}
+            </div>
+          </NuxtLink>
+        </div>
       </div>
     </div>
   </section>

@@ -42,6 +42,12 @@
         cursor: pointer;
         object-fit: cover;
     }
+    &__content {
+        display: flex;
+
+        flex-direction: column;
+        row-gap: 60px;
+    }
 }
 @media (max-width: grid-width($desktop)) {
     .fs-gallery {
