@@ -4,18 +4,20 @@
       <Title>{{ getGallery.name }} | Громово парк</Title>
     </Head>
     <div class="container no-tab">
-      <FsSectionTitles>
-        <template v-slot:h1> {{ getGallery.name }} </template>
-      </FsSectionTitles>
-      <div class="fs-gallery__list">
-        <img
-          alt=""
-          v-for="(img, key) in imgsss"
-          :key="key"
-          class="fs-gallery__image"
-          :src="getStaticImageUrl(img.src)"
-          @click="showSlider(key)"
-        />
+      <div class="fs-gallery__content">
+        <FsSectionTitles>
+          <template v-slot:h1> {{ getGallery.name }} </template>
+        </FsSectionTitles>
+        <div class="fs-gallery__list">
+          <img
+            alt=""
+            v-for="(img, key) in imgsss"
+            :key="key"
+            class="fs-gallery__image"
+            :src="getStaticImageUrl(img.src)"
+            @click="showSlider(key)"
+          />
+        </div>
       </div>
     </div>
     <FsGallerySlider

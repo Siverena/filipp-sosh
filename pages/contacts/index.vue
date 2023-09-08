@@ -1,8 +1,8 @@
 <template>
-  <Head>
-    <Title>Расписание | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
-  </Head>
   <section class="fs-contacts">
+    <Head>
+      <Title>Расписание | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
+    </Head>
     <div class="container">
       <FsSectionTitles>
         <template v-slot:h1> Контакты </template>
