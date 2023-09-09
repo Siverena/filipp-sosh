@@ -1,10 +1,11 @@
 <template>
-  <Head>
-    <Title
-      >Согласие на обработку персональных данных | МКОУ ФИЛИППОВСКАЯ СОШ</Title
-    >
-  </Head>
-  <section class="fs-agree">
+  <section class="fs-agree no-tab">
+    <Head>
+      <Title
+        >Согласие на обработку персональных данных | МКОУ ФИЛИППОВСКАЯ
+        СОШ</Title
+      >
+    </Head>
     <div class="container">
       <FsSectionTitles>
         <template v-slot:h1>

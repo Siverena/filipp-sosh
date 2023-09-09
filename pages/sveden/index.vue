@@ -1,3 +1,3 @@
 <template>
-  <div>dsdv</div>
+  <div class="no-tab">dsdv</div>
 </template>

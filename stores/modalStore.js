@@ -4,7 +4,7 @@ export const useModalStore = defineStore('modalStore', {
     return {
       isShowMob: false,
       isShowOrder: false,
-      isSubscription: false,
+      isShowSlider: false,
     };
   },
   getters: {
@@ -14,8 +14,8 @@ export const useModalStore = defineStore('modalStore', {
     getIsShowOrder(state) {
       return state.isShowOrder;
     },
-    getIsSubscription(state) {
-      return state.isSubscription;
+    getIsShowSlider(state) {
+      return state.isShowSlider;
     },
   },
   actions: {
@@ -23,21 +23,25 @@ export const useModalStore = defineStore('modalStore', {
     SET_IS_SHOW_MOB_MENU(data) {
       this.isShowMob = data;
       this.isShowOrder = false;
-      this.isShowPhoto = false;
+      this.isShowSlider = false;
     },
     SET_IS_SHOW_ORDER(data) {
       this.isShowMob = false;
       this.isShowOrder = data;
-      this.isShowPhoto = false;
+      this.isShowSlider = false;
     },
-    SET_IS_SUBSCRIPTION(data) {
-      this.isSubscription = data;
+    SET_IS_SHOW_SLIDER(data) {
+      this.isShowMob = false;
+      this.isShowOrder = false;
+      this.isShowSlider = data;
     },
+
     //actions
     openOrder() {
       this.SET_IS_SHOW_ORDER(true);
       this.deleteScroll();
       this.addInert();
+      this.addListenerEscKey();
     },
     closeOrder() {
       this.SET_IS_SHOW_ORDER(false);
@@ -48,11 +52,29 @@ export const useModalStore = defineStore('modalStore', {
       this.SET_IS_SHOW_MOB_MENU(true);
       this.deleteScroll();
       this.addInert();
+      this.addListenerEscKey();
     },
     closeMobMenu() {
       this.SET_IS_SHOW_MOB_MENU(false);
       this.addScroll();
       this.deleteInert();
+    },
+    openSlider() {
+      this.SET_IS_SHOW_SLIDER(true);
+      this.deleteScroll();
+      this.addInert();
+      this.addListenerEscKey();
+    },
+    closeSlider() {
+      this.SET_IS_SHOW_SLIDER(false);
+      this.addScroll();
+      this.deleteInert();
+    },
+    closeModal() {
+      this.closeMobMenu();
+      this.closeOrder();
+      this.closeSlider();
+      document.removeEventListener('keydown', this.escHandler);
     },
     addScroll() {
       document.querySelector('html').style.overflowY = 'scroll';
@@ -69,6 +91,14 @@ export const useModalStore = defineStore('modalStore', {
       document.querySelectorAll('.no-tab').forEach((element) => {
         element.removeAttribute('inert');
       });
+    },
+    addListenerEscKey() {
+      document.addEventListener('keydown', this.escHandler);
+    },
+    escHandler(e) {
+      if (e.key === 'Escape') {
+        this.closeModal();
+      }
     },
   },
 });
