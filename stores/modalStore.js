@@ -5,6 +5,7 @@ export const useModalStore = defineStore('modalStore', {
       isShowMob: false,
       isShowOrder: false,
       isShowSlider: false,
+      isShowCookies: false,
     };
   },
   getters: {
@@ -16,6 +17,9 @@ export const useModalStore = defineStore('modalStore', {
     },
     getIsShowSlider(state) {
       return state.isShowSlider;
+    },
+    getisShowCookies(state) {
+      return state.isShowCookies;
     },
   },
   actions: {
@@ -34,6 +38,10 @@ export const useModalStore = defineStore('modalStore', {
       this.isShowMob = false;
       this.isShowOrder = false;
       this.isShowSlider = data;
+    },
+
+    SET_IS_SHOWCOOKIES(data) {
+      this.isShowCookies = data;
     },
 
     //actions
@@ -59,6 +67,7 @@ export const useModalStore = defineStore('modalStore', {
       this.addScroll();
       this.deleteInert();
     },
+
     openSlider() {
       this.SET_IS_SHOW_SLIDER(true);
       this.deleteScroll();
@@ -75,6 +84,14 @@ export const useModalStore = defineStore('modalStore', {
       this.closeOrder();
       this.closeSlider();
       document.removeEventListener('keydown', this.escHandler);
+
+    acceptCookies() {
+      this.SET_IS_SHOWCOOKIES(false);
+      this.addSession();
+    },
+    showCookies() {
+      this.SET_IS_SHOWCOOKIES(true);
+
     },
     addScroll() {
       document.querySelector('html').style.overflowY = 'scroll';
@@ -92,6 +109,7 @@ export const useModalStore = defineStore('modalStore', {
         element.removeAttribute('inert');
       });
     },
+
     addListenerEscKey() {
       document.addEventListener('keydown', this.escHandler);
     },
@@ -99,6 +117,10 @@ export const useModalStore = defineStore('modalStore', {
       if (e.key === 'Escape') {
         this.closeModal();
       }
+
+    addSession() {
+      sessionStorage.setItem('test', 'Test value');
+
     },
   },
 });
