@@ -3,28 +3,27 @@
   <Head>
     <Title>МКОУ ФИЛИППОВСКАЯ СОШ</Title>
   </Head>
-  <div class="no-tab">
-    <FsHeader />
-    <div class="container"><FsBreadCrumbs /></div>
-  </div>
-  <div class="gap">
-    <NuxtPage />
-    <div class="no-tab">
-      <FsFooter />
-      <FsBanner v-if="getisShowCookies" />
+  <div class="fs-content">
+    <div :class="{ 'fs-content': currentUrl === 'index' }">
+      <FsHeader class="no-tab" />
+      <div class="container no-tab" v-if="currentUrl !== 'index'">
+        <FsBreadCrumbs />
+      </div>
+      <NuxtPage class="no-tab" />
     </div>
+    <FsFooter class="no-tab" />
   </div>
-
   <FsMobMenu v-if="getIsShowMob" />
   <FsOrder v-if="getIsShowOrder" />
 </template>
 
 <script>
-import { mapActions, mapState } from "pinia";
-import { useAdaptiveStore } from "@/stores/adaptiveStore.js";
-import { useModalStore } from "@/stores/modalStore.js";
-
+import { mapActions, mapState } from 'pinia';
+import { useAdaptiveStore } from '@/stores/adaptiveStore.js';
+import { useModalStore } from '@/stores/modalStore.js';
+import currentUrl from '@/utils/mixins/current-url.js';
 export default {
+  mixins: [currentUrl],
   computed: {
     ...mapState(useAdaptiveStore, ["widthComputed"]),
     ...mapState(useModalStore, [

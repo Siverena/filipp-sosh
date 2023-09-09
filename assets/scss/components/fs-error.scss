@@ -1,0 +1,89 @@
+.fs-error {
+    margin-bottom: 100px;
+    margin-top: 100px;
+    &__content {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+        align-items: center;
+    }
+    &__code {
+        color: $green-hover;
+        font-size: 280px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 294px; /* 105% */
+        letter-spacing: 5.6px;
+    }
+    &__error {
+        color: $green-hover;
+        text-align: center;
+        font-size: 46px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    &__text {
+        color: $green-hover;
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 22px;
+    }
+}
+@media (max-width: grid-width($desktop)) {
+    .fs-error {
+        margin-bottom: 80px;
+        margin-top: 80px;
+        &__content {
+            max-width: 100%;
+        }
+        &__code {
+            font-size: 200px;
+            line-height: normal;
+            letter-spacing: 4px;
+        }
+        &__error {
+            font-size: 42px;
+        }
+        &__text {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+}
+@media (max-width: grid-width($laptop)) {
+    .fs-error {
+        margin-bottom: 60px;
+        margin-top: 60px;
+        &__content {
+            row-gap: 20px;
+        }
+        &__code {
+            font-size: 180px;
+            letter-spacing: 3.6px;
+        }
+        &__error {
+            font-size: 40px;
+        }
+    }
+}
+@media (max-width: grid-width($tablet)) {
+    .fs-error {
+        margin-bottom: 60px;
+        margin-top: 60px;
+        &__content {
+            row-gap: 20px;
+        }
+        &__code {
+            font-size: 130px;
+            letter-spacing: 2.6px;
+        }
+        &__error {
+            font-size: 36px;
+        }
+    }
+}

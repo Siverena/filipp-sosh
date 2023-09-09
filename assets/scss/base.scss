@@ -15,11 +15,7 @@
 html {
     overflow-x: hidden;
 }
-.gap {
-    display: flex;
-    flex-direction: column;
-    row-gap: 160px;
-}
+
 .fs-content {
     display: flex;
     flex-direction: column;
@@ -30,9 +26,9 @@ body {
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
-    line-height: 24px;
+    line-height: 22px;
     overflow-x: hidden;
-    color: $text_primary;
+    color: $text-primary;
 }
 .container {
     width: $desktop;
@@ -40,16 +36,16 @@ body {
     padding: 0 40px;
 }
 .fs-h1 {
-    font-size: 41px;
-    line-height: 41px;
+    font-size: 46px;
+    line-height: 48px;
     margin: 0;
     font-weight: 400;
     max-width: 100%;
 }
 .fs-h2 {
-    font-weight: 700;
+    font-weight: 400;
     font-size: 28px;
-    line-height: 32px;
+    line-height: 30px;
     color: $green-normal;
     margin: 0;
     max-width: 100%;
@@ -61,16 +57,15 @@ body {
         padding: 0 20px;
     }
     .fs-h1 {
-        font-size: 38px;
-        line-height: 40px;
+        font-size: 42px;
     }
     .fs-h2 {
         font-size: 22px;
-        line-height: 28px;
+        line-height: 24px;
     }
     body {
         font-size: 16px;
-        line-height: 19px;
+        line-height: 20px;
     }
     .fs-content {
         row-gap: 120px;
@@ -82,11 +77,19 @@ body {
         width: $tablet;
     }
     .fs-h1 {
-        font-size: 34px;
-        line-height: 36px;
+        font-size: 40px;
+        line-height: 42px;
+    }
+    .fs-h2 {
+        font-size: 20px;
+        line-height: 22px;
     }
     .fs-content {
         row-gap: 100px;
+    }
+    body {
+        font-size: 14px;
+        line-height: 16px;
     }
 }
 
@@ -98,9 +101,9 @@ body {
         width: $mobile;
     }
     .fs-h1 {
-        font-size: 24px;
+        font-size: 36px;
 
-        line-height: 26px;
+        line-height: 38px;
 
         width: 100%;
     }

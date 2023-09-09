@@ -1,8 +1,8 @@
 <template>
-  <section class="fs-auth" v-if="false">
-    <div class="container">
+  <section class="fs-auth">
+    <div class="container" v-if="false">
       <FsSectionTitles class="fs-auth__title">
-        <template v-slot:h1>Вход в личный кабинет</template>
+        <template v-slot:h1>Регистрация</template>
       </FsSectionTitles>
 
       <form
@@ -55,15 +55,34 @@
         </template>
 
         <button class="fs-btn fs-btn--green fs-auth__btn">Отправить</button>
+        <div class="fs-auth__field fs-auth__field--agree">
+          <label for="agree" class="fs-auth__label fs-auth__label--agree">
+            <div
+              class="fs-auth__checkbox"
+              :class="
+                !agree && agreementError ? 'fs-auth__checkbox--error' : ''
+              "
+            >
+              <FsCheckInput v-if="agree" />
+            </div>
+            <div
+              class="fs-auth__label-text"
+              :class="
+                !agree && agreementError ? 'fs-auth__label-text--error' : ''
+              "
+            >
+              <span>Согласен с </span>
+              <NuxtLink to="/agree" target="_blank" class="fs-auth__agree"
+                >политикой обработки персональных данных</NuxtLink
+              >
+            </div>
+          </label>
+          <input type="checkbox" id="agree" name="agree" v-model="agree" />
+        </div>
 
         <div class="fs-auth__attention">
           <span class="fs-auth__star">*</span>Обязательное поле
         </div>
-        <nuxt-link
-          to="/registration"
-          class="fs-link fs-link--green fs-auth__link-reg"
-          >Зарегистрироваться</nuxt-link
-        >
       </form>
     </div>
   </section>
@@ -74,7 +93,26 @@ export default {
     return {
       agreementError: false,
       validationSuccess: true,
+      agree: false,
       fields: [
+        {
+          name: 'firstname',
+          label: 'Имя',
+          value: '',
+          required: true,
+          type: 'text',
+          placeholder: 'Имя',
+          error: '',
+        },
+        {
+          name: 'lastname',
+          label: 'Фамилия',
+          value: '',
+          required: true,
+          type: 'text',
+          placeholder: 'Фамилия',
+          error: '',
+        },
         {
           name: 'login',
           label: 'Логин',
@@ -85,8 +123,28 @@ export default {
           error: '',
         },
         {
+          name: 'email',
+          label: 'E-mail',
+          value: '',
+          required: true,
+          type: 'email',
+          mask: '',
+          placeholder: 'example@mail.ru',
+          error: '',
+        },
+        {
           name: 'password',
           label: 'Пароль',
+          value: '',
+          required: true,
+          type: 'password',
+          mask: '',
+          placeholder: '****',
+          error: '',
+        },
+        {
+          name: 'confirmPassword',
+          label: 'Подтвердите пароль',
           value: '',
           required: true,
           type: 'password',
@@ -103,6 +161,10 @@ export default {
     fieldsVisibility() {
       return {
         login: true,
+        firstname: true,
+        lastname: true,
+        email: true,
+        confirmPassword: true,
         password: true,
       };
     },
@@ -158,6 +220,22 @@ export default {
           this.validationSuccess = false;
         }
       });
+      if (!this.agree) {
+        this.validationSuccess = false;
+        this.agreementError = true;
+      }
+      this.checkPassword();
+    },
+    checkPassword() {
+      const password = this.fields.find((el) => el.name === 'password');
+      const confirmPassword = this.fields.find(
+        (el) => el.name === 'confirmPassword'
+      );
+      confirmPassword.error = '';
+      if (password.value !== confirmPassword.value) {
+        this.validationSuccess = false;
+        confirmPassword.error = 'Пароли не совпадают';
+      }
     },
     submitForm() {
       this.checkForm();

@@ -54,6 +54,11 @@ export const useNavLinksStore = defineStore('NavLinksStore', {
           visibleInSvedenMenu: false,
         },
         {
+          name: 'Регистрация',
+          link: '/registration',
+          visibleInMenu: false,
+        },
+        {
           name: 'Условия использования файлов cookie ',
           link: '/cookie',
           visibleInMenu: false,

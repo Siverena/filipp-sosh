@@ -89,7 +89,7 @@
 
         &__link {
             font-size: 16px;
-            color: $text_primary;
+            color: $text-primary;
             &.router-link-active {
                 color: $green-active;
                 line-height: 20px;
@@ -97,7 +97,7 @@
             }
         }
         &__child-link {
-            color: $text_primary;
+            color: $text-primary;
         }
         &__arrow {
             path {

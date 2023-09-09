@@ -41,8 +41,7 @@ export const useModalStore = defineStore('modalStore', {
       this.isShowCookies = data;
     },
     //actions
-    openOrder(isSubscription = false) {
-      this.SET_IS_SUBSCRIPTION(isSubscription);
+    openOrder() {
       this.SET_IS_SHOW_ORDER(true);
       this.deleteScroll();
       this.addInert();
@@ -69,7 +68,6 @@ export const useModalStore = defineStore('modalStore', {
     showCookies() {
       this.SET_IS_SHOWCOOKIES(true);
     },
-
     addScroll() {
       document.querySelector('html').style.overflowY = 'scroll';
     },

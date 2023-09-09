@@ -4,9 +4,10 @@ import { useModalStore } from '@/stores/modalStore.js';
 export default {
   data() {
     return {
-      agree: false,
       agreementError: false,
       validationSuccess: true,
+      // question: '',
+      // questionError: '',
       fields: [
         {
           name: 'name',
@@ -27,6 +28,16 @@ export default {
           placeholder: 'example@mail.ru',
           error: '',
         },
+        {
+          name: 'question',
+          label: 'Вопрос',
+          value: '',
+          required: true,
+          type: 'textarea',
+          mask: '',
+          placeholder: 'Введите вопрос',
+          error: '',
+        },
       ],
       formData: {},
     };
@@ -38,6 +49,7 @@ export default {
       return {
         name: true,
         email: true,
+        question: true,
       };
     },
   },
@@ -82,6 +94,7 @@ export default {
         field.error = `Поле ${field.label} заполнено некорректно`;
         return false;
       }
+
       return true;
     },
     checkForm() {
@@ -92,10 +105,6 @@ export default {
           this.validationSuccess = false;
         }
       });
-      if (!this.agree) {
-        this.validationSuccess = false;
-        this.agreementError = true;
-      }
     },
     submitForm() {
       this.checkForm();
@@ -105,7 +114,8 @@ export default {
             this.formData[field.name] = field.value;
           }
         });
-        console.log(this.data);
+        console.log(this.formData);
+        this.closeOrder();
       }
     },
   },
