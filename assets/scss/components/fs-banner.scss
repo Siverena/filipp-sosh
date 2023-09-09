@@ -1,0 +1,68 @@
+.fs-banner {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 35px;
+    padding: 20px;
+    max-width: 495px; //614
+    background-color: $background_1;
+    border-radius: 10px;
+    box-shadow: 1px 1px 7px 1px $green-hover;
+
+
+    &__content {
+        // outline: 2px solid yellow;
+        width: 100%;
+        min-height: 246px;
+        padding: 8px;
+    }
+
+    &__text {
+        // outline: 2px solid blue;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 28px;
+        color: $text_primary;
+    }
+
+    &__btns {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    &__btn {
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 42px;
+    }
+}
+
+@media (max-width: grid-width($mobile)) {
+    .fs-banner {
+        max-width: 320px;
+        gap: 16px;
+
+        &__content {
+            min-height: 240px;
+        }
+
+        &__text {        
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        &__btn {
+            width: 100%;
+            padding: 5px 33px;
+        }
+    }
+}
