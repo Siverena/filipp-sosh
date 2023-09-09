@@ -10,7 +10,9 @@
       </div>
       <FsAchievements />
       <div class="container">
-        <!-- <FsIndexGallery  /> -->
+        <clientOnly>
+          <FsIndexGallery />
+        </clientOnly>
       </div>
       <FsServices />
     </div>

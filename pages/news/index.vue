@@ -1,8 +1,8 @@
 <template>
-  <Head>
-    <Title>Новости | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
-  </Head>
   <section class="fs-news-list no-tab" v-if="!loading">
+    <Head>
+      <Title>Новости | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
+    </Head>
     <div class="container">
       <FsSectionTitles>
         <template v-slot:h1> Новости </template>

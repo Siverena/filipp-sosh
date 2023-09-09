@@ -1,3 +1,3 @@
 <template>
-  <div>dfd</div>
+  <div class="no-tab">dfd</div>
 </template>
