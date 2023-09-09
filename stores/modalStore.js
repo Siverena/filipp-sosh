@@ -85,7 +85,7 @@ export const useModalStore = defineStore('modalStore', {
       });
     },
     addSession() {
-      localStorage.setItem('test', 'Test value');
+      sessionStorage.setItem('test', 'Test value');
     },
   },
 });

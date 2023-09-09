@@ -12,6 +12,7 @@
       <NuxtPage class="no-tab" />
     </div>
     <FsFooter class="no-tab" />
+    <FsBanner v-if="getisShowCookies" />
   </div>
   <FsMobMenu v-if="getIsShowMob" />
   <FsOrder v-if="getIsShowOrder" />
