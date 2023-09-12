@@ -15,6 +15,8 @@
         :class="
           getClassByRoute('fs-nav__arrow') + ' ' + getClassByCurrentMenu(key)
         "
+        @keydown.enter="toggleMenu(key)"
+        tabindex="0"
       >
         <FsCheckMarkDown v-if="item.child" />
       </div>

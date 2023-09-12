@@ -4,7 +4,6 @@
       <FsSectionTitles class="fs-auth__title">
         <template v-slot:h1>Регистрация</template>
       </FsSectionTitles>
-
       <form
         class="fs-auth__content"
         @submit.prevent="submitForm"
