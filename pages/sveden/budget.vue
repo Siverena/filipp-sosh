@@ -1,3 +1,14 @@
 <template>
-  <div>budget</div>
+  <section class="fs-budget">
+    <Head>
+      <Title>Финансово хозяйственная деятельность | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
+    </Head>
+    <div class="container">
+      <div class="fs-budget__content">
+        <FsSectionTitles>
+          <template v-slot:h1> Финансово хозяйственная деятельность </template>
+        </FsSectionTitles>
+      </div>
+    </div>
+  </section>
 </template>

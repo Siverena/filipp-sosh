@@ -1,9 +1,9 @@
 .fs-link {
     text-decoration: underline;
-    font-size: 22px;
-    font-weight: 700;
-    line-height: 24px;
-    letter-spacing: 0.02em;
+    // font-size: 18px;
+    font-weight: 300;
+    line-height: 22px;
+    // letter-spacing: 0.02em;
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -42,13 +42,13 @@
 }
 @media (max-width: grid-width($desktop)) {
     .fs-link {
-        font-size: 20px;
+        // font-size: 20px;
         line-height: 22px;
     }
 }
 @media (max-width: grid-width($laptop)) {
     .fs-link {
-        font-size: 18px;
+        // font-size: 18px;
         line-height: 20px;
     }
 }
