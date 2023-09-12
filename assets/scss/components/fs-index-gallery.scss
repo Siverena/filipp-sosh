@@ -1,13 +1,12 @@
 .fs-index-gallery {
-    &__first {
-        margin-right: 79px;
-        padding-bottom: 118px;
-        display: flex;
-        flex-direction: column;
-    }
     &__container {
         overflow: visible;
         display: flex;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        row-gap: 60px;
     }
     &__reasons-cont {
         width: 100%;
@@ -30,9 +29,6 @@
     }
     &__link {
         margin-top: auto;
-        &--mobile {
-            display: none;
-        }
     }
     &__reason-text {
         width: 355px;
@@ -45,7 +41,6 @@
         left: 24px;
     }
     &__nav {
-        padding: 20px 0;
         display: flex;
         align-items: center;
         column-gap: 16px;
@@ -62,44 +57,29 @@
 }
 @media (max-width: grid-width($desktop)) {
     .fs-index-gallery {
-        margin-bottom: 90px;
-        &__first {
-            margin-right: 73px;
-        }
         &__reason {
             width: 414px;
             height: 276px;
         }
-        &__schema {
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 17px;
-            letter-spacing: 0.02em;
+
+        &__content {
+            row-gap: 40px;
         }
     }
 }
 @media (max-width: grid-width($laptop)) {
     .fs-index-gallery {
-        margin-bottom: 100px;
-        &__first {
-            padding-bottom: 0;
-            margin-bottom: 14px;
-        }
         &__container {
             display: block;
         }
-
+        &__content {
+            row-gap: 20px;
+        }
         &__reason {
             width: 663px;
             height: 442px;
         }
         &__link {
-            &--desktop {
-                display: none;
-            }
-            &--mobile {
-                display: flex;
-            }
         }
         &__nav {
             margin-bottom: 27px;

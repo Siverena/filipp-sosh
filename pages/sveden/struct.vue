@@ -1,4 +1,5 @@
 <template>
+
   <section class="fs-struct">
     <Head>
       <Title>Структура и органы управления образовательной организации | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
@@ -11,4 +12,5 @@
       </div>
     </div>
   </section>
+
 </template>

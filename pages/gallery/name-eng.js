@@ -1,6 +1,7 @@
 import { mapState, mapActions } from 'pinia';
 import { useAdaptiveStore } from '@/stores/adaptiveStore.js';
 import { useGalleryStore } from '~/stores/galleryStore.js';
+import { useModalStore } from '~/stores/modalStore.js';
 import imageUrl from '@/utils/mixins/image-url.js';
 export default {
   data() {
@@ -21,6 +22,7 @@ export default {
       'isLaptopVersion',
       'widthComputed',
     ]),
+    ...mapState(useModalStore, ['getIsShowSlider']),
     ...mapState(useGalleryStore, ['getGallery']),
     body() {
       return document.querySelector('html');
@@ -59,6 +61,7 @@ export default {
   },
   methods: {
     ...mapActions(useGalleryStore, ['fetchGallery']),
+    ...mapActions(useModalStore, ['openSlider']),
     async loadData() {
       this.loading = true;
       await this.fetchGallery(this.$route.params.nameEng);
@@ -66,16 +69,9 @@ export default {
       this.loading = false;
     },
     showSlider(key) {
-      this.isShowSlider = true;
-      this.body.style.overflowY = 'hidden';
-      document.querySelector('.no-tab').setAttribute('inert', 'inert');
+      this.openSlider();
       this.currentImage = key;
       this.getThumbnails();
-    },
-    closeSlider() {
-      this.isShowSlider = false;
-      this.body.style.overflowY = 'scroll';
-      document.querySelector('.no-tab').removeAttribute('inert');
     },
     nextSlide() {
       if (this.currentImage === this.images.length - 1) {
@@ -89,6 +85,14 @@ export default {
         this.currentImage = this.images.length - 1;
       } else {
         --this.currentImage;
+      }
+    },
+    arrowHandler(e) {
+      if (e.key === 'ArrowLeft') {
+        this.prevSlide();
+      }
+      if (e.key === 'ArrowRight') {
+        this.nextSlide();
       }
     },
     setCurrentImage(number) {

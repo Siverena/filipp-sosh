@@ -61,7 +61,6 @@ export default {
   },
   beforeCreate() {},
   mounted() {
-    console.log(this.$attrs.error.statusCode);
     this.getBodyClass();
   },
   beforeRouteUpdate() {},

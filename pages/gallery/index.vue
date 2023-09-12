@@ -1,9 +1,9 @@
 <template>
-  <section class="fs-gallery">
+  <section class="fs-gallery no-tab">
     <Head>
       <Title>Галерея | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
     </Head>
-    <div class="container no-tab" v-if="!loading">
+    <div class="container" v-if="!loading">
       <div class="fs-gallery__content">
         <FsSectionTitles>
           <template v-slot:h1> Галерея </template>
@@ -14,10 +14,11 @@
             :key="key"
             :to="`/gallery/${item?.nameEng}`"
             class="fs-gallery__item"
-            :style="
-              `background-image: url(` + getStaticImageUrl(item.mainImg) + `);`
-            "
-          >
+            ><img
+              class="fs-gallery__item-image"
+              :src="getStaticImageUrl(item.mainImg)"
+              alt=""
+            />
             <div class="fs-gallery__item-bg">
               {{ item.name }}
             </div>

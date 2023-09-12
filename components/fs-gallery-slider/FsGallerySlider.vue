@@ -2,7 +2,12 @@
   <div class="fs-gallery-slider">
     <div class="fs-gallery-slider__content">
       <div class="fs-gallery-slider__top">
-        <div class="fs-gallery-slider__close" @click="closeSlider">
+        <div
+          class="fs-gallery-slider__close"
+          @click="closeSlider"
+          @keydown.enter="closeSlider"
+          tabindex="0"
+        >
           <fsCross />
         </div>
       </div>
@@ -18,12 +23,16 @@
           <div
             class="fs-gallery-slider__btn fs-gallery-slider__prev"
             @click="prevSlide"
+            @keydown.enter="prevSlide"
+            tabindex="0"
           >
             <fsCheckMarkLeft />
           </div>
           <div
             class="fs-gallery-slider__btn fs-gallery-slider__next"
             @click="nextSlide"
+            @keydown.enter="nextSlide"
+            tabindex="0"
           >
             <fsCheckMarkRight />
           </div>
@@ -39,6 +48,8 @@
               'fs-gallery-slider__small--active': img === images[currentImage],
             }"
             @click="setCurrentImage(key + firstThumbnailsIndex)"
+            @keydown.enter="setCurrentImage(key + firstThumbnailsIndex)"
+            tabindex="0"
           >
             <img :src="getStaticImageUrl(img)" alt="" />
           </div>

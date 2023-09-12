@@ -16,20 +16,22 @@
             class="fs-gallery__image"
             :src="getStaticImageUrl(img.src)"
             @click="showSlider(key)"
+            tabindex="0"
+            @keypress.enter="showSlider(key)"
           />
         </div>
       </div>
     </div>
     <FsGallerySlider
-      v-if="isShowSlider"
+      v-if="getIsShowSlider"
       :currentImage="currentImage"
       :images="images"
-      :closeSlider="closeSlider"
       :nextSlide="nextSlide"
       :prevSlide="prevSlide"
       :setCurrentImage="setCurrentImage"
       :firstThumbnailsIndex="firstThumbnailsIndex"
       :thumbnails="thumbnails"
+      :arrowHandler="arrowHandler"
     />
   </section>
 </template>

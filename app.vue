@@ -1,15 +1,14 @@
 <template>
-  <!-- <link href="dist/css/bvi.min.css" rel="stylesheet" /> -->
   <Head>
     <Title>МКОУ ФИЛИППОВСКАЯ СОШ</Title>
   </Head>
   <div class="fs-content">
     <div :class="{ 'fs-content': currentUrl === 'index' }">
-      <FsHeader class="no-tab" />
+      <FsHeader />
       <div class="container no-tab" v-if="currentUrl !== 'index'">
         <FsBreadCrumbs />
       </div>
-      <NuxtPage class="no-tab" />
+      <NuxtPage />
     </div>
     <FsFooter class="no-tab" />
     <FsBanner v-if="getisShowCookies" />

@@ -1,5 +1,5 @@
 <template>
-  <section class="fs-contacts">
+  <section class="fs-contacts no-tab">
     <Head>
       <Title>Расписание | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
     </Head>

@@ -1,6 +1,6 @@
 <template>
   <clientOnly>
-    <header class="fs-header">
+    <header class="fs-header no-tab">
       <div class="fs-header__top container">
         <FsLogotype class="fs-header__logo" />
         <FsNav class="fs-header__nav" />
@@ -21,6 +21,7 @@
           class="fs-header__burger"
           tabindex="0"
           @click.stop="openMobMenu"
+          @keydown.enter="openMobMenu"
         />
       </div>
       <div class="fs-header__bottom" v-if="currentUrl === 'index'">

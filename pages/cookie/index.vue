@@ -1,8 +1,8 @@
 <template>
-  <Head>
-    <Title>Условия использования файлов cookie | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
-  </Head>
-  <section class="fs-text-page">
+  <section class="fs-text-page no-tab">
+    <Head>
+      <Title>Условия использования файлов cookie | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
+    </Head>
     <FsSectionTitles>
       <template v-slot:h1> Условия использования файлов cookie </template>
     </FsSectionTitles>
