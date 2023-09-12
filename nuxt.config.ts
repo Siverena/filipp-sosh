@@ -8,22 +8,12 @@ export default defineNuxtConfig({
     fonts: fileURLToPath(new URL('./assets/fonts', import.meta.url)),
   },
   devtools: { enabled: true },
-  //If you want to auto-import components based only on its name, not path, then you need to set pathPrefix option to false using extended form of the configuration object:
   app: {
     baseURL: process.env.NODE_ENV === 'development' ? '/' : '/sosh/',
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      script: [
-        {
-          // hid: 'stripe',
-          // src: 'https://lidrekon.ru/slep/js/jquery.js',
-          // defer: true,
-        },
-      ],
-      link: [
-        // { rel: 'stylesheet', href: '/letsee/letsee.css' },
-      ],
+      script: [{}],
     },
   },
 
@@ -47,23 +37,16 @@ export default defineNuxtConfig({
   build: {
     transpile: ['primevue'],
   },
-  modules: [
-    // ...
-    '@pinia/nuxt',
-  ],
+  modules: ['@pinia/nuxt'],
   pinia: {
-    autoImports: [
-      // automatically imports `defineStore`
-      'defineStore', // import { defineStore } from 'pinia'
-      ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
-    ],
+    autoImports: ['defineStore', ['defineStore', 'definePiniaStore']],
   },
   pages: true,
   css: [
-    // SCSS file in the project
-    '~/assets/scss/main.scss', // you should add main.scss somewhere in your app
+    '~/assets/scss/main.scss',
     'primevue/resources/themes/lara-light-indigo/theme.css',
     'primevue/resources/primevue.min.css',
+    'primeicons/primeicons.css',
   ],
   router: {
     options: {},
