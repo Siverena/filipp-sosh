@@ -1,7 +1,7 @@
 .fs-banner {
     position: fixed;
-    bottom: 5px;
-    right: 5px;
+    bottom: 40px;
+    right: 40px;
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -9,25 +9,17 @@
     align-items: flex-start;
     gap: 35px;
     padding: 20px;
-    max-width: 495px; //614
+    max-width: 370px; //495
     background-color: $background_1;
     border-radius: 10px;
     box-shadow: 1px 1px 7px 1px $green-hover;
 
 
     &__content {
-        // outline: 2px solid yellow;
-        width: 100%;
-        min-height: 246px;
-        padding: 8px;
+        padding: 7px;
     }
 
     &__text {
-        // outline: 2px solid blue;
-        font-size: 22px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 28px;
         color: $text_primary;
     }
 
@@ -37,28 +29,14 @@
         align-items: flex-start;
         gap: 24px;
     }
-
-    &__btn {
-        font-size: 22px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 42px;
-    }
 }
 
-@media (max-width: grid-width($mobile)) {
+@media (max-width: grid-width($tablet)) {
     .fs-banner {
-        max-width: 320px;
+        bottom: 10px;
+        right: 10px;
         gap: 16px;
-
-        &__content {
-            min-height: 240px;
-        }
-
-        &__text {        
-            font-size: 16px;
-            line-height: 22px;
-        }
+        max-width: 320px;
 
         &__btn {
             width: 100%;
