@@ -24,14 +24,13 @@
               {{ item.text[index] }}
             </div>
             <div class="fs-news__nav">
-              <nuxt-link :to="`/news/${item.id}`">Читать нововсть</nuxt-link>
+              <a :href="`/news/${item.id}`">Читать новость</a>
             </div>
           </div>
         </article>
       </div>
     </div>
     <pre>
-      <p>{{ getNews }}</p>
     </pre>
   </section>
 </template>
