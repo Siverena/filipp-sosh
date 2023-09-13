@@ -1,4 +1,4 @@
-import schedule from '@/stores/data/d-schedule.js';
+import schedule from '~/stores/data/d-schedule.js';
 import { defineStore } from 'pinia';
 async function API(classId = null) {
   if (classId) {
@@ -11,6 +11,7 @@ export const useScheduleStore = defineStore('ScheduleStore', {
   state: () => {
     return {
       schedule: [],
+      callShedule: [],
     };
   },
   getters: {
