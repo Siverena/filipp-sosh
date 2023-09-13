@@ -1,12 +1,11 @@
 .fs-achievements {
     background-color: $green-normal;
-    padding: 90px 0;
+    padding: 60px 0;
     &__content {
         display: flex;
-
         flex-direction: column;
         justify-content: space-between;
-        row-gap: 54px;
+        row-gap: 60px;
         flex-shrink: 0;
         color: $text-color;
     }
@@ -14,27 +13,17 @@
         color: $text-color;
     }
     &__item-title {
-        font-size: 28px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 30.8px;
+        color: $text-color;
     }
     &__item-text {
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 24px;
     }
     &__items {
         display: grid;
-        grid-template-columns: repeat(auto-fill, 370px);
-        // display: flex;
+        grid-template-columns: repeat(auto-fill, 310px);
         justify-content: space-between;
-
         row-gap: 30px;
     }
     &__item {
-        width: 370px;
         display: flex;
         padding: 20px 11px;
         flex-direction: column;
@@ -42,5 +31,49 @@
         align-items: center;
         row-gap: 20px;
         text-align: center;
+    }
+}
+@media (max-width: grid-width($desktop)) {
+    .fs-achievements {
+        padding: 40px 0;
+        &__content {
+            row-gap: 40px;
+        }
+        &__items {
+            grid-template-columns: repeat(auto-fill, 270px);
+        }
+        &__item {
+            svg {
+                height: 50px;
+            }
+        }
+    }
+}
+@media (max-width: grid-width($laptop)) {
+    .fs-achievements {
+        padding: 40px 0;
+        &__content {
+            row-gap: 20px;
+        }
+        &__items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            column-gap: 20px;
+        }
+        &__item {
+            width: 255px;
+        }
+    }
+}
+@media (max-width: grid-width($tablet)) {
+    .fs-achievements {
+        padding: 20px 0;
+        &__item {
+            width: 150px;
+            svg {
+                height: 40px;
+            }
+        }
     }
 }

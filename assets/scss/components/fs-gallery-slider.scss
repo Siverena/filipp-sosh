@@ -24,6 +24,23 @@
         cursor: pointer;
         width: 80px;
         height: 80px;
+        svg {
+            fill: $text-color;
+        }
+        path {
+            fill: inherit;
+        }
+        &:hover {
+            svg {
+                fill: $green-hover;
+            }
+        }
+        &:focus {
+            outline: none;
+            svg {
+                fill: $green-hover;
+            }
+        }
     }
     &__content {
         width: 100%;
@@ -60,7 +77,10 @@
             object-fit: cover;
         }
         &--active {
-            border: 1px solid $text-color;
+            border: 1px solid $green-active;
+        }
+        &:focus {
+            outline: 4px solid $green-normal;
         }
     }
     &__nav {
@@ -89,6 +109,23 @@
     }
     &__btn {
         cursor: pointer;
+        svg {
+            fill: $text-color;
+        }
+        path {
+            fill: inherit;
+        }
+        &:hover {
+            svg {
+                fill: $green-hover;
+            }
+        }
+        &:focus {
+            outline: none;
+            svg {
+                fill: $green-hover;
+            }
+        }
     }
 }
 @media (max-width: grid-width($desktop)) {

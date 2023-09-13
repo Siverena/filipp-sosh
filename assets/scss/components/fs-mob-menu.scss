@@ -67,7 +67,7 @@
             height: 25px;
         }
         path {
-            fill: $text_primary;
+            fill: $text-primary;
         }
     }
     hr {
@@ -83,7 +83,7 @@
             margin-right: 8px;
         }
         path {
-            fill: $text_primary;
+            fill: $text-primary;
         }
     }
     &__info-item {
@@ -91,7 +91,7 @@
         align-items: baseline;
         margin-bottom: 11px;
         text-decoration: none;
-        color: $text_primary;
+        color: $text-primary;
     }
     &__list {
         flex-direction: column;
@@ -102,7 +102,7 @@
         padding: 0;
     }
     &__link {
-        color: $text_primary;
+        color: $text-primary;
         display: flex;
         align-items: center;
         text-decoration: none;
@@ -122,7 +122,7 @@
                 height: 20px;
                 width: 3px;
                 position: relative;
-                background-color: $text_primary;
+                background-color: $text-primary;
                 margin-right: 13px;
                 top: 0;
             }
@@ -136,7 +136,7 @@
         padding: 30px 0 0 0;
     }
     &__child-link {
-        color: $text_primary;
+        color: $text-primary;
         text-decoration: none;
         font-weight: 400;
         position: relative;
@@ -174,7 +174,7 @@
             height: 7px;
         }
         path {
-            fill: $text_primary;
+            fill: $text-primary;
         }
     }
 }

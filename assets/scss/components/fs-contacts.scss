@@ -11,7 +11,7 @@
     }
 
     &__contact-link {
-        color: $text_primary;
+        color: $text-primary;
         text-decoration: none;
     }
     &__map-content {
@@ -30,7 +30,7 @@
         svg {
             flex-shrink: 0;
             path {
-                fill: $text_primary;
+                fill: $text-primary;
             }
         }
     }

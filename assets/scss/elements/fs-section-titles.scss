@@ -1,9 +1,10 @@
 .fs-section-titles {
-    color: $text_primary;
+    color: $text-primary;
     display: flex;
     flex-direction: column;
     row-gap: 20px;
     text-align: center;
+    margin-bottom: 60px;
     &__dop-text {
         text-align: center;
         font-size: 18px;

@@ -1,0 +1,46 @@
+.fs-banner {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 35px;
+    padding: 20px;
+    max-width: 370px; //495
+    background-color: $background_1;
+    border-radius: 10px;
+    box-shadow: 1px 1px 7px 1px $green-hover;
+
+
+    &__content {
+        padding: 7px;
+    }
+
+    &__text {
+        color: $text_primary;
+    }
+
+    &__btns {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+    }
+}
+
+@media (max-width: grid-width($tablet)) {
+    .fs-banner {
+        bottom: 10px;
+        right: 10px;
+        gap: 16px;
+        max-width: 320px;
+
+        &__btn {
+            width: 100%;
+            padding: 5px 33px;
+        }
+    }
+}
