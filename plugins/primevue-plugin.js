@@ -6,7 +6,7 @@ import InputMask from 'primevue/inputmask';
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(PrimeVue, {
-    // unstyled: true
+    unstyled: true,
   });
   nuxtApp.vueApp.component('Accordion', Accordion);
   nuxtApp.vueApp.component('AccordionTab', AccordionTab);

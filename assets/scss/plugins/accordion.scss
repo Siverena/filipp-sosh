@@ -1,231 +1,231 @@
-.fs-accordion {
-    div.p-accordion-header {
-        a.p-accordion-header-link {
-            background: transparent;
-            padding: 40px 0;
-            background-color: transparent;
-            border: none;
-            border-bottom: 2px solid $text-primary;
-            border-radius: 0;
-            font-size: 24px;
-            font-weight: 700;
-            line-height: 29px;
-            letter-spacing: 0.02em;
-            color: $text-primary;
-            svg.p-accordion-toggle-icon {
-                order: 2;
-                margin-left: auto;
-                margin-right: 0;
-            }
-            &[aria-expanded="true"] {
-                border-bottom: none;
-                &:hover {
-                    border-bottom: none;
-                }
-                &:focus {
-                    border-bottom: none;
-                }
-            }
-        }
-        &:hover {
-            a.p-accordion-header-link {
-                background: transparent;
-                border: none;
-                color: #0d5297;
-                border-bottom: 2px solid $text-primary;
-            }
-        }
-        &:not(.p-disabled) {
-            a.p-accordion-header-link {
-                border-bottom: 2px solid $text-primary;
-                &:focus {
-                    outline: none;
-                    outline-offset: 0;
-                    border-bottom: none;
-                    box-shadow: 0 0 0 0 transparent;
-                    border-bottom: 2px solid $text-primary;
-                }
-                &[aria-expanded="true"] {
-                    border-bottom: none;
-                    &:hover {
-                        border-bottom: none;
-                    }
-                    &:focus {
-                        border-bottom: none;
-                    }
-                }
-            }
-        }
-        &:not(.p-disabled).p-highlight {
-            a.p-accordion-header-link {
-                background: transparent;
-                padding: 40px 0;
-                background-color: transparent;
-                border: none;
-                border-bottom: 2px solid $text-primary;
-                border-radius: 0;
-                font-size: 24px;
-                font-weight: 700;
-                line-height: 29px;
-                letter-spacing: 0.02em;
-                color: $text-primary;
-                &:focus {
-                    outline: none;
-                    outline-offset: 0;
-                    border-bottom: none;
-                    box-shadow: 0 0 0 0 transparent;
-                    border-bottom: 2px solid $text-primary;
-                }
-                &[aria-expanded="true"] {
-                    border-bottom: none;
-                    &:hover {
-                        border-bottom: none;
-                    }
-                    &:focus {
-                        border-bottom: none;
-                    }
-                }
-            }
-            &:hover {
-                a.p-accordion-header-link {
-                    background: transparent;
-                    padding: 40px 0;
-                    background-color: transparent;
-                    border: none;
-                    border-bottom: 2px solid $text-primary;
-                    border-radius: 0;
-                    font-size: 24px;
-                    font-weight: 700;
-                    line-height: 29px;
-                    letter-spacing: 0.02em;
-                    color: $text-primary;
-                    &:focus {
-                        outline: none;
-                        outline-offset: 0;
-                        border-bottom: none;
-                        box-shadow: 0 0 0 0 transparent;
-                        border-bottom: 2px solid $text-primary;
-                    }
-                    &[aria-expanded="true"] {
-                        border-bottom: none;
-                        &:hover {
-                            border-bottom: none;
-                        }
-                        &:focus {
-                            border-bottom: none;
-                        }
-                    }
-                }
-            }
-        }
-        &:not(.p-highlight):not(.p-disabled) {
-            &:hover {
-                a.p-accordion-header-link {
-                    background: transparent;
-                    padding: 40px 0;
-                    background-color: transparent;
-                    border: none;
-                    border-bottom: 2px solid $text-primary;
-                    border-radius: 0;
-                    font-size: 24px;
-                    font-weight: 700;
-                    line-height: 29px;
-                    letter-spacing: 0.02em;
-                    color: $text-primary;
-                    &[aria-expanded="true"] {
-                        border-bottom: none;
-                    }
-                    &:focus {
-                        outline: none;
-                        outline-offset: 0;
-                        border-bottom: none;
-                        box-shadow: 0 0 0 0 transparent;
-                        border-bottom: 2px solid $text-primary;
-                    }
-                    &[aria-expanded="true"] {
-                        border-bottom: none;
-                        &:hover {
-                            border-bottom: none;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    div.p-accordion-content {
-        padding: 24px 0 44px;
-        border: none;
-        background-color: transparent;
-        border-bottom: 2px solid $text-primary;
-        border-radius: 0;
-    }
+// .fs-accordion {
+//     div.p-accordion-header {
+//         a.p-accordion-header-link {
+//             background: transparent;
+//             padding: 40px 0;
+//             background-color: transparent;
+//             border: none;
+//             border-bottom: 2px solid $text-primary;
+//             border-radius: 0;
+//             font-size: 24px;
+//             font-weight: 700;
+//             line-height: 29px;
+//             letter-spacing: 0.02em;
+//             color: $text-primary;
+//             svg.p-accordion-toggle-icon {
+//                 order: 2;
+//                 margin-left: auto;
+//                 margin-right: 0;
+//             }
+//             &[aria-expanded="true"] {
+//                 border-bottom: none;
+//                 &:hover {
+//                     border-bottom: none;
+//                 }
+//                 &:focus {
+//                     border-bottom: none;
+//                 }
+//             }
+//         }
+//         &:hover {
+//             a.p-accordion-header-link {
+//                 background: transparent;
+//                 border: none;
+//                 color: #0d5297;
+//                 border-bottom: 2px solid $text-primary;
+//             }
+//         }
+//         &:not(.p-disabled) {
+//             a.p-accordion-header-link {
+//                 border-bottom: 2px solid $text-primary;
+//                 &:focus {
+//                     outline: none;
+//                     outline-offset: 0;
+//                     border-bottom: none;
+//                     box-shadow: 0 0 0 0 transparent;
+//                     border-bottom: 2px solid $text-primary;
+//                 }
+//                 &[aria-expanded="true"] {
+//                     border-bottom: none;
+//                     &:hover {
+//                         border-bottom: none;
+//                     }
+//                     &:focus {
+//                         border-bottom: none;
+//                     }
+//                 }
+//             }
+//         }
+//         &:not(.p-disabled).p-highlight {
+//             a.p-accordion-header-link {
+//                 background: transparent;
+//                 padding: 40px 0;
+//                 background-color: transparent;
+//                 border: none;
+//                 border-bottom: 2px solid $text-primary;
+//                 border-radius: 0;
+//                 font-size: 24px;
+//                 font-weight: 700;
+//                 line-height: 29px;
+//                 letter-spacing: 0.02em;
+//                 color: $text-primary;
+//                 &:focus {
+//                     outline: none;
+//                     outline-offset: 0;
+//                     border-bottom: none;
+//                     box-shadow: 0 0 0 0 transparent;
+//                     border-bottom: 2px solid $text-primary;
+//                 }
+//                 &[aria-expanded="true"] {
+//                     border-bottom: none;
+//                     &:hover {
+//                         border-bottom: none;
+//                     }
+//                     &:focus {
+//                         border-bottom: none;
+//                     }
+//                 }
+//             }
+//             &:hover {
+//                 a.p-accordion-header-link {
+//                     background: transparent;
+//                     padding: 40px 0;
+//                     background-color: transparent;
+//                     border: none;
+//                     border-bottom: 2px solid $text-primary;
+//                     border-radius: 0;
+//                     font-size: 24px;
+//                     font-weight: 700;
+//                     line-height: 29px;
+//                     letter-spacing: 0.02em;
+//                     color: $text-primary;
+//                     &:focus {
+//                         outline: none;
+//                         outline-offset: 0;
+//                         border-bottom: none;
+//                         box-shadow: 0 0 0 0 transparent;
+//                         border-bottom: 2px solid $text-primary;
+//                     }
+//                     &[aria-expanded="true"] {
+//                         border-bottom: none;
+//                         &:hover {
+//                             border-bottom: none;
+//                         }
+//                         &:focus {
+//                             border-bottom: none;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//         &:not(.p-highlight):not(.p-disabled) {
+//             &:hover {
+//                 a.p-accordion-header-link {
+//                     background: transparent;
+//                     padding: 40px 0;
+//                     background-color: transparent;
+//                     border: none;
+//                     border-bottom: 2px solid $text-primary;
+//                     border-radius: 0;
+//                     font-size: 24px;
+//                     font-weight: 700;
+//                     line-height: 29px;
+//                     letter-spacing: 0.02em;
+//                     color: $text-primary;
+//                     &[aria-expanded="true"] {
+//                         border-bottom: none;
+//                     }
+//                     &:focus {
+//                         outline: none;
+//                         outline-offset: 0;
+//                         border-bottom: none;
+//                         box-shadow: 0 0 0 0 transparent;
+//                         border-bottom: 2px solid $text-primary;
+//                     }
+//                     &[aria-expanded="true"] {
+//                         border-bottom: none;
+//                         &:hover {
+//                             border-bottom: none;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     div.p-accordion-content {
+//         padding: 24px 0 44px;
+//         border: none;
+//         background-color: transparent;
+//         border-bottom: 2px solid $text-primary;
+//         border-radius: 0;
+//     }
 
-    div.p-accordion-header
-        a.p-accordion-header-link
-        .p-accordion-header:not(.p-disabled)
-        .p-accordion-header-link:focus {
-        box-shadow: none;
-    }
-}
-@media (max-width: grid-width($desktop)) {
-    .fs-accordion {
-        div.p-accordion-header {
-            a.p-accordion-header-link {
-                font-size: 20px;
-                line-height: 24px;
-            }
+//     div.p-accordion-header
+//         a.p-accordion-header-link
+//         .p-accordion-header:not(.p-disabled)
+//         .p-accordion-header-link:focus {
+//         box-shadow: none;
+//     }
+// }
+// @media (max-width: grid-width($desktop)) {
+//     .fs-accordion {
+//         div.p-accordion-header {
+//             a.p-accordion-header-link {
+//                 font-size: 20px;
+//                 line-height: 24px;
+//             }
 
-            &:not(.p-disabled).p-highlight {
-                a.p-accordion-header-link {
-                    font-size: 20px;
-                    line-height: 24px;
-                }
-                &:hover {
-                    a.p-accordion-header-link {
-                        font-size: 20px;
-                        line-height: 24px;
-                    }
-                }
-            }
-            &:not(.p-highlight):not(.p-disabled) {
-                &:hover {
-                    a.p-accordion-header-link {
-                        font-size: 20px;
-                        line-height: 24px;
-                    }
-                }
-            }
-        }
-    }
-}
-@media (max-width: grid-width($laptop)) {
-    .fs-accordion {
-        div.p-accordion-header {
-            a.p-accordion-header-link {
-                font-size: 16px;
-                line-height: 19px;
-            }
+//             &:not(.p-disabled).p-highlight {
+//                 a.p-accordion-header-link {
+//                     font-size: 20px;
+//                     line-height: 24px;
+//                 }
+//                 &:hover {
+//                     a.p-accordion-header-link {
+//                         font-size: 20px;
+//                         line-height: 24px;
+//                     }
+//                 }
+//             }
+//             &:not(.p-highlight):not(.p-disabled) {
+//                 &:hover {
+//                     a.p-accordion-header-link {
+//                         font-size: 20px;
+//                         line-height: 24px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+// @media (max-width: grid-width($laptop)) {
+//     .fs-accordion {
+//         div.p-accordion-header {
+//             a.p-accordion-header-link {
+//                 font-size: 16px;
+//                 line-height: 19px;
+//             }
 
-            &:not(.p-disabled).p-highlight {
-                a.p-accordion-header-link {
-                    font-size: 16px;
-                    line-height: 19px;
-                }
-                &:hover {
-                    a.p-accordion-header-link {
-                        font-size: 16px;
-                        line-height: 19px;
-                    }
-                }
-            }
-            &:not(.p-highlight):not(.p-disabled) {
-                &:hover {
-                    a.p-accordion-header-link {
-                        font-size: 16px;
-                        line-height: 19px;
-                    }
-                }
-            }
-        }
-    }
-}
+//             &:not(.p-disabled).p-highlight {
+//                 a.p-accordion-header-link {
+//                     font-size: 16px;
+//                     line-height: 19px;
+//                 }
+//                 &:hover {
+//                     a.p-accordion-header-link {
+//                         font-size: 16px;
+//                         line-height: 19px;
+//                     }
+//                 }
+//             }
+//             &:not(.p-highlight):not(.p-disabled) {
+//                 &:hover {
+//                     a.p-accordion-header-link {
+//                         font-size: 16px;
+//                         line-height: 19px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
