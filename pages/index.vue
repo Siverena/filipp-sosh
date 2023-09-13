@@ -13,6 +13,7 @@
         <FsIndexGallery />
       </div>
       <FsServices />
+      <FsNews />
     </div>
   </main>
 </template>

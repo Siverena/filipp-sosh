@@ -15,9 +15,6 @@
     "sass": "^1.63.4",
     "sass-loader": "^13.3.2"
   },
-  "overrides": {
-    "vue": "latest"
-  },
   "dependencies": {
     "@pinia/nuxt": "^0.4.11",
     "jquery": "^3.7.1",
