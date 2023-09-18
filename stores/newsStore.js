@@ -1,7 +1,6 @@
 import news from '@/stores/data/d-news.js';
 import { defineStore } from 'pinia';
 async function API(id = null) {
-  console.log('мы там где надо' + id)
   if (id) {
     // if (!news.data[id-1]) {
       // throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })
