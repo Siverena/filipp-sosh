@@ -1,7 +1,7 @@
-<template v-if="loading">
+<template>
   <div class="fs-call-schedule">
     <div class="fs-h2 fs-call-schedule__title">Расписание звонков</div>
-    <div class="fs-call-schedule__list">
+    <div class="fs-call-schedule__list" v-if="!loading">
       <div
         class="fs-call-schedule__item"
         v-for="item in getCallSchedule"

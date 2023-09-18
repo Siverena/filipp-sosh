@@ -1,50 +1,54 @@
 <template>
-  <section class="fs-schedule no-tab" v-if="!loading">
+  <section class="fs-schedule no-tab">
     <Head>
       <Title>Расписание | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
     </Head>
     <div class="container">
-      <FsSectionTitles>
-        <template v-slot:h1> Расписание </template>
-      </FsSectionTitles>
-      <FsCallSchedule />
-      <p class="fs-h2">Расписание уроков</p>
+      <!-- <FsLoader v-if="loading" /> -->
+      <div class="fs-schedule__content">
+        <FsSectionTitles>
+          <template v-slot:h1> Расписание </template>
+        </FsSectionTitles>
+        <FsCallSchedule />
+        <p class="fs-h2">Расписание уроков</p>
 
-      <FsAccordeon>
-        <FsAccordeonTab
-          v-for="(item, key) in getSchedule"
-          :key="key"
-          :index="key"
-          :currentActive="currentActive"
-        >
-          <template v-slot:title> {{ item.className }} класс </template>
-          <template v-slot:content>
-            <div class="fs-schedule__items">
-              <div
-                class="fs-schedule-day"
-                v-for="(day, index) in item.days"
-                :key="index"
-              >
-                <div class="fs-schedule-day__title">{{ day.dayName }}</div>
-                <ol class="fs-schedule-day__list" v-if="day.lessons[0]">
-                  <template v-for="(lesson, i) in day.lessons" :key="i">
-                    <li class="fs-schedule-day__name">
-                      {{ lesson }}
-                    </li>
-                  </template>
-                </ol>
-                <div v-else>Выходной</div>
+        <FsAccordeon v-if="!loading">
+          <FsAccordeonTab
+            v-for="(item, key) in getSchedule"
+            :key="key"
+            :index="key"
+            :currentActive="currentActive"
+          >
+            <template v-slot:title> {{ item.className }} класс </template>
+            <template v-slot:content>
+              <div class="fs-schedule__items">
+                <div
+                  class="fs-schedule-day"
+                  v-for="(day, index) in item.days"
+                  :key="index"
+                >
+                  <div class="fs-schedule-day__title">{{ day.dayName }}</div>
+                  <ol class="fs-schedule-day__list" v-if="day.lessons[0]">
+                    <template v-for="(lesson, i) in day.lessons" :key="i">
+                      <li class="fs-schedule-day__name">
+                        {{ lesson }}
+                      </li>
+                    </template>
+                  </ol>
+                  <div v-else>Выходной</div>
+                </div>
               </div>
-            </div>
-          </template>
-        </FsAccordeonTab>
-      </FsAccordeon>
+            </template>
+          </FsAccordeonTab>
+        </FsAccordeon>
+      </div>
     </div>
   </section>
 </template>
 <script>
 import { mapActions, mapState } from 'pinia';
 import { useScheduleStore } from '@/stores/scheduleStore.js';
+import { useUiStore } from '@/stores/uiStore.js';
 export default {
   data() {
     return {
@@ -53,7 +57,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(useScheduleStore, ['getSchedule']),
+    ...mapState(useScheduleStore, ['getSchedule', 'isLoading']),
   },
   methods: {
     ...mapActions(useScheduleStore, ['fetchSchedule']),
@@ -63,6 +67,7 @@ export default {
         await this.fetchSchedule();
         this.loading = false;
       } catch (e) {
+        this.loading = false;
         console.log(e);
       }
     },

@@ -14,9 +14,6 @@ export const useScheduleStore = defineStore('ScheduleStore', {
     getCallSchedule(state) {
       return state.callShedule;
     },
-    isLoading() {
-      return Promise.resolve(this.fetchSchedule);
-    },
   },
   actions: {
     //mutations
