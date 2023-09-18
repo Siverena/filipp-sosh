@@ -35,8 +35,8 @@ export default [
   },
   {
     id: '3',
-    name: '9 мая',
-    nameEng: '9th-may',
+    name: 'Последний звонок',
+    nameEng: 'last-ring',
     mainImg: 'fs-gallery/ski-track-15/Screenshot_9.jpg',
     images: [
       'fs-gallery/ski-track-15/Screenshot_1.jpg',

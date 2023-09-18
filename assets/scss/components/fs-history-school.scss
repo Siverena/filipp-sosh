@@ -1,36 +1,37 @@
 .fs-history-school {
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    row-gap: 60px;
     &__container {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        column-gap: 30px;
+        row-gap: 30px;
     }
     &__item {
-        height: 400px;
-        margin-bottom: 30px;
+        height: fit-content;
+
+        display: flex;
+        flex-direction: column;
     }
     &__item-title {
         margin-bottom: 30px;
     }
     &__item-content {
+        background-color: $background_1;
+        padding: 20px;
+        border-radius: 10px;
+        height: 100%;
         img {
             width: 350px;
             height: auto;
             float: left;
             margin-right: 10px;
+            border-radius: 10px;
         }
         p {
             text-indent: 20px;
             margin-bottom: 10px;
         }
         ul {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, 45%);
-            justify-content: space-between;
             padding: 0;
             margin-left: 28px;
         }

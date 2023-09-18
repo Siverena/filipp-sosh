@@ -1,0 +1,22 @@
+.single-news-wrappper {
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.article-image{
+    max-width: 394px;
+    width: 30%;
+}
+.article-items-wrapper{
+    display: flex;
+    gap: 30px;
+}
+.article-text{
+    align-items: center;
+    display: flex;
+}
+.article-title{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}

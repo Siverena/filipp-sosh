@@ -15,6 +15,7 @@
         </clientOnly>
       </div>
       <FsServices />
+      <FsNews />
     </div>
   </main>
 </template>

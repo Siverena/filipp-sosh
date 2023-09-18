@@ -1,33 +1,38 @@
 .fs-schedule {
     &__items {
         display: grid;
-        grid-template-columns: repeat(auto-fill, 226px);
+        grid-template-columns: repeat(auto-fill, 180px);
         justify-content: space-between;
-        row-gap: 50px;
+        row-gap: 20px;
+        padding: 30px 0;
     }
 }
+
 .fs-schedule-day {
     color: $text-primary;
-    padding: 16px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     row-gap: 16px;
     background-color: $background_1;
+    border-radius: 10px;
     &__title {
-        font-size: 24px;
         font-weight: 700;
-        line-height: 24px;
-        text-transform: uppercase;
+        color: $green-normal;
     }
     &__list {
-        border-left: 6px solid $green-normal;
-        padding-left: 30px;
+        padding-left: 16px;
+        // list-style: none;
         display: flex;
         flex-direction: column;
         row-gap: 10px;
         height: 100%;
     }
     &__name {
+        font-size: 16px;
+        &::marker {
+            font-weight: 700;
+        }
     }
 }
 @media (max-width: grid-width($tablet)) {
@@ -38,7 +43,7 @@
     }
     .fs-schedule-day {
         padding: 8px;
-        row-gap: 0px;
+
         &__title {
             font-size: 16px;
             line-height: 19px;
