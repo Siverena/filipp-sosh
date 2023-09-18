@@ -16,12 +16,21 @@
         background-position: center;
         background-size: cover;
     }
-
     &__logo {
         stroke: $green-normal;
         fill: $green-normal;
         width: 150px;
         margin-right: auto;
+        &:hover {
+            opacity: 0.5;
+        }
+        &:focus {
+            outline: none;
+            fill: $green-active;
+            path {
+                stroke: $green-active;
+            }
+        }
     }
     &__nav {
         display: flex;
@@ -47,7 +56,6 @@
         display: none;
         margin-left: 20px;
         cursor: pointer;
-
         &:hover {
             rect {
                 fill: $green-hover;
@@ -66,7 +74,6 @@
         }
     }
 }
-
 @media (max-width: grid-width($desktop)) {
     .fs-header {
         &__nav {

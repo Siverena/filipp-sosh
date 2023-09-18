@@ -96,6 +96,11 @@ export default {
     };
   },
   mixins: [imageUrl],
+  computed: {
+    slidesCount() {
+      return this.slides.length;
+    },
+  },
   methods: {
     nextSlide() {
       if (this.currentSlide === this.slides.length - 1) {

@@ -23,6 +23,7 @@
     }
     &:focus {
         background-color: $green-hover;
+        outline: none;
     }
 }
 @media (max-width: grid-width($tablet)) {

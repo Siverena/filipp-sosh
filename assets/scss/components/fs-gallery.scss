@@ -38,7 +38,6 @@
         position: absolute;
         bottom: 0;
         height: 100%;
-
         &:hover {
             background-color: rgba(0, 0, 0, 0.15);
         }
@@ -48,9 +47,9 @@
         height: 264px;
         cursor: pointer;
         object-fit: cover;
-        &:focus {
-            outline: 3px solid $green-normal;
-        }
+        // &:focus {
+        //     outline: 3px solid $green-normal;
+        // }
     }
     &__content {
         display: flex;

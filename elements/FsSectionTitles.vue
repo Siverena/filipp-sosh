@@ -10,7 +10,7 @@
 export default {
   computed: {
     showDop() {
-      if (this.$slots.footer) {
+      if (this.$slots.dop) {
         return true;
       }
       return false;
