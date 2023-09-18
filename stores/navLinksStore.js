@@ -6,7 +6,7 @@ export const useNavLinksStore = defineStore('NavLinksStore', {
         {
           name: 'О нас ',
           link: '/',
-          visibleInMenu: true, 
+          visibleInMenu: true,
           visibleInSvedenMenu: false,
           child: [
             {
@@ -67,79 +67,79 @@ export const useNavLinksStore = defineStore('NavLinksStore', {
         // Добавление
         {
           name: 'Основные сведения',
-          link: '/sveden/common/',
+          link: '/sveden/common',
           visibleInMenu: false,
           visibleInSvedenMenu: true,
         },
         {
           name: 'Структура и органы управления образовательной организации',
-          link: '/sveden/struct/',
+          link: '/sveden/struct',
           visibleInMenu: false,
           visibleInSvedenMenu: true,
         },
         {
           name: 'Документы',
-          link: '/sveden/document/',
+          link: '/sveden/document',
           visibleInMenu: false,
           visibleInSvedenMenu: true,
         },
         {
           name: 'Образование',
-          link: '/sveden/education/',
+          link: '/sveden/education',
           visibleInMenu: false,
           visibleInSvedenMenu: true,
         },
         {
           name: 'Образовательные стандарты',
-          link: '/sveden/eduStandarts/',
+          link: '/sveden/eduStandarts',
           visibleInMenu: false,
           visibleInSvedenMenu: true,
         },
         {
           name: 'Руководство. Педагогический состав',
-          link: '/sveden/employees/',
+          link: '/sveden/employees',
           visibleInMenu: false,
           visibleInSvedenMenu: true,
         },
         {
           name: 'Материально-техническое обеспечение и оснащенность образовательного процесса',
-          link: '/sveden/objects/',
+          link: '/sveden/objects',
           visibleInMenu: false,
           visibleInSvedenMenu: true,
         },
         {
           name: 'Стипендии и меры поддержки обучающихся',
-          link: '/sveden/grants/',
+          link: '/sveden/grants',
           visibleInMenu: false,
           visibleInSvedenMenu: true,
         },
         {
           name: 'Платные образовательные услуги',
-          link: '/sveden/paid_edu/',
+          link: '/sveden/paid_edu',
           visibleInMenu: false,
           visibleInSvedenMenu: true,
         },
         {
           name: 'Финансово-хозяйственная деятельность',
-          link: '/sveden/budget/',
+          link: '/sveden/budget',
           visibleInMenu: false,
           visibleInSvedenMenu: true,
         },
-        { 
+        {
           name: 'Вакантные места для приема (перевода)',
-          link: '/sveden/vacant/',
+          link: '/sveden/vacant',
           visibleInMenu: false,
           visibleInSvedenMenu: true,
         },
         {
           name: 'Международное сотрудничество',
-          link: '/sveden/cooperation/',
+          link: '/sveden/cooperation',
           visibleInMenu: false,
           visibleInSvedenMenu: false,
         },
         {
           name: 'Доступная среда',
-          link: '/sveden/dsreda/',
+          link: '/sveden/dsreda',
           visibleInMenu: false,
           visibleInSvedenMenu: false,
         },

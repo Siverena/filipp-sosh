@@ -4,6 +4,16 @@
         align-items: center;
         column-gap: 6px;
         text-decoration: none;
+        &:hover {
+            path {
+                stroke: $green-hover;
+            }
+        }
+        &:focus {
+            path {
+                stroke: $green-hover;
+            }
+        }
     }
     &__icon {
         stroke: $text-primary;
@@ -16,8 +26,5 @@
     }
     path {
         stroke: inherit;
-    }
-    &:hover {
-        stroke: $green-hover;
     }
 }

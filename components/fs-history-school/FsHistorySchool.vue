@@ -16,6 +16,9 @@
         </div>
       </template>
       <div class="fs-history-school__btns">
+        <div class="fs-history-school__count">
+          {{ currentSlide + 1 }} / {{ slidesCount }}
+        </div>
         <FsBtnSlidesPrev @click="prevSlide" />
         <FsBtnSlidesNext @click="nextSlide" />
       </div>

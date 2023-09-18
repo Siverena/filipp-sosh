@@ -9,18 +9,20 @@
         color: $text-color;
     }
     &__titles {
+        text-align: center;
         color: $text-color;
     }
     &__item-title {
-        font-size: 18px;
+        width: 204px;
+        font-size: 28px;
         font-style: normal;
         font-weight: 400;
-        line-height: 24px; /* 110% */
+        line-height: 31px;
         text-decoration: none;
     }
     &__items {
         display: grid;
-        grid-template-columns: repeat(5, 150px);
+        grid-template-columns: repeat(5, 225px); //150px
         justify-content: center;
         column-gap: 30px;
         row-gap: 30px;
@@ -28,21 +30,34 @@
     &__item {
         // width: 370px;
         display: flex;
-        padding: 20px 11px;
+        padding: 20px 10px;
         flex-direction: column;
         align-items: center;
-        row-gap: 20px;
+        min-height: 250px;
+        row-gap: 27px;
         text-align: center;
         text-decoration: none;
         color: $text-color;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.10);
         a {
             text-decoration: none;
         }
         svg {
-            height: 50px;
+            height: 86px;
         }
+        &:hover {
+            // outline: 3px solid orange;
+            background: rgba(174, 198, 112, 0.80);
+        }
+        &:focus-within {
+            // outline: 3px solid orange;
+            background: rgba(174, 198, 112, 0.50);
+        }
+        &:active {}
     }
 }
+
 @media (max-width: grid-width($desktop)) {
     .fs-services {
         padding: 40px 0;
@@ -50,7 +65,7 @@
             row-gap: 40px;
         }
         &__items {
-            grid-template-columns: repeat(auto-fill, 160px);
+            grid-template-columns: repeat(auto-fill, 235px); //160px
             justify-content: space-between;
         }
     }
@@ -58,7 +73,7 @@
 @media (max-width: grid-width($laptop)) {
     .fs-services {
         &__items {
-            grid-template-columns: repeat(auto-fill, 150px);
+            grid-template-columns: repeat(auto-fill, 225px); //150px
             column-gap: 0;
             // justify-content: space-between;
         }

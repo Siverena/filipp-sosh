@@ -11,7 +11,7 @@
         <ul class="fs-sveden__list">
           <li class="fs-sveden__item" v-for="(item, key) in getMenuSvedenLinks" :key="key">
             <NuxtLink class="fs-link fs-link--green fs-sveden__link" :to="item.link">
-              <img class="fs-sveden__img" src="@/assets/img/fs-sveden/sveden-icon.jpg" alt="" />
+              <i class="pi pi-link pi--style"></i>
               <span>{{ item.name }}</span>
             </NuxtLink>
           </li>

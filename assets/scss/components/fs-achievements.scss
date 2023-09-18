@@ -1,6 +1,7 @@
 .fs-achievements {
     background-color: $green-normal;
     padding: 60px 0;
+
     &__content {
         display: flex;
         flex-direction: column;
@@ -9,20 +10,25 @@
         flex-shrink: 0;
         color: $text-color;
     }
+
     &__titles {
+        text-align: center;
         color: $text-color;
     }
+
     &__item-title {
         color: $text-color;
     }
-    &__item-text {
-    }
+
+    &__item-text {}
+
     &__items {
         display: grid;
         grid-template-columns: repeat(auto-fill, 310px);
         justify-content: space-between;
         row-gap: 30px;
     }
+
     &__item {
         display: flex;
         padding: 20px 11px;
@@ -31,17 +37,23 @@
         align-items: center;
         row-gap: 20px;
         text-align: center;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.10);
     }
 }
+
 @media (max-width: grid-width($desktop)) {
     .fs-achievements {
         padding: 40px 0;
+
         &__content {
             row-gap: 40px;
         }
+
         &__items {
             grid-template-columns: repeat(auto-fill, 270px);
         }
+
         &__item {
             svg {
                 height: 50px;
@@ -49,28 +61,35 @@
         }
     }
 }
+
 @media (max-width: grid-width($laptop)) {
     .fs-achievements {
         padding: 40px 0;
+
         &__content {
             row-gap: 20px;
         }
+
         &__items {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             column-gap: 20px;
         }
+
         &__item {
             width: 255px;
         }
     }
 }
+
 @media (max-width: grid-width($tablet)) {
     .fs-achievements {
         padding: 20px 0;
+
         &__item {
             width: 150px;
+
             svg {
                 height: 40px;
             }
