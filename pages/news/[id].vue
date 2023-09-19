@@ -1,9 +1,9 @@
 <template>
-  <div class="single-news">
-    <div class="single-news__wrappper">
-        <h2 class="single-news__article-title"> {{ getNews.title }} </h2>
-          <img class="single-news__article-image" :src="getStaticImageUrl(getNews.images[0])" alt="foto" />
-          <p class="single-news__article-text">{{ getNews.text[0] }}</p>
+  <div class="fs-single-news">
+    <div class="fs-single-news__wrappper">
+        <h2 class="fs-single-news__article-title"> {{ getNews.title }} </h2>
+          <img class="fs-single-news__article-image" :src="getStaticImageUrl(getNews.images[0])" alt="foto" />
+          <p class="fs-single-news__article-text">{{ getNews.text[0] }}</p>
     </div>
   </div>
 

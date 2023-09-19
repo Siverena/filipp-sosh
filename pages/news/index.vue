@@ -8,25 +8,25 @@
         <template v-slot:h1> Новости </template>
       </FsSectionTitles>
       <div class="fs-news-list__content">
-        <article class="fs-news" v-for="(item, key) in getNews" :key="key">
+        <article class="fs-news-list__article" v-for="(item, key) in getNews" :key="key">
           <div class="fs-news-list__image">
             <img :src="getStaticImageUrl(item.images[0])" alt="foto" />
           </div>
           <div class="fs-news-list__items">
-            <div class="fs-news__content">
-            <div class="fs-news__title">
-              <h2 class="fs-h2">{{ item.title }}</h2>
-              <span class="fs-news__date">
+            <div class="fs-news-list__article-content">
+            <div class="fs-news-list__title">
+              <h2 class="fs-news-list__h2">{{ item.title }}</h2>
+              <span class="fs-news-list__date">
                 Опубликовано: 15 мая 2023 года
               </span>
             </div>
-            <div class="fs-news__preview">
+            <div class="fs-news-list__preview">
               <p v-for="index in item.text" :key="index">
               {{ item.text.map((item) => item.substr(0,175)).toString() }}...
             </p>
             </div>
-            <div class="fs-news__nav">
-              <a :href="`/news/${item.id}`">Читать новость</a>
+            <div class="fs-news-list__nav">
+              <a class="fs-news-list__ref" :href="`/news/${item.id}`">Читать новость</a>
             </div>
           </div>
           </div>

@@ -1,10 +1,10 @@
-.news{
+.fs-news{
     max-width: 1280px;
     align-self: center;
     @media (max-width: grid-width($laptop)) {
         max-width: 100%;
         width: 100%;
-        .article-news{
+        .fs-news__article-news{
             max-width: unset;
             width: 100%;
         }
@@ -93,7 +93,7 @@
             }
         }
 
-        .news__items-wrapper{
+        .fs-news__items-wrapper{
             display: flex;
             flex-direction: column;
             height: 100%;
@@ -115,7 +115,7 @@
                 }
             }
         }
-        .news__reference{
+        .fs-news__reference{
             display: flex;
             align-items: flex-end;
             a {
