@@ -10,6 +10,14 @@
         stroke: $text-color;
         fill: $text-color;
         margin-bottom: 32px;
+        &:hover {
+            opacity: 0.5;
+            outline: none;
+        }
+        &:focus {
+            opacity: 0.5;
+            outline: none;
+        }
     }
     &__row {
         display: grid;
@@ -36,6 +44,10 @@
         text-decoration: none;
         color: inherit;
         margin-bottom: 19px;
+        &:focus {
+            opacity: 0.5;
+            outline: none;
+        }
     }
     &__copyright {
         display: flex;
@@ -62,6 +74,9 @@
         margin-bottom: 23px;
         text-decoration: underline;
         color: inherit;
+        &:focus {
+            opacity: 0.5;
+        }
     }
     &__subscribe {
         margin-bottom: 30px;

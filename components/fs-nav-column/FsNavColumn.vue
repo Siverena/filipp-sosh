@@ -11,8 +11,10 @@
         }}</NuxtLink>
         <div
           @click.stop="toggleMenu(key)"
+          @keydown.enter="toggleMenu(key)"
           v-if="item.child"
           class="fs-nav-column__arrow"
+          tabindex="0"
           :class="{
             'fs-nav__arrow--open': currentMenu === key,
           }"

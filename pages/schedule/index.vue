@@ -1,99 +1,64 @@
 <template>
-  <section class="fs-schedule no-tab" v-if="!loading">
+  <section class="fs-schedule no-tab">
     <Head>
       <Title>Расписание | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
     </Head>
     <div class="container">
-      <FsSectionTitles>
-        <template v-slot:h1> Расписание </template>
-      </FsSectionTitles>
-      <!-- <Accordion
-        :multiple="true"
-        :activeIndex="[0]"
-        class="fs-accordion fs-schedule__accordeon"
-      >
-        <AccordionTab
-          v-for="(item, classId) in getSchedule"
-          :key="classId"
-          :header="`${item.className} класс`"
-        >
-          <div class="fs-schedule__items">
-            <div
-              class="fs-schedule-day"
-              v-for="(day, index) in item.days"
-              :key="index"
-            >
-              <div class="fs-schedule-day__title">{{ day.dayName }}</div>
-              <ol class="fs-schedule-day__list">
-                <li
-                  class="fs-schedule-day__name"
-                  v-for="(lesson, i) in day.lessons"
-                  :key="i"
+      <div class="fs-schedule__content">
+        <FsSectionTitles>
+          <template v-slot:h1> Расписание </template>
+        </FsSectionTitles>
+        <FsCallSchedule />
+        <p class="fs-h2 fs-schedule__title">Расписание уроков</p>
+        <div class="fs-schedule__loader" v-if="loading">
+          <div class="fs-schedule__loader-wrapper">
+            <div class="fs-schedule__loader-line"></div>
+            <div class="fs-schedule__loader-line"></div>
+            <div class="fs-schedule__loader-line"></div>
+          </div>
+        </div>
+        <FsAccordeon v-if="!loading">
+          <FsAccordeonTab
+            v-for="(item, key) in getSchedule"
+            :key="key"
+            :index="key"
+            :currentActive="currentActive"
+          >
+            <template v-slot:title> {{ item.className }} класс </template>
+            <template v-slot:content>
+              <div class="fs-schedule__items">
+                <div
+                  class="fs-schedule-day"
+                  v-for="(day, index) in item.days"
+                  :key="index"
                 >
-                  {{ lesson }}
-                </li>
-              </ol>
-            </div>
-          </div>
-        </AccordionTab>
-      </Accordion> -->
-      <FsCallSchedule />
-      <p class="fs-h2">Расписание уроков</p>
-
-      <ul class="fs-accordeon">
-        <li
-          class="fs-accordeon__item"
-          v-for="(item, key) in getSchedule"
-          :key="key"
-        >
-          <p
-            class="fs-accordeon__item-title"
-            :class="{
-              'fs-accordeon__item-title--active': curretActive === key,
-            }"
-            @click.self="toggleActiveAccordeonBlock"
-          >
-            {{ `${item.className} класс` }}
-            <FsArrowDown />
-          </p>
-          <div
-            class="fs-accordeon__item-hidden"
-            :class="{
-              'fs-accordeon__item-hidden--active': curretActive === key,
-            }"
-          >
-            <div class="fs-schedule__items">
-              <div
-                class="fs-schedule-day"
-                v-for="(day, index) in item.days"
-                :key="index"
-              >
-                <div class="fs-schedule-day__title">{{ day.dayName }}</div>
-                <ol class="fs-schedule-day__list">
-                  <li
-                    class="fs-schedule-day__name"
-                    v-for="(lesson, i) in day.lessons"
-                    :key="i"
-                  >
-                    {{ lesson }}
-                  </li>
-                </ol>
+                  <div class="fs-schedule-day__title">{{ day.dayName }}</div>
+                  <ol class="fs-schedule-day__list" v-if="day.lessons[0]">
+                    <template v-for="(lesson, i) in day.lessons" :key="i">
+                      <li class="fs-schedule-day__name">
+                        {{ lesson }}
+                      </li>
+                    </template>
+                  </ol>
+                  <div v-else>Выходной</div>
+                </div>
               </div>
-            </div>
-          </div>
-        </li>
-      </ul>
+            </template>
+          </FsAccordeonTab>
+        </FsAccordeon>
+      </div>
     </div>
   </section>
 </template>
 <script>
 import { mapActions, mapState } from 'pinia';
 import { useScheduleStore } from '@/stores/scheduleStore.js';
+import { useUiStore } from '@/stores/uiStore.js';
 export default {
   data() {
     return {
       loading: true,
-      curretActive: false,
+      currentActive: false,
     };
   },
   computed: {
