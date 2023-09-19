@@ -1,15 +1,13 @@
 <template>
-  <div class="single-news-wrappper">
-    <h2 class="article-title">{{ getNews.title }}</h2>
-    <div class="article-items-wrapper">
+  <div class="fs-single-news">
+    <div class="fs-single-news__wrappper">
+      <h2 class="fs-single-news__article-title">{{ getNews.title }}</h2>
       <img
-        class="article-image"
+        class="fs-single-news__article-image"
         :src="getStaticImageUrl(getNews.images[0])"
         alt="foto"
       />
-      <div>
-        <span class="article-text">{{ getNews.text[0] }}</span>
-      </div>
+      <p class="fs-single-news__article-text">{{ getNews.text[0] }}</p>
     </div>
   </div>
 </template>
