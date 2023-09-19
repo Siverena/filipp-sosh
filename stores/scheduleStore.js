@@ -5,6 +5,7 @@ export const useScheduleStore = defineStore('ScheduleStore', {
     return {
       schedule: [],
       callShedule: [],
+      isLoading: true,
     };
   },
   getters: {
@@ -13,6 +14,9 @@ export const useScheduleStore = defineStore('ScheduleStore', {
     },
     getCallSchedule(state) {
       return state.callShedule;
+    },
+    getIsLoading(state) {
+      return state.isLoading;
     },
   },
   actions: {
@@ -26,10 +30,12 @@ export const useScheduleStore = defineStore('ScheduleStore', {
     //actions
     async fetchSchedule(classId = '') {
       const api = useNuxtApp().$api;
-      api
+      return api
         .get(`/class-schedules/${classId}`)
         .then((response) => {
           this.SET_SCHEDULE(response.data);
+          console.log('fetch schedules finished');
+          // this.isLoading = false;
         })
         .catch(function (e) {
           console.log(e);
@@ -37,14 +43,18 @@ export const useScheduleStore = defineStore('ScheduleStore', {
     },
     async fetchCallSchedule() {
       const api = useNuxtApp().$api;
-      api
+      return api
         .get(`/call-schedules/`)
         .then((response) => {
           this.SET_CALL_SCHEDULE(response.data);
+          console.log('fetch call-schedules finished');
         })
         .catch(function (e) {
           console.log(e);
         });
+    },
+    async fetchAll() {
+      return Promise.all([this.fetchCallSchedule, this.fetchSchedule]);
     },
   },
 });

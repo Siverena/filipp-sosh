@@ -10,7 +10,6 @@
         <div class="container no-tab" v-if="currentUrl !== 'index'">
           <FsBreadCrumbs />
         </div>
-
         <NuxtPage />
       </div>
       <FsFooter class="no-tab" />
