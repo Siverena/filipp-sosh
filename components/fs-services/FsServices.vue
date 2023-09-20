@@ -8,47 +8,44 @@
         </FsSectionTitles>
         <div class="fs-services__items">
           <div class="fs-services__item">
-            <FsSend />
             <a
-              class="fs-link fs-link--white"
+              class="fs-link fs-link--white fs-services-link"
               href="https://образование33.рф/elektronnyy-shkola/podat-zayavlenie/"
             >
+              <FsSend />
               <p class="fs-services__item-title">Подать заявление</p>
             </a>
           </div>
           <div class="fs-services__item">
-            <FsCheckStatus />
             <a
-              class="fs-link fs-link--white"
+              class="fs-link fs-link--white fs-services-link"
               href="https://образование33.рф/elektronnyy-shkola/proverka-statusa-zayavleniya/"
             >
+              <FsCheckStatus />
               <p class="fs-services__item-title">Проверить статус заявления</p>
             </a>
           </div>
           <div class="fs-services__item">
-            <FsInformation />
             <a
-              class="fs-link fs-link--white"
+              class="fs-link fs-link--white fs-services-link"
               href="https://образование33.рф/elektronnyy-shkola/informatsiya-ob-uchrezhdeniyakh/"
             >
+              <FsInformation />
               <p class="fs-services__item-title">Информация об учреждениях</p>
             </a>
           </div>
           <div class="fs-services__item">
-            <FsDiary />
-            <a
-              class="fs-link fs-link--white"
-              href="https://школа.образование33.рф/auth/login-page"
-            >
+            <a class="fs-link fs-link--white fs-services-link" href="https://школа.образование33.рф/auth/login-page">
+              <FsDiary />
               <p class="fs-services__item-title">Вход в электронный дневник</p>
             </a>
           </div>
           <div class="fs-services__item">
-            <FsResult />
             <a
-              class="fs-link fs-link--white"
+              class="fs-link fs-link--white fs-services-link"
               href="https://образование33.рф/elektronnyy-shkola/rezultaty-ege-oge/"
             >
+              <FsResult />
               <p class="fs-services__item-title">Результаты ЕГЭ/ОГЭ</p>
             </a>
           </div>

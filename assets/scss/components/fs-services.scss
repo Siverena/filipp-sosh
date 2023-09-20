@@ -29,12 +29,12 @@
     }
     &__item {
         // width: 370px;
-        display: flex;
-        padding: 20px 10px;
-        flex-direction: column;
-        align-items: center;
+        // display: flex;
+        // padding: 20px 10px;
+        // flex-direction: column;
+        // align-items: center;
         min-height: 250px;
-        row-gap: 27px;
+        // row-gap: 27px;
         text-align: center;
         text-decoration: none;
         color: $text-color;
@@ -55,6 +55,23 @@
             background: rgba(174, 198, 112, 0.50);
         }
         &:active {}
+    }
+
+    &-link{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 27px;
+        height: 100%;
+        padding: 20px 10px;
+        // outline: 1px solid red;
+        // position:absolute;
+        // width: 100%;
+        // height: 100%;
+        // top: 0;
+        // left: 0;
+        // padding-top: 135px;
+        // overflow: hidden;
     }
 }
 
