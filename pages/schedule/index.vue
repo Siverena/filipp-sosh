@@ -19,7 +19,7 @@
         </div>
         <FsAccordeon v-if="!loading">
           <FsAccordeonTab
-            v-for="(item, key) in getSchedule"
+            v-for="(item, key) in getSchedule.data"
             :key="key"
             :index="key"
             :currentActive="currentActive"
