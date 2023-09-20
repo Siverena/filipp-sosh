@@ -34,8 +34,6 @@ export const useScheduleStore = defineStore('ScheduleStore', {
         .get(`/class-schedules/${classId}`)
         .then((response) => {
           this.SET_SCHEDULE(response.data);
-          console.log('fetch schedules finished');
-          // this.isLoading = false;
         })
         .catch(function (e) {
           console.log(e);
@@ -47,7 +45,6 @@ export const useScheduleStore = defineStore('ScheduleStore', {
         .get(`/call-schedules/`)
         .then((response) => {
           this.SET_CALL_SCHEDULE(response.data);
-          console.log('fetch call-schedules finished');
         })
         .catch(function (e) {
           console.log(e);
