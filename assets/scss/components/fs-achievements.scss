@@ -18,13 +18,13 @@
 
     &__item-title {
         color: $text-color;
+        font-size: 22px;
+        padding: 0 73px;
     }
-
-    &__item-text {}
 
     &__items {
         display: grid;
-        grid-template-columns: repeat(auto-fill, 310px);
+        grid-template-columns: repeat(auto-fill, 383px);
         justify-content: space-between;
         row-gap: 30px;
     }
@@ -38,7 +38,10 @@
         row-gap: 20px;
         text-align: center;
         border-radius: 10px;
-        background: rgba(255, 255, 255, 0.10);
+        background: rgba(255, 255, 255, 0.1);
+        svg {
+            height: 50px;
+        }
     }
 }
 
@@ -46,18 +49,8 @@
     .fs-achievements {
         padding: 40px 0;
 
-        &__content {
-            row-gap: 40px;
-        }
-
         &__items {
-            grid-template-columns: repeat(auto-fill, 270px);
-        }
-
-        &__item {
-            svg {
-                height: 50px;
-            }
+            grid-template-columns: repeat(auto-fill, 316px);
         }
     }
 }
@@ -66,33 +59,28 @@
     .fs-achievements {
         padding: 40px 0;
 
-        &__content {
-            row-gap: 20px;
-        }
-
         &__items {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            column-gap: 20px;
+            grid-template-columns: repeat(auto-fill, 215px);
         }
 
         &__item {
             width: 255px;
+        }
+        &__item-title {
+            font-size: 18px;
+            padding: 0 35px;
         }
     }
 }
 
 @media (max-width: grid-width($tablet)) {
     .fs-achievements {
-        padding: 20px 0;
-
+        &__items {
+            grid-template-columns: repeat(auto-fill, 320px);
+        }
         &__item {
-            width: 150px;
-
-            svg {
-                height: 40px;
-            }
+            width: 320px;
+            padding: 20px 44px;
         }
     }
 }

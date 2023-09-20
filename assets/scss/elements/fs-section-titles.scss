@@ -17,3 +17,20 @@
         }
     }
 }
+@media (max-width: grid-width($desktop)) {
+    .fs-section-titles {
+        margin-bottom: 40px;
+    }
+}
+@media (max-width: grid-width($laptop)) {
+    .fs-section-titles {
+        &__dop-text {
+            font-size: 16px;
+        }
+    }
+}
+@media (max-width: grid-width($tablet)) {
+    .fs-section-titles {
+        margin-bottom: 20px;
+    }
+}

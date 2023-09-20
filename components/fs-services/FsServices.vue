@@ -13,7 +13,7 @@
               class="fs-link fs-link--white"
               href="https://образование33.рф/elektronnyy-shkola/podat-zayavlenie/"
             >
-              <p class="fs-services__item-title">Подать заявление</p>
+              <p class="fs-h2 fs-services__item-title">Подать заявление</p>
             </a>
           </div>
           <div class="fs-services__item">
@@ -22,7 +22,9 @@
               class="fs-link fs-link--white"
               href="https://образование33.рф/elektronnyy-shkola/proverka-statusa-zayavleniya/"
             >
-              <p class="fs-services__item-title">Проверить статус заявления</p>
+              <p class="fs-h2 fs-services__item-title">
+                Проверить статус заявления
+              </p>
             </a>
           </div>
           <div class="fs-services__item">
@@ -31,7 +33,9 @@
               class="fs-link fs-link--white"
               href="https://образование33.рф/elektronnyy-shkola/informatsiya-ob-uchrezhdeniyakh/"
             >
-              <p class="fs-services__item-title">Информация об учреждениях</p>
+              <p class="fs-h2 fs-services__item-title">
+                Информация об учреждениях
+              </p>
             </a>
           </div>
           <div class="fs-services__item">
@@ -40,7 +44,7 @@
               class="fs-link fs-link--white"
               href="https://школа.образование33.рф/auth/login-page"
             >
-              <p class="fs-services__item-title">Вход в электронный дневник</p>
+              <p class="fs-h2 fs-services__item-title">Электронный дневник</p>
             </a>
           </div>
           <div class="fs-services__item">
@@ -49,7 +53,7 @@
               class="fs-link fs-link--white"
               href="https://образование33.рф/elektronnyy-shkola/rezultaty-ege-oge/"
             >
-              <p class="fs-services__item-title">Результаты ЕГЭ/ОГЭ</p>
+              <p class="fs-h2 fs-services__item-title">Результаты ЕГЭ/ОГЭ</p>
             </a>
           </div>
         </div>
