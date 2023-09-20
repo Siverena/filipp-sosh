@@ -53,6 +53,23 @@
         &:active {
         }
     }
+
+    &-link{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 27px;
+        height: 100%;
+        padding: 20px 10px;
+        // outline: 1px solid red;
+        // position:absolute;
+        // width: 100%;
+        // height: 100%;
+        // top: 0;
+        // left: 0;
+        // padding-top: 135px;
+        // overflow: hidden;
+    }
 }
 
 @media (max-width: grid-width($desktop)) {

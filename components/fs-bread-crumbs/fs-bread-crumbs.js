@@ -44,15 +44,15 @@ export default {
       const arr = this.$route.fullPath.split('/');
       let link = '';
       //Обрабатываем элементы, достаем данные из навигации
-      arr.slice(1).forEach((el, index) => {
-        link = link + '/' + el;
-        console.log(link)
-        let elem = this.getElem(this.getNavLinks, link);
-        this.links.push({
-          name: elem.name,
-          link: elem.link,
-        });
-      })
+      // arr.slice(1).forEach((el, index) => {
+      //   link = link + '/' + el;
+      //   console.log(link)
+      //   let elem = this.getElem(this.getNavLinks, link);
+      //   this.links.push({
+      //     name: elem.name,
+      //     link: elem.link,
+      //   });
+      // })
     },
     getElem(arr, needle) {
       let foundElem = null;
