@@ -2,14 +2,9 @@ import news from '@/stores/data/d-news.js';
 import { defineStore } from 'pinia';
 async function API(id = null) {
   if (id) {
-    // if (!news.data[id-1]) {
-    // throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })
-    // this.$root.error({ statusCode: 400, message: 'Error 400. Bad request' });
-    // }
-    return news.data[id - 1];
-    // return news[0].find((el) => el.id === id);
+    return news.data.find((el) => el.id === id);
   } else {
-    return news;
+    return news.data;
   }
 }
 
@@ -34,12 +29,9 @@ export const useNewsStore = defineStore('NewsStore', {
     },
     //actions
     async fetchNews(id = null) {
-      console.log(id);
-      API(id)
+      return API(id)
         .then((data) => {
-          if (id) {
-            this.SET_NEWS(data);
-          } else this.SET_NEWS(data.data);
+          this.SET_NEWS(data);
         })
         .catch((e) => {
           console.log(e);

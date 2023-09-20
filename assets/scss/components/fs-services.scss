@@ -13,16 +13,12 @@
         color: $text-color;
     }
     &__item-title {
-        width: 204px;
-        font-size: 28px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 31px;
-        text-decoration: none;
+        color: $text-color;
+        font-size: 16px;
     }
     &__items {
         display: grid;
-        grid-template-columns: repeat(5, 225px); //150px
+        grid-template-columns: repeat(5, 170px); //150px
         justify-content: center;
         column-gap: 30px;
         row-gap: 30px;
@@ -30,42 +26,41 @@
     &__item {
         // width: 370px;
         display: flex;
-        padding: 20px 10px;
+        padding: 15px 18px;
         flex-direction: column;
         align-items: center;
-        min-height: 250px;
-        row-gap: 27px;
+        min-height: 150px;
+        row-gap: 20px;
         text-align: center;
         text-decoration: none;
         color: $text-color;
         border-radius: 10px;
-        background: rgba(255, 255, 255, 0.10);
+        background: rgba(255, 255, 255, 0.1);
         a {
             text-decoration: none;
         }
         svg {
-            height: 86px;
+            height: 38px;
         }
         &:hover {
             // outline: 3px solid orange;
-            background: rgba(174, 198, 112, 0.80);
+            background: rgba(174, 198, 112, 0.8);
         }
         &:focus-within {
             // outline: 3px solid orange;
-            background: rgba(174, 198, 112, 0.50);
+            background: rgba(174, 198, 112, 0.5);
         }
-        &:active {}
+        &:active {
+        }
     }
 }
 
 @media (max-width: grid-width($desktop)) {
     .fs-services {
         padding: 40px 0;
-        &__content {
-            row-gap: 40px;
-        }
+
         &__items {
-            grid-template-columns: repeat(auto-fill, 235px); //160px
+            grid-template-columns: repeat(auto-fill, 160px); //160px
             justify-content: space-between;
         }
     }
@@ -73,7 +68,7 @@
 @media (max-width: grid-width($laptop)) {
     .fs-services {
         &__items {
-            grid-template-columns: repeat(auto-fill, 225px); //150px
+            grid-template-columns: repeat(auto-fill, 150px); //150px
             column-gap: 0;
             // justify-content: space-between;
         }

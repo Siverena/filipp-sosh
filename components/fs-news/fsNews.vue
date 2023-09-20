@@ -1,32 +1,42 @@
 <template>
-  <div class="fs-news">
-    <FsSectionTitles class="fs-news__head-wrapper">
+  <div class="fs-news" v-if="!loading">
+    <div class="container">
+      <FsSectionTitles>
         <template v-slot:h1>Последние новости</template>
-        <template v-slot:dop>В нашей школе учаться только на четверки и пятерки </template>
-    </FsSectionTitles>
+        <template v-slot:dop
+          >В нашей школе учаться только на четверки и пятерки
+        </template>
+      </FsSectionTitles>
       <div class="fs-news__wrapper">
-          <article class="fs-news__article" v-for="item in news" :key="item.id">
-            <div class="fs-news__content-container">
-              <div class="fs-news__title-wrapper">
-              <div class="fs-news__image">
-                  <img :src="item.mainImg">
-              </div>
-              <h3 class="fs-news__title">{{ item.title }}</h3>
+        <article
+          class="fs-news__article"
+          v-for="item in getNews"
+          :key="item.id"
+        >
+          <div class="fs-news__title-wrapper">
+            <div class="fs-news__image">
+              <img :src="item.mainImg" />
             </div>
-              <div class="fs-news__items-wrapper">
-                  <span> {{ item.text[0].substr(0,175) }} </span>
-                  <span class="fs-news__reference">
-                    <a :href="`news/${item.id}`">Читать далее</a>
-                  </span>
-              </div>
-            </div>
-          </article>
+          </div>
+          <div class="fs-news__items-wrapper">
+            <p class="fs-h2 fs-news__title">{{ item.title }}</p>
+            <span class="fs-news__text">
+              {{ item.description }}
+            </span>
+            <span class="fs-news__reference">
+              <NuxtLink :to="`news/${item.id}`" class="fs-link fs-news__link"
+                >Читать далее</NuxtLink
+              >
+            </span>
+          </div>
+          <!-- </div> -->
+        </article>
       </div>
       <div class="fs-news__button-container">
-        <button class="fs-news__show-button" @click="console.log(this.showAll=!this.showAll)">{{ this.showAll ? 'Скрыть' : 'Все новости' }}</button>
+        <NuxtLink to="/news" class="fs-btn fs-btn--green">Все новости</NuxtLink>
       </div>
+    </div>
   </div>
 </template>
-
 
 <script src="./fs-news.js"></script>
