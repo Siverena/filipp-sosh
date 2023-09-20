@@ -4,14 +4,19 @@
       <Title>Расписание | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
     </Head>
     <div class="container">
-      <!-- <FsLoader v-if="loading" /> -->
       <div class="fs-schedule__content">
         <FsSectionTitles>
           <template v-slot:h1> Расписание </template>
         </FsSectionTitles>
         <FsCallSchedule />
-        <p class="fs-h2">Расписание уроков</p>
-
+        <p class="fs-h2 fs-schedule__title">Расписание уроков</p>
+        <div class="fs-schedule__loader" v-if="loading">
+          <div class="fs-schedule__loader-wrapper">
+            <div class="fs-schedule__loader-line"></div>
+            <div class="fs-schedule__loader-line"></div>
+            <div class="fs-schedule__loader-line"></div>
+          </div>
+        </div>
         <FsAccordeon v-if="!loading">
           <FsAccordeonTab
             v-for="(item, key) in getSchedule"
@@ -57,7 +62,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(useScheduleStore, ['getSchedule', 'isLoading']),
+    ...mapState(useScheduleStore, ['getSchedule']),
   },
   methods: {
     ...mapActions(useScheduleStore, ['fetchSchedule']),
@@ -67,7 +72,6 @@ export default {
         await this.fetchSchedule();
         this.loading = false;
       } catch (e) {
-        this.loading = false;
         console.log(e);
       }
     },

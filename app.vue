@@ -8,9 +8,8 @@
       <div :class="{ 'fs-content': currentUrl === 'index' }">
         <FsHeader />
         <div class="container no-tab" v-if="currentUrl !== 'index'">
-          <FsBreadCrumbs />
+          <!-- <FsBreadCrumbs /> -->
         </div>
-
         <NuxtPage />
       </div>
       <FsFooter class="no-tab" />

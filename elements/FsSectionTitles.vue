@@ -6,9 +6,13 @@
     }"
   >
     <h2 class="fs-h1"><slot name="h1"></slot></h2>
-    <h3 class="fs-section-titles__dop-text"   :class="{
-      'fs-section-titles__dop-text--index': currentUrl === 'index',
-    }" v-if="showDop">
+    <h3
+      class="fs-section-titles__dop-text"
+      v-if="showDop"
+      :class="{
+        'fs-section-titles__dop-text--index': currentUrl === 'index',
+      }"
+    >
       <slot name="dop"></slot>
     </h3>
   </div>

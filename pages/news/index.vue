@@ -8,30 +8,37 @@
         <template v-slot:h1> Новости </template>
       </FsSectionTitles>
       <div class="fs-news-list__content">
-        <article class="fs-news" v-for="(item, key) in getNews" :key="key">
-          <div class="fs-news__image">
-            <img :src="getStaticImageUrl(item.mainImg)" alt="" />
+        <article
+          class="fs-news-list__article"
+          v-for="(item, key) in getNews"
+          :key="key"
+        >
+          <div class="fs-news-list__article-image">
+            <img :src="getStaticImageUrl(item.images[0])" alt="foto" />
           </div>
-          <div class="fs-news__content">
-            <div class="fs-news__title">
+          <div class="fs-news-list__article-content">
+            <div class="fs-news-list__article-title">
               <h2 class="fs-h2">{{ item.title }}</h2>
-              <span class="fs-news__date">
-                Опубликовано: 15 мая 2023 года
+              <span class="fs-news-list__article-date">
+                Опубликовано: {{ item.publDate }}
               </span>
             </div>
-            <div class="fs-news__preview">
-              <p v-for="index in item.text" :key="index"></p>
-              {{ item.text[index] }}
+            <div class="fs-news-list__article-preview">
+              <p>
+                {{ item.description }}
+              </p>
             </div>
-            <div class="fs-news__nav">
-              <a :href="`/news/${item.id}`">Читать новость</a>
+            <div class="fs-news-list__article-nav">
+              <a
+                class="fs-link fs-link--green fs-news-list__article-ref"
+                :href="`/news/${item.id}`"
+                >Читать новость</a
+              >
             </div>
           </div>
         </article>
       </div>
     </div>
-    <pre>
-    </pre>
   </section>
 </template>
 <script>

@@ -75,6 +75,9 @@
 }
 @media (max-width: grid-width($desktop)) {
     .fs-header {
+        &__top {
+            padding: 15px 20px;
+        }
         &__nav {
             display: none !important;
         }

@@ -46,7 +46,7 @@
                 height: 10px;
                 border-radius: 2px;
                 // box-shadow: 0px 0px 1.5px 1.5px $green-normal inset;
-                
+
                 background: $green-normal;
                 margin-left: 2px;
                 flex-shrink: 0;
@@ -88,6 +88,9 @@
         }
         &__item {
             height: auto;
+        }
+        &__item-title {
+            text-align: center;
         }
         &__btns {
             column-gap: 20px;

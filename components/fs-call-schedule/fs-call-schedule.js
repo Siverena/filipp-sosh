@@ -8,7 +8,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(useScheduleStore, ['getCallSchedule']),
+    ...mapState(useScheduleStore, ['getCallSchedule', 'getIsLoading']),
 
     // ...mapState(useUiStore, ['getPageLoader']),
   },
