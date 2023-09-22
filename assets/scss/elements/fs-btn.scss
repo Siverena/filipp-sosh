@@ -10,6 +10,7 @@
     padding: 20px 60px;
     box-sizing: border-box;
     border-radius: 10px;
+    white-space: nowrap;
     &--green {
         transition: background-color 1s;
         color: $text-color;

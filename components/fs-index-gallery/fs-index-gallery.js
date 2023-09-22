@@ -6,7 +6,6 @@ export default {
     return {
       loading: true,
       activeReason: 0,
-      //   reasons: [],
     };
   },
   mixins: [imageUrl],
@@ -48,8 +47,7 @@ export default {
     async loadData() {
       try {
         this.loading = true;
-        this.fetchGallery();
-
+        await this.fetchGallery();
         this.loading = false;
       } catch (e) {
         console.log(e);

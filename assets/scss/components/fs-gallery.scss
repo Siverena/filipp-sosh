@@ -73,6 +73,58 @@
             outline: 4px solid #344c1194;
         }
     }
+    &__loader {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 389px);
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+        &:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(
+                110deg,
+                rgba(227, 227, 227, 0) 0%,
+                rgba(227, 227, 227, 0) 40%,
+                rgba(227, 227, 227, 0.5) 50%,
+                rgba(227, 227, 227, 0) 60%,
+                rgba(227, 227, 227, 0) 100%
+            );
+            animation: gradient-animation_2 1.2s linear infinite;
+        }
+    }
+    &__loader-item {
+        width: 389px;
+        height: 264px;
+        display: flex;
+        align-items: flex-end;
+        background-color: $background_1;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    &__loader-info {
+        width: 247px;
+        height: 81px;
+        background-color: $text-color;
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    &__loader-string {
+        height: 23px;
+        width: 196px;
+        background-color: $background_1;
+        border-radius: 5px;
+        &--2 {
+            width: 112px;
+        }
+    }
 }
 @media (max-width: grid-width($desktop)) {
     .fs-gallery {
@@ -87,6 +139,16 @@
         &__image {
             width: 309px;
             height: 211px;
+        }
+        &__loader {
+            grid-template-columns: repeat(auto-fill, 309px);
+        }
+        &__loader-item {
+            width: 309px;
+            height: 211px;
+        }
+        &__loader-info {
+            width: 100%;
         }
     }
 }
@@ -114,6 +176,17 @@
             width: 239px;
             height: 162px;
         }
+
+        &__loader {
+            grid-template-columns: repeat(auto-fill, 239px);
+        }
+        &__loader-item {
+            width: 239px;
+            height: 162px;
+        }
+        &__loader-info {
+            width: 100%;
+        }
     }
 }
 @media (max-width: grid-width($tablet)) {
@@ -136,6 +209,17 @@
         &__image {
             width: 320px;
             height: 218px;
+        }
+        &__loader {
+            grid-template-columns: repeat(auto-fill, 320px);
+            row-gap: 20px;
+        }
+        &__loader-item {
+            width: 320px;
+            height: 218px;
+        }
+        &__loader-info {
+            width: 100%;
         }
     }
 }
