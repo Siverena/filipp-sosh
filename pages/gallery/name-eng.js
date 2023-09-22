@@ -4,6 +4,7 @@ import { useGalleryStore } from '~/stores/galleryStore.js';
 import { useModalStore } from '~/stores/modalStore.js';
 import imageUrl from '@/utils/mixins/image-url.js';
 export default {
+  props: ['id'],
   data() {
     return {
       loading: true,
@@ -64,7 +65,9 @@ export default {
     ...mapActions(useModalStore, ['openSlider']),
     async loadData() {
       this.loading = true;
-      await this.fetchGallery(this.$route.params.nameEng);
+      console.log(this.$route);
+      console.log(this.id);
+      await this.fetchGallery(this.id);
       this.images = this.getGallery.images;
       this.loading = false;
     },

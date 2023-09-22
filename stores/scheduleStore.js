@@ -22,7 +22,7 @@ export const useScheduleStore = defineStore('ScheduleStore', {
   actions: {
     //mutations
     SET_SCHEDULE(data) {
-      this.schedule = data;
+      this.schedule = data.data;
     },
     SET_CALL_SCHEDULE(data) {
       this.callShedule = data.callSchedules;
@@ -30,6 +30,9 @@ export const useScheduleStore = defineStore('ScheduleStore', {
     //actions
     async fetchSchedule(classId = '') {
       const api = useNuxtApp().$api;
+      if (this.schedule.length) {
+        return Promise.resolve();
+      }
       return api
         .get(`/class-schedules/${classId}`)
         .then((response) => {
@@ -41,6 +44,9 @@ export const useScheduleStore = defineStore('ScheduleStore', {
     },
     async fetchCallSchedule() {
       const api = useNuxtApp().$api;
+      if (this.callShedule.length) {
+        return Promise.resolve();
+      }
       return api
         .get(`/call-schedules/`)
         .then((response) => {

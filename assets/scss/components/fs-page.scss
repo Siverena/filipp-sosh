@@ -1,0 +1,28 @@
+.fs-page {
+    &__content {
+        display: flex;
+        flex-direction: column;
+        row-gap: 60px;
+    }
+}
+@media (max-width: grid-width($desktop)) {
+    .fs-page {
+        &__content {
+            row-gap: 40px;
+        }
+    }
+}
+@media (max-width: grid-width($laptop)) {
+    .fs-page {
+        &__content {
+            row-gap: 30px;
+        }
+    }
+}
+@media (max-width: grid-width($tablet)) {
+    .fs-page {
+        &__content {
+            row-gap: 20px;
+        }
+    }
+}

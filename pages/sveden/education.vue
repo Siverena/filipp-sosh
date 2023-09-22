@@ -8,6 +8,9 @@
         <FsSectionTitles>
           <template v-slot:h1> Образование </template>
         </FsSectionTitles>
+        <div class="fs-page__content">
+          <FsSection />
+        </div>
       </div>
     </div>
   </section>
