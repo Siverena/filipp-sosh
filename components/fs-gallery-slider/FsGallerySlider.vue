@@ -14,7 +14,7 @@
       <div class="fs-gallery-slider__center">
         <div class="fs-gallery-slider__image-wrapper">
           <img
-            :src="getStaticImageUrl(images[currentImage])"
+            :src="images[currentImage]"
             class="fs-gallery-slider__image"
             alt=""
           />
@@ -51,7 +51,7 @@
             @keydown.enter="setCurrentImage(key + firstThumbnailsIndex)"
             tabindex="0"
           >
-            <img :src="getStaticImageUrl(img)" alt="" />
+            <img :src="img" alt="" />
           </div>
         </div>
       </div>

@@ -1,39 +1,54 @@
-import gall from '@/stores/data/d-gallery.js';
 import { defineStore } from 'pinia';
-async function API(nameEng = null) {
-  if (nameEng) {
-    return gall.find((el) => el.nameEng === nameEng);
-  } else {
-    return gall;
-  }
-}
 
 export const useGalleryStore = defineStore('GalleryStore', {
   state: () => {
     return {
       gallery: [],
+      galleryAlbom: {},
     };
   },
   getters: {
     getGallery(state) {
       return state.gallery;
     },
-    isLoading() {
-      return Promise.resolve(this.fetchGallery);
+    getGalleryAlbom(state) {
+      return state.galleryAlbom;
     },
   },
   actions: {
     //mutations
     SET_GALLERY(gl) {
-      this.gallery = gl;
+      this.gallery = gl.data;
+    },
+    SET_GALLERY_ALBOM(gl) {
+      this.galleryAlbom = gl.data[0];
     },
     //actions
-    async fetchGallery(nameEng = null) {
-      API(nameEng)
-        .then((data) => {
-          this.SET_GALLERY(data);
+    async fetchGallery() {
+      const api = useNuxtApp().$api;
+      if (this.gallery.length) {
+        return Promise.resolve();
+      }
+      return api
+        .get(`/albums/`)
+        .then((response) => {
+          this.SET_GALLERY(response.data);
         })
-        .catch((e) => {
+        .catch(function (e) {
+          console.log(e);
+        });
+    },
+    async fetchGalleryAlbom(nameEng) {
+      const api = useNuxtApp().$api;
+      if (this.galleryAlbom.nameEng === nameEng) {
+        return Promise.resolve();
+      }
+      return api
+        .get(`/albums/${nameEng}`)
+        .then((response) => {
+          this.SET_GALLERY_ALBOM(response.data);
+        })
+        .catch(function (e) {
           console.log(e);
         });
     },

@@ -1,25 +1,36 @@
-import imageUrl from '@/utils/mixins/image-url.js';
 import { mapActions, mapState } from 'pinia';
-import { useGalleryStore } from '@/stores/galleryStore.js';
+import { usePagesStore } from '@/stores/pagesStore.js';
+import currentUrl from '~/utils/mixins/current-url';
+
 export default {
   data() {
     return {
       loading: true,
-      activeReason: 0,
+      currentActive: false,
     };
   },
-  mixins: [imageUrl],
+  mixins: [currentUrl],
   computed: {
-    ...mapState(useGalleryStore, ['getGallery']),
-    reasonsCount() {
-      return this.reasons.length;
-    },
-    reasons() {
-      return this.getGallery;
+    ...mapState(usePagesStore, ['getContent']),
+  },
+  watch: {
+    currentUrl() {
+      this.loadData();
     },
   },
   methods: {
-    ...mapActions(useGalleryStore, ['fetchGallery']),
+    ...mapActions(usePagesStore, ['fetchContent']),
+    async loadData() {
+      try {
+        this.loading = true;
+        const arr = this.$route.fullPath.split('/');
+        const path = arr[arr.length - 1];
+        await this.fetchContent(path);
+        this.loading = false;
+      } catch (e) {
+        console.log(e);
+      }
+    },
     nextReason() {
       const tmp = this.reasons[0];
       if (this.reasons.length - 1 === this.activeReason) {
@@ -44,14 +55,8 @@ export default {
         this.activeReason = this.activeReason - 1;
       }
     },
-    async loadData() {
-      try {
-        this.loading = true;
-        await this.fetchGallery();
-        this.loading = false;
-      } catch (e) {
-        console.log(e);
-      }
+    getCountImg(arrImages) {
+      return arrImages.length;
     },
   },
   async created() {
