@@ -7,10 +7,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 60px;
+    padding: 15px 45px;
     box-sizing: border-box;
     border-radius: 10px;
-    white-space: nowrap;
     &--green {
         transition: background-color 1s;
         color: $text-color;
