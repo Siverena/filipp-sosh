@@ -4,11 +4,13 @@
       <Title>Документы | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
     </Head>
     <div class="container">
-      <div class="fs-document__content">
-        <FsSectionTitles>
-          <template v-slot:h1> Документы </template>
-        </FsSectionTitles>
+      <FsSectionTitles>
+        <template v-slot:h1> Документы </template>
+      </FsSectionTitles>
+      <div class="fs-page__content">
+        <FsSection />
       </div>
     </div>
   </section>
 </template>
+<script></script>

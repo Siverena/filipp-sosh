@@ -2,7 +2,6 @@ import { mapState, mapActions } from 'pinia';
 import { useAdaptiveStore } from '@/stores/adaptiveStore.js';
 import { useGalleryStore } from '~/stores/galleryStore.js';
 import { useModalStore } from '~/stores/modalStore.js';
-import imageUrl from '@/utils/mixins/image-url.js';
 export default {
   data() {
     return {
@@ -10,11 +9,9 @@ export default {
       isShowSlider: false,
       informations: [],
       currentImage: 0,
-      images: [],
       thumbnails: [],
     };
   },
-  mixins: [imageUrl],
   computed: {
     ...mapState(useAdaptiveStore, [
       'isMobileVersion',
@@ -23,20 +20,9 @@ export default {
       'widthComputed',
     ]),
     ...mapState(useModalStore, ['getIsShowSlider']),
-    ...mapState(useGalleryStore, ['getGallery']),
+    ...mapState(useGalleryStore, ['getGalleryAlbom']),
     body() {
       return document.querySelector('html');
-    },
-
-    imgsss() {
-      const tmp = [];
-      this.images.forEach((element, index) => {
-        const objTmp = {};
-        objTmp.id = index;
-        objTmp.src = element;
-        tmp.push(objTmp);
-      });
-      return tmp;
     },
     imagesCount() {
       if (this.isTabVersion || this.isLaptopVersion || this.isMobileVersion) {
@@ -60,12 +46,11 @@ export default {
     },
   },
   methods: {
-    ...mapActions(useGalleryStore, ['fetchGallery']),
+    ...mapActions(useGalleryStore, ['fetchGalleryAlbom']),
     ...mapActions(useModalStore, ['openSlider']),
     async loadData() {
       this.loading = true;
-      await this.fetchGallery(this.$route.params.nameEng);
-      this.images = this.getGallery.images;
+      await this.fetchGalleryAlbom(this.$route.params.nameEng);
       this.loading = false;
     },
     showSlider(key) {
@@ -74,7 +59,7 @@ export default {
       this.getThumbnails();
     },
     nextSlide() {
-      if (this.currentImage === this.images.length - 1) {
+      if (this.currentImage === this.getGalleryAlbom.images.length - 1) {
         this.currentImage = 0;
       } else {
         ++this.currentImage;
@@ -82,7 +67,7 @@ export default {
     },
     prevSlide() {
       if (this.currentImage === 0) {
-        this.currentImage = this.images.length - 1;
+        this.currentImage = this.getGalleryAlbom.images.length - 1;
       } else {
         --this.currentImage;
       }
@@ -96,31 +81,37 @@ export default {
       }
     },
     setCurrentImage(number) {
-      if (number > this.images.length - 1) {
-        number = number - this.images.length;
+      if (number > this.getGalleryAlbom.images.length - 1) {
+        number = number - this.getGalleryAlbom.images.length;
       }
       if (number < 0) {
-        number = this.images.length + number;
+        number = this.getGalleryAlbom.images.length + number;
       }
       this.currentImage = number;
     },
     getThumbnails() {
       this.thumbnails = [];
       if (this.firstThumbnailsIndex < 0) {
-        this.thumbnails = this.images.slice(this.firstThumbnailsIndex);
-        this.thumbnails.push(
-          ...this.images.slice(0, this.lastThumbnailsIndex + 1)
+        this.thumbnails = this.getGalleryAlbom.images.slice(
+          this.firstThumbnailsIndex
         );
-      } else if (this.lastThumbnailsIndex >= this.images.length) {
-        this.thumbnails = this.images.slice(this.firstThumbnailsIndex);
         this.thumbnails.push(
-          ...this.images.slice(
+          ...this.getGalleryAlbom.images.slice(0, this.lastThumbnailsIndex + 1)
+        );
+      } else if (
+        this.lastThumbnailsIndex >= this.getGalleryAlbom.images.length
+      ) {
+        this.thumbnails = this.getGalleryAlbom.images.slice(
+          this.firstThumbnailsIndex
+        );
+        this.thumbnails.push(
+          ...this.getGalleryAlbom.images.slice(
             0,
-            this.lastThumbnailsIndex - (this.images.length - 1)
+            this.lastThumbnailsIndex - (this.getGalleryAlbom.images.length - 1)
           )
         );
       } else {
-        this.thumbnails = this.images.slice(
+        this.thumbnails = this.getGalleryAlbom.images.slice(
           this.firstThumbnailsIndex,
           this.lastThumbnailsIndex + 1
         );
