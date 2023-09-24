@@ -1,0 +1,19 @@
+.fs-universal{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2{
+        font-size: 46px;
+    }
+    &__items-wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 30px;
+        span {
+            font-weight: 700;
+        }
+    }
+
+}
