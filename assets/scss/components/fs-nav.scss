@@ -24,10 +24,14 @@
         align-items: center;
         column-gap: 10px;
         &:hover {
-            opacity: 0.5;
+            color: $ton-4;
         }
         &:focus {
-            color: $green-active;
+            color: $ton-4;
+            outline: none;
+        }
+        &:active {
+            color: $ton-5;
             outline: none;
         }
         &.router-link-active {

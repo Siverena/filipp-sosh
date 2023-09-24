@@ -5,8 +5,8 @@
       'fs-section-titles--index': currentUrl === 'index',
     }"
   >
-    <h2 class="fs-h1"><slot name="h1"></slot></h2>
-    <h3
+    <p class="fs-h1"><slot name="main"></slot></p>
+    <p
       class="fs-section-titles__dop-text"
       v-if="showDop"
       :class="{
@@ -14,7 +14,7 @@
       }"
     >
       <slot name="dop"></slot>
-    </h3>
+    </p>
   </div>
 </template>
 <script>

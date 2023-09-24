@@ -6,11 +6,21 @@
           <Title>Основные сведения | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
         </Head>
         <FsSectionTitles>
-          <template v-slot:h1> Основные сведения </template>
+          <template v-slot:main> Основные сведения </template>
         </FsSectionTitles>
-        <article class="fs-common__item" v-for="(item, key) in getCommon" :key="key">
-          <FsH2 class="fs-common__item-heading"><template v-slot>{{ item.category }}</template></FsH2>
-          <div class="fs-common__item-row" v-for="index in item.fields" :key="index">
+        <article
+          class="fs-common__item"
+          v-for="(item, key) in getCommon"
+          :key="key"
+        >
+          <FsH2 class="fs-common__item-heading"
+            ><template v-slot>{{ item.category }}</template></FsH2
+          >
+          <div
+            class="fs-common__item-row"
+            v-for="index in item.fields"
+            :key="index"
+          >
             <p class="fs-common__item-title">{{ index.name }}</p>
             <p class="fs-common__item-text" v-html="index.text"></p>
           </div>
@@ -21,8 +31,8 @@
 </template>
 
 <script>
-import { mapActions, mapState } from "pinia";
-import { useCommonStore } from "@/stores/commonStore.js";
+import { mapActions, mapState } from 'pinia';
+import { useCommonStore } from '@/stores/commonStore.js';
 
 export default {
   data() {
@@ -31,10 +41,10 @@ export default {
     };
   },
   computed: {
-    ...mapState(useCommonStore, ["getCommon"]),
+    ...mapState(useCommonStore, ['getCommon']),
   },
   methods: {
-    ...mapActions(useCommonStore, ["fetchCommon"]),
+    ...mapActions(useCommonStore, ['fetchCommon']),
     async loadData() {
       try {
         this.loading = true;

@@ -35,7 +35,7 @@
           }"
         ></i>
         <a
-          class="fs-link fs-link--green"
+          class="fs-link fs-link--base"
           :href="link.documentSource"
           target="_blank"
         >

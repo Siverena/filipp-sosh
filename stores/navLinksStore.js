@@ -135,7 +135,7 @@ export const useNavLinksStore = defineStore('NavLinksStore', {
           name: 'Международное сотрудничество',
           link: '/sveden/cooperation',
           visibleInMenu: false,
-          visibleInSvedenMenu: false,
+          visibleInSvedenMenu: true,
         },
         {
           name: 'Доступная среда',

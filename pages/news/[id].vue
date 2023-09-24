@@ -5,7 +5,7 @@
     </Head>
     <div class="container">
       <FsSectionTitles>
-        <template v-slot:h1> {{ getNews.title }} </template>
+        <template v-slot:main> {{ getNews.title }} </template>
       </FsSectionTitles>
       <div class="fs-single-news__content">
         <div class="fs-single-news__head">
@@ -57,7 +57,7 @@
         </div>
         <div class="fs-single-news__links">
           <h2>Ссылки на ресурсы статьи</h2>
-          <a class="fs-link fs-link--green">
+          <a class="fs-link fs-link--base">
             <i class="pi pi-link pi--style"></i>
             <span
               >Структура и органы управления образовательной организацией</span

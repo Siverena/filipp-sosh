@@ -5,12 +5,12 @@
         <FsLogotype class="fs-header__logo" />
         <FsNav class="fs-header__nav" />
         <!-- <a
-          class="fs-header__phone fs-link fs-link--green"
+          class="fs-header__phone fs-link fs-link--base"
           href="tel:+74923771273"
           >+7 (492) 377-12-73</a
         > -->
         <p
-          class="fs-header__btn fs-link fs-link--green"
+          class="fs-header__btn fs-link fs-link--base"
           @click.stop="openOrder"
           @keydown.enter="openOrder"
           tabindex="0"

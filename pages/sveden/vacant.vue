@@ -8,7 +8,7 @@
     <div class="container">
       <div class="fs-vacant__content">
         <FsSectionTitles>
-          <template v-slot:h1>
+          <template v-slot:main>
             Вактантные места для прирема (перевода)
           </template>
         </FsSectionTitles>

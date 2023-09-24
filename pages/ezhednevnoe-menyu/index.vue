@@ -9,7 +9,7 @@
     <div class="container">
       <div class="fs-ezhednevnoe-menyu__content">
         <FsSectionTitles>
-          <template v-slot:h1>
+          <template v-slot:main>
             Организация питания в образовательной организации
           </template>
         </FsSectionTitles>

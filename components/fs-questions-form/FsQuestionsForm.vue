@@ -92,7 +92,7 @@
             <nuxt-link
               to="/agree"
               target="_blank"
-              class="fs-link fs-link--green fs-questions-form__link"
+              class="fs-link fs-link--base fs-questions-form__link"
               >политикой обработки персональных данных</nuxt-link
             >
             .

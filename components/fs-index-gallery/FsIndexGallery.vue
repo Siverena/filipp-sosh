@@ -2,14 +2,14 @@
   <section class="fs-index-gallery" v-if="!loading">
     <div class="fs-index-gallery__content">
       <FsSectionTitles class="fs-index-gallery__title">
-        <template v-slot:h1>Галерея</template>
+        <template v-slot:main>Галерея</template>
       </FsSectionTitles>
       <div class="fs-index-gallery__layout">
         <div class="fs-index-gallery__info">
           <p class="fs-h2">Жизнь нашей школы в фотографиях</p>
 
           <NuxtLink
-            class="fs-link fs-link--green fs-index-gallery__link"
+            class="fs-link fs-link--base fs-index-gallery__link"
             to="/gallery"
             >Посмотреть все альбомы</NuxtLink
           >
@@ -22,7 +22,7 @@
               :key="key"
             >
               <nuxt-link :to="`/gallery/${reason.nameEng}`">
-                <img :src="getStaticImageUrl(reason.mainImg)" alt="" />
+                <img :src="reason.mainImg" alt="" />
                 <div class="fs-index-gallery__reason-text">
                   {{ reason.name }}
                 </div>
@@ -37,7 +37,7 @@
             </div>
           </div>
           <NuxtLink
-            class="fs-link fs-link--green fs-index-gallery__link fs-index-gallery__link--mobile"
+            class="fs-link fs-link--base fs-index-gallery__link fs-index-gallery__link--mobile"
             to="/gallery"
             >Посмотреть все фото</NuxtLink
           >

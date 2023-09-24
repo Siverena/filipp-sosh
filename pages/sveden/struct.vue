@@ -8,7 +8,7 @@
     </Head>
     <div class="container">
       <FsSectionTitles>
-        <template v-slot:h1>
+        <template v-slot:main>
           Структура и органы управления образовательной организации
         </template>
       </FsSectionTitles>
