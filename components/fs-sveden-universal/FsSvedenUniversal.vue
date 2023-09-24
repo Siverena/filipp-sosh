@@ -1,25 +1,17 @@
 <template>
-    <section class="fs-universal">
-      <Head>
-        <Title>{{ title }}</Title>
-      </Head>
-      <div class="container">
-        <FsSectionTitles>
-          <template v-slot:h1> {{ articleTitle }} </template>
-        </FsSectionTitles>
-        <div v-for="item in content" class="fs-universal__items-wrapper">
-          <span>
-            {{ item.text }}
-          </span>
-          <p>
-            {{ item.answer }}
-          </p>
-        </div>
-      </div>
-    </section>
-  </template>
-  <script>
-  export default {
-    props: ['title', 'content', 'article-title']
-  }
-  </script>
+  <section class="fs-universal">
+    <div v-for="item in content" class="fs-universal__item">
+      <p class="fs-universal__text">
+        {{ item.text }}
+      </p>
+      <p class="fs-universal__answer">
+        {{ item.answer }}
+      </p>
+    </div>
+  </section>
+</template>
+<script>
+export default {
+  props: ['content'],
+};
+</script>

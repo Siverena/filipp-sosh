@@ -1,7 +1,7 @@
 <template>
   <section class="fs-history-school">
     <FsSectionTitles>
-      <template v-slot:h1> История школы </template>
+      <template v-slot:main> История школы </template>
     </FsSectionTitles>
     <div class="fs-history-school__container">
       <template v-for="(slide, key) in slides" :key="key">

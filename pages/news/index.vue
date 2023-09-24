@@ -5,7 +5,7 @@
     </Head>
     <div class="container">
       <FsSectionTitles>
-        <template v-slot:h1> Новости </template>
+        <template v-slot:main> Новости </template>
       </FsSectionTitles>
       <div class="fs-news-list__content">
         <article
@@ -30,7 +30,7 @@
             </div>
             <div class="fs-news-list__article-nav">
               <a
-                class="fs-link fs-link--green fs-news-list__article-ref"
+                class="fs-link fs-link--base fs-news-list__article-ref"
                 :href="`/news/${item.id}`"
                 >Читать новость</a
               >

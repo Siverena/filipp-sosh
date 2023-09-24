@@ -5,7 +5,7 @@
     </Head>
     <div class="container">
       <FsSectionTitles>
-        <template v-slot:h1> Доступная среда </template>
+        <template v-slot:main> Доступная среда </template>
       </FsSectionTitles>
       <div class="fs-page__content">
         <FsSection />

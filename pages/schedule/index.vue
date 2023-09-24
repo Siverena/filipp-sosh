@@ -6,7 +6,7 @@
     <div class="container">
       <div class="fs-schedule__content">
         <FsSectionTitles>
-          <template v-slot:h1> Расписание </template>
+          <template v-slot:main> Расписание </template>
         </FsSectionTitles>
         <FsCallSchedule />
         <p class="fs-h2 fs-schedule__title">Расписание уроков</p>

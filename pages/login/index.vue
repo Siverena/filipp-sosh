@@ -2,7 +2,7 @@
   <section class="fs-auth no-tab">
     <div class="container">
       <FsSectionTitles class="fs-auth__title">
-        <template v-slot:h1>Вход в личный кабинет</template>
+        <template v-slot:main>Вход в личный кабинет</template>
       </FsSectionTitles>
 
       <form
@@ -61,7 +61,7 @@
         </div>
         <nuxt-link
           to="/registration"
-          class="fs-link fs-link--green fs-auth__link-reg"
+          class="fs-link fs-link--base fs-auth__link-reg"
           >Зарегистрироваться</nuxt-link
         >
       </form>

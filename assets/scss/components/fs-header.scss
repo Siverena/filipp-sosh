@@ -3,7 +3,6 @@
         display: flex;
         padding: 15px 40px;
         align-items: center;
-        background: rgba(255, 255, 255, 0.2);
         z-index: 1;
         position: relative;
     }
@@ -16,18 +15,28 @@
         background-size: cover;
     }
     &__logo {
-        stroke: $green-normal;
-        fill: $green-normal;
+        stroke: $ton-2;
+        fill: $ton-2;
         width: 150px;
         margin-right: auto;
         &:hover {
-            opacity: 0.5;
+            fill: $ton-4;
+            path {
+                stroke: $ton-4;
+            }
         }
         &:focus {
             outline: none;
-            fill: $green-active;
+            fill: $ton-4;
             path {
-                stroke: $green-active;
+                stroke: $ton-4;
+            }
+        }
+        &:active {
+            outline: none;
+            fill: $ton-5;
+            path {
+                stroke: $ton-5;
             }
         }
     }
@@ -57,18 +66,18 @@
         cursor: pointer;
         &:hover {
             rect {
-                fill: $green-hover;
+                fill: $ton-4;
             }
         }
         &:active {
             rect {
-                fill: $green-active;
+                fill: $ton-5;
             }
         }
         &:focus {
             outline: none;
             rect {
-                fill: $green-active;
+                fill: $ton-4;
             }
         }
     }

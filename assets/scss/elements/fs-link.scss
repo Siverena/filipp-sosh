@@ -7,7 +7,7 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
-    color: $green-normal;
+    // color: $ton-5;
     &--white {
         color: $text-color;
         &:hover {
@@ -23,19 +23,19 @@
             outline: none;
         }
     }
-    &--green {
-        color: $green-normal;
+    &--base {
+        color: $ton-5;
         &:hover {
-            color: $green-hover;
+            color: $ton-2;
         }
         &:active {
-            color: $green-active;
+            color: $ton-4;
         }
         &:disabled {
             color: $text-disabled;
         }
         &:focus {
-            color: $green-active;
+            color: $ton-2;
             outline: none;
         }
     }

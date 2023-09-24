@@ -6,7 +6,7 @@
     <div class="container">
       <div class="fs-education__content">
         <FsSectionTitles>
-          <template v-slot:h1> Образование </template>
+          <template v-slot:main> Образование </template>
         </FsSectionTitles>
         <div class="fs-page__content">
           <FsSection />

@@ -3,12 +3,15 @@
     <div class="container">
       <div class="fs-achievements__content">
         <FsSectionTitles class="fs-achievements__titles">
-          <template v-slot:h1>Достижения школы</template>
+          <template v-slot:main>Достижения школы</template>
         </FsSectionTitles>
         <div class="fs-achievements__items">
           <div class="fs-achievements__item">
             <FsHat />
-            <p class="fs-achievements__item-title fs-h2">Лучший класс <br> школы</p>
+            <p class="fs-achievements__item-title fs-h2">
+              Лучший класс <br />
+              школы
+            </p>
             <p class="fs-achievements__item-text">
               Поздравляем наших учеников с заслуженной победой в конкурсе
               талантов. Приглашаем на церемонию награждения!
@@ -16,7 +19,9 @@
           </div>
           <div class="fs-achievements__item">
             <FsExcellent />
-            <p class="fs-achievements__item-title fs-h2">8 отличников, 15 ударников</p>
+            <p class="fs-achievements__item-title fs-h2">
+              8 отличников, 15 ударников
+            </p>
             <p class="fs-achievements__item-text">
               Поздравляем наших учеников с заслуженной победой в конкурсе
               талантов. Приглашаем на церемонию награждения!

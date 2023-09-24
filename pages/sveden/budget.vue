@@ -8,7 +8,9 @@
     <div class="container">
       <div class="fs-budget__content">
         <FsSectionTitles>
-          <template v-slot:h1> Финансово хозяйственная деятельность </template>
+          <template v-slot:main>
+            Финансово хозяйственная деятельность
+          </template>
         </FsSectionTitles>
         <div class="fs-page__content">
           <FsSection />

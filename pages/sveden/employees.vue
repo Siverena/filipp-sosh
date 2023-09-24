@@ -6,7 +6,7 @@
     <div class="container">
       <div class="fs-employees__content">
         <FsSectionTitles>
-          <template v-slot:h1> Руководство. Педагогический состав </template>
+          <template v-slot:main> Руководство. Педагогический состав </template>
         </FsSectionTitles>
       </div>
     </div>

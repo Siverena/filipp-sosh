@@ -4,7 +4,7 @@
       <Title>Условия использования файлов cookie | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
     </Head>
     <FsSectionTitles>
-      <template v-slot:h1> Условия использования файлов cookie </template>
+      <template v-slot:main> Условия использования файлов cookie </template>
     </FsSectionTitles>
     <div class="container">
       <div class="content">

@@ -1,20 +1,31 @@
 <template>
   <section class="fs-cooperation">
-    <FsSvedenUniversal :title="this.title" :articleTitle="this.articleTitle" :content="this.content"></FsSvedenUniversal>
+    <Head>
+      <Title>Международное сотрудничество | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
+    </Head>
+    <div class="container">
+      <FsSectionTitles class="fs-auth__title">
+        <template v-slot:main>Международное сотрудничество</template>
+      </FsSectionTitles>
+      <FsSvedenUniversal :content="content"></FsSvedenUniversal>
+    </div>
   </section>
-
 </template>
 <script>
-  export default {
-    data: function () {
-      return {
-        title: 'Международное сотрудничество | МКОУ ФИЛИППОВСКАЯ СОШ',
-        content: [
-            { text: 'Информация о заключенных и планируемых к заключению договорах с иностранными и (или) международными организациями по вопросам образования и науки (при наличии):', answer: 'не имеется'},
-            { text: 'Информация о международной аккредитации образовательных программ (при наличии):', answer: 'не имеется'}
-          ],
-        articleTitle: 'Международное сотрудничество'
-        }
-      }
-    }
+export default {
+  data: function () {
+    return {
+      content: [
+        {
+          text: 'Информация о заключенных и планируемых к заключению договорах с иностранными и (или) международными организациями по вопросам образования и науки (при наличии):',
+          answer: 'не имеется',
+        },
+        {
+          text: 'Информация о международной аккредитации образовательных программ (при наличии):',
+          answer: 'не имеется',
+        },
+      ],
+    };
+  },
+};
 </script>

@@ -64,7 +64,7 @@
           <nuxt-link
             to="/agree"
             target="_blank"
-            class="fs-link fs-link--green fs-order__link"
+            class="fs-link fs-link--base fs-order__link"
             >cогласие на обработку персональных данных</nuxt-link
           >
           .

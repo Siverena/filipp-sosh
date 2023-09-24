@@ -18,7 +18,7 @@
           <Title>{{ getGalleryAlbom.name }} | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
         </Head>
         <FsSectionTitles>
-          <template v-slot:h1> {{ getGalleryAlbom.name }} </template>
+          <template v-slot:main> {{ getGalleryAlbom.name }} </template>
         </FsSectionTitles>
         <div class="fs-gallery__list">
           <img

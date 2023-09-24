@@ -6,7 +6,7 @@
     <div class="container">
       <div class="fs-gallery__content">
         <FsSectionTitles>
-          <template v-slot:h1> Галерея </template>
+          <template v-slot:main> Галерея </template>
         </FsSectionTitles>
         <div class="fs-gallery__loader" v-if="loading">
           <div class="fs-gallery__loader-item" v-for="key in 3">
