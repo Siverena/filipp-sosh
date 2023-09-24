@@ -70,7 +70,7 @@
             transition: filter 3ms;
         }
         &:focus {
-            outline: 4px solid #344c1194;
+            outline: 4px solid $ton-4;
         }
     }
     &__loader {

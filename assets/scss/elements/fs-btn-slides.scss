@@ -9,13 +9,14 @@
     justify-content: center;
     border-radius: 5px;
     path {
-        fill: $text_color;
+        fill: $ton-5;
     }
 
     &:hover {
         background-color: $ton-5;
         path {
             transition: all 1s;
+            fill: $text-color;
         }
     }
     &:active {
@@ -24,6 +25,10 @@
     &:focus {
         background-color: $ton-5;
         outline: none;
+        path {
+            transition: all 1s;
+            fill: $text-color;
+        }
     }
 }
 @media (max-width: grid-width($tablet)) {
