@@ -1,17 +1,18 @@
 <template>
   <section class="fs-paid-edu">
-    <Head>
-      <Title>Платные образовательные услуги | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
-    </Head>
-    <div class="fs-paid-edu__wrapper">
-      <FsSectionTitles>
-        <template v-slot:h1> Платные образовательные услуги </template>
-      </FsSectionTitles>
-      <div class="fs-paid-edu__items-wrapper">
-        <span class="fs-paid-edu__content">
-          не оказываются
-        </span>
-      </div>
-    </div>
+    <FsSvedenUniversal :title="this.title" :articleTitle="this.articleTitle" :content="this.content"></FsSvedenUniversal>
   </section>
 </template>
+<script>
+  export default {
+    data: function () {
+      return {
+        title: 'Платные образовательные услуги | МКОУ ФИЛИППОВСКАЯ СОШ',
+        content: [
+            { answer: 'не оказываются'}
+          ],
+        articleTitle: 'Платные образовательные услуги'
+        }
+      }
+    }
+</script>

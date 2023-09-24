@@ -1,28 +1,20 @@
 <template>
   <section class="fs-cooperation">
-    <Head>
-      <Title>Стипендии и меры поддержки обучающихся | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
-    </Head>
-    <div class="fs-cooperation__wrapper">
-      <FsSectionTitles>
-        <template v-slot:h1> Международное сотрудничество </template>
-      </FsSectionTitles>
-      <div class="fs-cooperation__items-wrapper">
-        <span class="fs-cooperation__title">
-          Информация о заключенных и планируемых к заключению договорах с иностранными и (или) международными организациями по вопросам образования и науки (при наличии):
-        </span>
-        <span class="fs-cooperation__content">
-          не имеется
-        </span>
-      </div>
-      <div class="fs-cooperation__items-wrapper">
-        <span class="fs-cooperation__title">
-          Информация о международной аккредитации образовательных программ (при наличии):
-        </span>
-        <span class="fs-cooperation__content">
-          не имеется
-        </span>
-      </div>
-    </div>
+    <FsSvedenUniversal :title="this.title" :articleTitle="this.articleTitle" :content="this.content"></FsSvedenUniversal>
   </section>
+
 </template>
+<script>
+  export default {
+    data: function () {
+      return {
+        title: 'Международное сотрудничество | МКОУ ФИЛИППОВСКАЯ СОШ',
+        content: [
+            { text: 'Информация о заключенных и планируемых к заключению договорах с иностранными и (или) международными организациями по вопросам образования и науки (при наличии):', answer: 'не имеется'},
+            { text: 'Информация о международной аккредитации образовательных программ (при наличии):', answer: 'не имеется'}
+          ],
+        articleTitle: 'Международное сотрудничество'
+        }
+      }
+    }
+</script>
