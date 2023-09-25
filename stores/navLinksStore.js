@@ -3,19 +3,18 @@ export const useNavLinksStore = defineStore('NavLinksStore', {
   state: () => {
     return {
       navLinks: [
+        // {
+        //   name: 'О нас ',
+        //   link: '/',
+        //   visibleInMenu: true,
+        //   visibleInSvedenMenu: false,
+        //   child: [],
+        // },
         {
-          name: 'О нас ',
-          link: '/',
+          name: 'Расписание',
+          link: '/schedule',
           visibleInMenu: true,
           visibleInSvedenMenu: false,
-          child: [
-            {
-              name: 'Сведения об образовательной организации',
-              link: '/sveden',
-              visibleInMenu: true,
-              visibleInSvedenMenu: true,
-            },
-          ],
         },
         {
           name: 'Новости',
@@ -29,11 +28,106 @@ export const useNavLinksStore = defineStore('NavLinksStore', {
           visibleInMenu: true,
           visibleInSvedenMenu: false,
         },
+
         {
-          name: 'Расписание',
-          link: '/schedule',
+          name: 'Сведения об образовательной организации',
+          link: '/sveden',
           visibleInMenu: true,
-          visibleInSvedenMenu: false,
+          visibleInSvedenMenu: true,
+          child: [
+            {
+              name: 'Основные сведения',
+              link: '/sveden/common',
+              visibleInMenu: false,
+              visibleInSvedenMenu: true,
+            },
+            {
+              name: 'Структура и органы управления образовательной организации',
+              link: '/sveden/struct',
+              visibleInMenu: false,
+              visibleInSvedenMenu: true,
+            },
+            {
+              name: 'Документы',
+              link: '/sveden/document',
+              visibleInMenu: false,
+              visibleInSvedenMenu: true,
+            },
+            {
+              name: 'Образование',
+              link: '/sveden/education',
+              visibleInMenu: false,
+              visibleInSvedenMenu: true,
+            },
+            {
+              name: 'Образовательные стандарты',
+              link: '/sveden/eduStandarts',
+              visibleInMenu: false,
+              visibleInSvedenMenu: true,
+            },
+            {
+              name: 'Руководство. Педагогический состав',
+              link: '/sveden/employees',
+              visibleInMenu: false,
+              visibleInSvedenMenu: true,
+            },
+            {
+              name: 'Материально-техническое обеспечение и оснащенность образовательного процесса',
+              link: '/sveden/objects',
+              visibleInMenu: false,
+              visibleInSvedenMenu: true,
+            },
+            {
+              name: 'Стипендии и меры поддержки обучающихся',
+              link: '/sveden/grants',
+              visibleInMenu: false,
+              visibleInSvedenMenu: true,
+            },
+            {
+              name: 'Платные образовательные услуги',
+              link: '/sveden/paid_edu',
+              visibleInMenu: false,
+              visibleInSvedenMenu: true,
+            },
+            {
+              name: 'Финансово-хозяйственная деятельность',
+              link: '/sveden/budget',
+              visibleInMenu: false,
+              visibleInSvedenMenu: true,
+            },
+            {
+              name: 'Вакантные места для приема (перевода)',
+              link: '/sveden/vacant',
+              visibleInMenu: false,
+              visibleInSvedenMenu: true,
+            },
+            {
+              name: 'Международное сотрудничество',
+              link: '/sveden/cooperation',
+              visibleInMenu: false,
+              visibleInSvedenMenu: true,
+            },
+            {
+              name: 'Доступная среда',
+              link: '/sveden/dsreda',
+              visibleInMenu: false,
+              visibleInSvedenMenu: false,
+            },
+
+            {
+              name: 'Школьное питание',
+              link: '/ezhednevnoe-menyu',
+              visibleInMenu: false,
+              visibleInSvedenMenu: true,
+            },
+
+            {
+              name: 'Формы обратной связи для родителей обучающихся и ответы на вопросы родителей по питанию',
+              link: '/formy-obratnoj-svyazi-dlya-roditelej-obuchayushhihsya-i-otvety-na-voprosy-roditelej-po-pitaniyu',
+              visibleInMenu: false,
+              visibleInSvedenMenu: false,
+            },
+          ],
         },
         {
           name: 'Контакты',
