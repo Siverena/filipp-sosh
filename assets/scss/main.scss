@@ -7,7 +7,7 @@
 
 /**********
 /* MIXINS */
-
+@import "./mixin/fs-loader-animation.scss";
 /**********
 /* FUNCTIONS */
 @import "./functions.scss";
@@ -62,10 +62,11 @@
 @import "./components/fs-news-list.scss";
 @import "./components/fs-accordeon.scss";
 @import "./components/fs-socials.scss";
+@import "./components/fs-objects.scss";
+@import "./components/fs-objects-slider.scss";
 @import "./components/fs-sveden-universal.scss";
 @import "./components/fs-questions-form.scss";
 @import "./components/fs-faq.scss";
-
 
 /**********
 /* PAGES */

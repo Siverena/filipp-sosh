@@ -1,80 +1,86 @@
 <template>
   <section class="fs-objects">
     <Head>
-      <Title
-        >Материально-техническое обеспечение и оснащенность образовательного
-        процесса | МКОУ ФИЛИППОВСКАЯ СОШ</Title
-      >
+      <Title>
+        Материально-техническое обеспечение и оснащенность образовательного процесса | МКОУ ФИЛИППОВСКАЯ СОШ
+      </Title>
     </Head>
     <div class="container">
-      <FsSectionTitles>
-        <template v-slot:main>
-          Материально-техническое обеспечение и оснащенность образовательного
-          процесса
-        </template>
-      </FsSectionTitles>
       <div class="fs-objects__content">
-        <Accordion :multiple="true" :class="'fs-accordion'">
-          <AccordionTab>
-            <span>
-              Оборудованные учебные кабинеты, объекты для проведения
-              практических занятий а так же приспособленных для использования
-              инвалидами и лицами с ограниченными возможностями здоровья
-            </span>
-          </AccordionTab>
-        </Accordion>
-        <div class="fs-objects__item fs-objects__item--bg1 bg-1">
-          <div class="fs-objects__item-row">
-            <div class="fs-objects-info">
-              <p class="fs-h2 fs-objects-info__title">Кабинет информатики</p>
-              <p class="fs-objects-info__text">
-                Объект оснащен 6 персональными компьютерами 1 из которых с
-                подключением к сети Интернет. Кабинет предназначен для изучения
-                основ компьютерной грамотности и практических занятий
-                обучающихся.
-              </p>
+        <FsSectionTitles>
+          <template v-slot:h1> Материально-техническое обеспечение и оснащенность образовательного процесса </template>
+        </FsSectionTitles>
+        <div class="fs-objects__loader"  v-if="!loading">
+          <div class="fs-objects__loader-row1"></div>
+          <div class="fs-objects__loader-row2">
+            <div class="fs-objects__loader-col1">
+              <div class="fs-objects__loader-line1"></div>
+              <div class="fs-objects__loader-line2"></div>
             </div>
-          </div>
-          <div class="fs-objects-images">
-            <!-- <img src="~/assets/img/fs-objects/cad-informatics.jpg" alt="" /> -->
+            <div class="fs-objects__loader-col2"></div>
           </div>
         </div>
-        <div class="fs-objects__item1 bg-2">
-          <div class="fs-objects__item-row">
-            <div class="fs-objects-info">
-              <p class="fs-h2 fs-objects-info__title1">Кабинет технологи</p>
-              <div class="fs-objects-info__text">
-                <span>
-                  Объект предназначен для проведения практических работ
-                  формирующих представления о составляющих техносферы, о
-                  современном производстве и о распространенных в нем
-                  технологиях.Кабинет оборудован швейными машинами, доской
-                  гладильной. Место учителя оборудовано (проектор, экран).
-                </span>
-                <span>
-                  Мастерская — основная учебно-методическая и практическая база
-                  для выполнения учебных программ по предмету «Технология» для
-                  учащихся 5-8 классов.
-                </span>
-              </div>
-            </div>
-            <div class="fs-objects-images1">
-              <!-- <img src="~/assets/img/fs-objects/cab-technology.jpg" alt="" /> -->
-            </div>
-          </div>
-          <div class="fs-objects__item-row">
-            <div class="fs-objects-slider">
-              <div class="fs-index-objects__nav">
-                <FsBtnSlidesPrev @click="prevReason" class="fs-btn-slides1" />
-                <FsBtnSlidesNext @click="nextReason" class="fs-btn-slides1" />
-                <div class="fs-index-objects__count">
-                  {{ activeReason + 1 }} / {{ reasonsCount }}
+        <div class="fs-objects__content-wrapper" v-if="!loading">
+          <FsAccordeon>
+            <FsAccordeonTab :currentActive="currentActive">
+              <template v-slot:content>
+                <p>
+                  Оборудованные учебные кабинеты, объекты для проведения практических занятий а так же приспособленных
+                  для использования инвалидами и лицами с ограниченными возможностями здоровья
+                </p>
+              </template>
+            </FsAccordeonTab>
+          </FsAccordeon>
+          <article v-for="(cabinet, key) in getObjects" :key="key">
+            <div class="fs-objects__item" :class="{ 'fs-objects__item--rev': key % 2 }">
+              <div class="fs-objects__info">
+                <div class="fs-h2 fs-objects__info-title" :class="{ 'fs-objects__info-title--rev': key % 2 }">
+                  {{ cabinet.title }}
                 </div>
+                <p class="fs-objects__info-text" v-html=" cabinet.text"></p>
               </div>
+              <FsObjectsSlider :arrCabinet="cabinet" :inCabinet="key" />
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script>
+import { mapActions, mapState } from "pinia";
+import { useObjectsStore } from "@/stores/objectsStore.js";
+
+export default {
+  data() {
+    return {
+      loading: true,
+      currentActive: false,
+      current: 0,
+    };
+  },
+  computed: {
+    ...mapState(useObjectsStore, ["getObjects", "isLoading"]),
+  },
+  methods: {
+    ...mapActions(useObjectsStore, ["fetchObjects"]),
+    async loadData() {
+      try {
+        this.loading = true;
+        await this.fetchObjects();
+        this.loading = false;
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    update(cnt) {
+      this.current = cnt;
+      console.log(cnt);
+    },
+  },
+  async created() {
+    this.loadData();
+  },
+};
+</script>

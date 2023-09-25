@@ -1,6 +1,7 @@
 import { mapState, mapActions } from 'pinia';
 import { useGalleryStore } from '~/stores/galleryStore.js';
 import { useNavLinksStore } from '@/stores/navLinksStore.js';
+import { useNewsStore } from '@/stores/newsStore.js';
 
 import currentUrl from '@/utils/mixins/current-url';
 
@@ -18,6 +19,7 @@ export default {
       getGallery: 'getGallery',
       galleryLoading: 'isLoading',
     }),
+    ...mapState(useNewsStore, ['getNews']),
 
     showBreadcrumbs() {
       return this.currentUrl !== 'index';
@@ -43,16 +45,31 @@ export default {
       this.links = [];
       const arr = this.$route.fullPath.split('/');
       let link = '';
-      //Обрабатываем элементы, достаем данные из навигации
-      // arr.slice(1).forEach((el, index) => {
-      //   link = link + '/' + el;
-      //   console.log(link)
-      //   let elem = this.getElem(this.getNavLinks, link);
-      //   this.links.push({
-      //     name: elem.name,
-      //     link: elem.link,
-      //   });
-      // })
+      // Обрабатываем элементы, достаем данные из навигации
+      arr.slice(1).forEach((el, index) => {
+        link = link + '/' + el;
+        // console.log(index)     
+        if (index === 1 && arr[1] !== 'sveden') {  // 3й элемент 
+          if (arr[1] === 'gallery') {
+            this.links.push({
+              name: this.getGallery.name,
+              link: '/' + this.getGallery.nameEng,
+            });
+          }
+          if (arr[1] === 'news') {
+            this.links.push({
+              name: this.getNews.title,
+              link: '/' + this.getNews.id,
+            });
+          }
+        } else { //2-ой элемент
+          const elem = this.getElem(this.getNavLinks, link);
+          this.links.push({
+            name: elem.name,
+            link: elem.link,
+          });
+        }
+      })
     },
     getElem(arr, needle) {
       let foundElem = null;
