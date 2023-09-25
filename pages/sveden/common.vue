@@ -8,7 +8,7 @@
         <FsSectionTitles>
           <template v-slot:main> Основные сведения </template>
         </FsSectionTitles>
-        <div class="fs-common__loader" v-if="!loading">
+        <div class="fs-common__loader" v-if="loading">
           <div class="fs-common__loader-wrapper">
             <div class="fs-common__loader-line1"></div>
             <div class="fs-common__loader-row">

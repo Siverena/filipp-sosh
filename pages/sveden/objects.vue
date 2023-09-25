@@ -10,7 +10,7 @@
         <FsSectionTitles>
           <template v-slot:h1> Материально-техническое обеспечение и оснащенность образовательного процесса </template>
         </FsSectionTitles>
-        <div class="fs-objects__loader"  v-if="!loading">
+        <div class="fs-objects__loader"  v-if="loading">
           <div class="fs-objects__loader-row1"></div>
           <div class="fs-objects__loader-row2">
             <div class="fs-objects__loader-col1">
