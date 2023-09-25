@@ -2,7 +2,7 @@
   <section class="fs-auth no-tab">
     <div class="container">
       <FsSectionTitles class="fs-auth__title">
-        <template v-slot:h1>Регистрация</template>
+        <template v-slot:main>Регистрация</template>
       </FsSectionTitles>
       <form
         class="fs-auth__content"

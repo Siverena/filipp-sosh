@@ -4,11 +4,20 @@
       <Title>Платные образовательные услуги | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
     </Head>
     <div class="container">
-      <div class="fs-paid-edu__content">
-        <FsSectionTitles>
-          <template v-slot:h1> Платные образовательные услуги </template>
-        </FsSectionTitles>
-      </div>
+      <FsSectionTitles class="fs-auth__title">
+        <template v-slot:main>Платные образовательные услуги</template>
+      </FsSectionTitles>
+
+      <FsSvedenUniversal :content="content"></FsSvedenUniversal>
     </div>
   </section>
 </template>
+<script>
+export default {
+  data: function () {
+    return {
+      content: [{ answer: 'не оказываются' }],
+    };
+  },
+};
+</script>

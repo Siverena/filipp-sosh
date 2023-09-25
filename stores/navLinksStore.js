@@ -135,11 +135,25 @@ export const useNavLinksStore = defineStore('NavLinksStore', {
           name: 'Международное сотрудничество',
           link: '/sveden/cooperation',
           visibleInMenu: false,
-          visibleInSvedenMenu: false,
+          visibleInSvedenMenu: true,
         },
         {
           name: 'Доступная среда',
           link: '/sveden/dsreda',
+          visibleInMenu: false,
+          visibleInSvedenMenu: false,
+        },
+
+        {
+          name: 'Школьное питание',
+          link: '/ezhednevnoe-menyu',
+          visibleInMenu: false,
+          visibleInSvedenMenu: true,
+        },
+
+        {
+          name: 'Формы обратной связи для родителей обучающихся и ответы на вопросы родителей по питанию',
+          link: '/formy-obratnoj-svyazi-dlya-roditelej-obuchayushhihsya-i-otvety-na-voprosy-roditelej-po-pitaniyu',
           visibleInMenu: false,
           visibleInSvedenMenu: false,
         },

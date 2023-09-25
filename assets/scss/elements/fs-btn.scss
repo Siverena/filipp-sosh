@@ -7,23 +7,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 60px;
+    padding: 15px 45px;
     box-sizing: border-box;
     border-radius: 10px;
     &--green {
-        transition: background-color 1s;
+        transition: background-color 0.5s;
         color: $text-color;
-        background-color: $green-normal;
+        background-color: $ton-4;
         border: none;
         &:hover {
-            transition: background-color 1s;
-            background-color: $green-hover;
+            transition: background-color 0.5s;
+            background-color: $ton-5;
         }
         &:active {
-            background-color: $green-active;
+            background-color: $ton-2;
         }
         &:focus {
-            background-color: $green-active;
+            background-color: $ton-5;
             outline: none;
         }
         &:disabled {
@@ -35,21 +35,21 @@
         color: $text-color;
         background-color: transparent;
         border: 2px solid $text-color;
-        transition: all 1s;
+        transition: all 0.5s;
         &:hover {
-            transition: all 1s;
-            background-color: $text-color;
-            color: $text-primary;
+            transition: all 0.5s;
+            background-color: $ton-5;
+            color: $text-color;
         }
         &:active {
-            background-color: $green-active;
-            border-color: $green-active;
+            background-color: $ton-4;
+            border-color: $ton-4;
             color: $text-primary;
         }
         &:focus {
-            background-color: $green-active;
-            border-color: $green-active;
-            color: $text-primary;
+            background-color: $ton-5;
+            border-color: $ton-5;
+            color: $text-color;
             outline: none;
         }
         &:disabled {
@@ -62,9 +62,9 @@
         color: $green-hover;
         background-color: transparent;
         border: 2px solid $green-hover;
-        transition: all 1s;
+        transition: all 0.5s;
         &:hover {
-            transition: all 1s;
+            transition: all 0.5s;
             background-color: $text-color;
             color: $text-primary;
         }

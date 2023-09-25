@@ -25,18 +25,26 @@
             class="fs-mob-menu__info-item fs-mob-menu__mail"
           >
             <FsPhone />
-            +7 (492) 377-12-73
+            +7 (49237) 7-12-73
           </a>
           <a
-            href="mailto:info@gromovopark.ru"
+            href="tel:+74923771274"
+            class="fs-mob-menu__info-item fs-mob-menu__mail"
+          >
+            <FsPhone />
+            +7 (49237) 7-12-74
+          </a>
+          <a
+            href="mailto:Filippovskay-sl@yandex.ru"
             class="fs-mob-menu__info-item fs-mob-menu__mail"
           >
             <FsMail />
-            info@gromovopark.ru
+            Filippovskay-sl@yandex.ru
           </a>
           <p class="fs-mob-menu__info-item fs-mob-menu__location">
             <FsPin />
-            Ленинградская область, Приозерский район, поселок Красноармейское
+            Владимирская область, Киржачский район, село Филипповское, Советская
+            улица, 26
           </p>
         </div>
       </div>

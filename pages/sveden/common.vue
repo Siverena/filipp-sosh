@@ -6,7 +6,7 @@
           <Title>Основные сведения | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
         </Head>
         <FsSectionTitles>
-          <template v-slot:h1> Основные сведения </template>
+          <template v-slot:main> Основные сведения </template>
         </FsSectionTitles>
         <div class="fs-common__loader" v-if="!loading">
           <div class="fs-common__loader-wrapper">
@@ -41,8 +41,8 @@
 </template>
 
 <script>
-import { mapActions, mapState } from "pinia";
-import { useCommonStore } from "@/stores/commonStore.js";
+import { mapActions, mapState } from 'pinia';
+import { useCommonStore } from '@/stores/commonStore.js';
 
 export default {
   data() {
@@ -51,10 +51,10 @@ export default {
     };
   },
   computed: {
-    ...mapState(useCommonStore, ["getCommon"]),
+    ...mapState(useCommonStore, ['getCommon']),
   },
   methods: {
-    ...mapActions(useCommonStore, ["fetchCommon"]),
+    ...mapActions(useCommonStore, ['fetchCommon']),
     async loadData() {
       try {
         this.loading = true;

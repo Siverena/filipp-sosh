@@ -6,7 +6,7 @@
     <div class="container">
       <div class="fs-schedule__content">
         <FsSectionTitles>
-          <template v-slot:h1> Расписание </template>
+          <template v-slot:main> Расписание </template>
         </FsSectionTitles>
         <FsCallSchedule />
         <p class="fs-h2 fs-schedule__title">Расписание уроков</p>
@@ -19,7 +19,7 @@
         </div>
         <FsAccordeon v-if="!loading">
           <FsAccordeonTab
-            v-for="(item, key) in getSchedule.data"
+            v-for="(item, key) in getSchedule"
             :key="key"
             :index="key"
             :currentActive="currentActive"
@@ -53,7 +53,6 @@
 <script>
 import { mapActions, mapState } from 'pinia';
 import { useScheduleStore } from '@/stores/scheduleStore.js';
-import { useUiStore } from '@/stores/uiStore.js';
 export default {
   data() {
     return {

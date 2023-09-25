@@ -2,7 +2,7 @@
   <div class="fs-news" v-if="!loading">
     <div class="container">
       <FsSectionTitles>
-        <template v-slot:h1>Последние новости</template>
+        <template v-slot:main>Последние новости</template>
         <template v-slot:dop
           >В нашей школе учаться только на четверки и пятерки
         </template>
@@ -24,7 +24,9 @@
               {{ item.description }}
             </span>
             <span class="fs-news__reference">
-              <NuxtLink :to="`news/${item.id}`" class="fs-link fs-news__link"
+              <NuxtLink
+                :to="`news/${item.id}`"
+                class="fs-link fs-link--base fs-news__link"
                 >Читать далее</NuxtLink
               >
             </span>

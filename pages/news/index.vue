@@ -5,7 +5,7 @@
     </Head>
     <div class="container">
       <FsSectionTitles>
-        <template v-slot:h1> Новости </template>
+        <template v-slot:main> Новости </template>
       </FsSectionTitles>
       <div class="fs-news-list__content">
         <article
@@ -14,13 +14,13 @@
           :key="key"
         >
           <div class="fs-news-list__article-image">
-            <img :src="getStaticImageUrl(item.images[0])" alt="foto" />
+            <img :src="item.mainImg" alt="foto" />
           </div>
           <div class="fs-news-list__article-content">
             <div class="fs-news-list__article-title">
               <h2 class="fs-h2">{{ item.title }}</h2>
               <span class="fs-news-list__article-date">
-                Опубликовано: {{ item.publDate }}
+                Опубликовано: {{ item.created_at }}
               </span>
             </div>
             <div class="fs-news-list__article-preview">
@@ -30,7 +30,7 @@
             </div>
             <div class="fs-news-list__article-nav">
               <a
-                class="fs-link fs-link--green fs-news-list__article-ref"
+                class="fs-link fs-link--base fs-news-list__article-ref"
                 :href="`/news/${item.id}`"
                 >Читать новость</a
               >
@@ -41,7 +41,7 @@
     </div>
   </section>
 </template>
-<script>
+<!-- <script>
 import { mapActions, mapState } from 'pinia';
 import { useNewsStore } from '@/stores/newsStore.js';
 import imageUrl from '@/utils/mixins/image-url.js';
@@ -52,6 +52,37 @@ export default {
     };
   },
   mixins: [imageUrl],
+  computed: {
+    ...mapState(useNewsStore, ['getNews']),
+  },
+  methods: {
+    ...mapActions(useNewsStore, ['fetchNews']),
+    async loadData() {
+      try {
+        this.loading = true;
+        await this.fetchNews();
+        this.loading = false;
+      } catch (e) {
+        console.log(e);
+      }
+    },
+  },
+  async created() {
+    this.loadData();
+  },
+};
+</script> -->
+
+<script>
+import { mapActions, mapState } from 'pinia';
+import { useNewsStore } from '@/stores/newsStore.js';
+export default {
+  data() {
+    return {
+      loading: true,
+      currentActive: false,
+    };
+  },
   computed: {
     ...mapState(useNewsStore, ['getNews']),
   },

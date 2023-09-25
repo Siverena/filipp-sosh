@@ -8,7 +8,7 @@
     </Head>
     <div class="container">
       <FsSectionTitles>
-        <template v-slot:h1>
+        <template v-slot:main>
           Согласие на обработку персональных данных
         </template>
       </FsSectionTitles>

@@ -1,0 +1,59 @@
+.fs-section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    &__text {
+        a {
+            color: $green-normal;
+            &:hover {
+                color: $green-hover;
+            }
+            &:active {
+                color: $green-active;
+            }
+        }
+        ul {
+            padding: 0;
+            list-style: none;
+            padding-left: 16px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            li {
+                align-items: center;
+
+                position: relative;
+                &::before {
+                    content: " ";
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 2px;
+                    background: $green-normal;
+                    margin-left: 2px;
+                    flex-shrink: 0;
+                    position: absolute;
+                    left: -16px;
+                    top: 4px;
+                }
+            }
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+    &__link {
+        display: flex;
+        align-items: baseline;
+        column-gap: 5px;
+        color: $green-normal;
+        a {
+            text-decoration: none;
+        }
+    }
+    &__link-pi {
+        color: $text-primary;
+    }
+}

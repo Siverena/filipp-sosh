@@ -5,7 +5,7 @@
     </Head>
     <div class="container">
       <FsSectionTitles>
-        <template v-slot:h1> Контакты </template>
+        <template v-slot:main> Контакты </template>
       </FsSectionTitles>
       <div class="fs-contacts__content">
         <div class="fs-contacts__items">
