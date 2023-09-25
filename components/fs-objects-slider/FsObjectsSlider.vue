@@ -7,7 +7,7 @@
         </div>
       </div>
     </div>
-    <div class="fs-objects-slider__nav" :class="{ 'fs-objects-slider__nav--rev': inCabinet % 2 }">
+    <div class="fs-objects-slider__nav" :class="{ 'fs-objects-slider__nav--rev': inCabinet % 2 }"  v-if="slidesCount > 1">
       <div class="fs-objects-slider__count">{{ currentSlide + 1 }} / {{ slidesCount }}</div>
       <FsBtnSlidesPrev @click="prevSlide" :class="{ 'fs-objects-slider__btn--rev': inCabinet % 2 }" />
       <FsBtnSlidesNext @click="nextSlide" :class="{ 'fs-objects-slider__btn--rev': inCabinet % 2 }" />

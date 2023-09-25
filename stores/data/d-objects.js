@@ -4,9 +4,9 @@ export default [
     text: "Объект оснащен 6 персональными компьютерами 1 из которых с подключением к сети Интернет. Кабинет предназначен для изучения основ компьютерной грамотности и практических занятий обучающихся.",
     images: [
       'fs-objects/cab-technology.jpg',
-      'fs-objects/cab-informatics.jpg',
-      'fs-objects/cab-technology.jpg',
-      'fs-objects/cab-informatics.jpg',
+      // 'fs-objects/cab-informatics.jpg',
+      // 'fs-objects/cab-technology.jpg',
+      // 'fs-objects/cab-informatics.jpg',
     ],
   },
   {
