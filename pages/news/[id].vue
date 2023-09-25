@@ -11,19 +11,14 @@
         <div class="fs-single-news__head">
           <img
             class="fs-single-news__article-image"
-            :src="getStaticImageUrl(getNews.prev)"
+            :src= "getNews.mainImg"
             alt="foto"
           />
           <p class="fs-single-news__article-date">
-            Опубликована {{ getNews.publDate }}
+            Опубликована {{ getNews.created_at }}
           </p>
-          <p
-            class="fs-single-news__article-text"
-            v-for="(text, key) in getNews.text"
-            :key="key"
-          >
-            {{ text }}
-          </p>
+          <p>{{ getNews.text }}</p>
+
         </div>
         <div class="fs-news-slider">
           <div class="fs-news-slider__slides">
@@ -32,7 +27,7 @@
               v-for="(img, key) in slides"
               :key="key"
             >
-              <img :src="getStaticImageUrl(img)" alt="" />
+              <img :src="img" alt="" />
             </div>
           </div>
           <div class="fs-news-slider__nav">
