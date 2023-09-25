@@ -1,120 +1,155 @@
 .fs-objects {
-  &__content {
+  &__content,
+  &__content-wrapper {
     display: flex;
     flex-direction: column;
     // align-items: center;
-    gap: 60px;
+    row-gap: 60px;
     // margin-top: 160px;
   }
-
   &__item {
-    // outline: 1px solid green;
     display: flex;
+    // flex-direction: column;
+    // align-items: flex-start;
     justify-content: space-between;
-    align-items: flex-start;
     align-self: stretch;
-    gap: 30px;
     padding: 20px;
-    border-radius: 10px;
     background: $background_1;
+    &--rev {
+      flex-direction: row-reverse;
+      // color: $text-color;
+      background-color: $background_1;
+    }
   }
-
-  &__item1 {
-    // outline: 1px solid green;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    align-self: stretch;
-    gap: 30px;
-    padding: 20px;
-    border-radius: 10px;
-    background: $background_1;
-  }
-
-  &__item-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    align-self: stretch;
-    gap: 46px;
-  }
-
-  // &__item--revers {
-  //   flex-direction: row-reverse;
-  //   background: $green-normal !important;
-  //   color: $text-color;
-  // }
-}
-
-.fs-objects-info {
-  // outline: 1px solid blue;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  align-self: stretch;
-  gap: 30px;
-  width: 572px;
-  height: 444px;
-
-  &__text {
+  &__info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    align-self: stretch;
+    gap: 30px;
+    width: 572px;
+    height: 100%;
+  }
+  &__info-text {
+    display: flex;
+    flex-direction: column;
     gap: 27px;
-    align-self: stretch;
+    &>p span {
+      font-weight: bold;
+    }
   }
-}
-
-.fs-objects-images {
-  // outline: 1px solid rgb(225, 0, 255);
-  // width: 300px;
-  // height: 555px;
-  flex: 1 0 0;
-  align-self: stretch;
-  // background: url("~/assets/img/fs-objects/cad-informatics1.jpg"), lightgray 50% / cover no-repeat;
-  background-image: url("~/assets/img/fs-objects/cad-informatics.jpg");
-  background-color: lightgray;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.fs-objects-images1 {
-  flex: 1 0 0;
-  align-self: stretch;
-  // background: url("~/assets/img/fs-objects/cad-informatics1.jpg"), lightgray 50% / cover no-repeat;
-  background-image: url("~/assets/img/fs-objects/cab-technology.jpg");
-  background-color: lightgray;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.fs-index-objects {
-  &__nav {
+  &__loader {
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+    align-self: stretch;
+    &:after {
+      @include loader-animation();
+    }
+  }
+  &__loader-row1 {
     display: flex;
     align-items: center;
-    column-gap: 16px;
+    align-self: stretch;
+    gap: 10px;
+    height: 81px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    background: $background_1;
+  }
+  &__loader-row2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+    padding: 20px;
+    border-radius: 10px;
+    background: $background_1;
+  }
+  &__loader-col1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    gap: 30px;
+    width: 572px;
+    height: 444px;
+  }
+  &__loader-col2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 555px;
+    height: 444px;
+    border-radius: 10px;
+    background: #FFF;
+  }
+  &__loader-line1 {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: 297px;
+    height: 31px;
+    background: #FFF;
+  }
+  &__loader-line2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    gap: 10px;
+    height: 158px;
+    background: #FFF;
   }
 }
-
-.fs-btn-slides1 {
-  background-color: white;
-
-  path {
-    fill: #344c11;
+@media (max-width: grid-width($desktop)) {
+  .fs-objects {
+    &__info {
+      width: 445px;
+    }
+    &__loader-col1,
+    &__loader-col2 {
+      width: 445px;
+    }
   }
 }
-
-.bg-1 {
-  background: $background_1;
-  color: $text-primary;
+@media (max-width: grid-width($laptop)) {
+  .fs-objects {
+    &__info {
+      width: 318px;
+    }
+    &__loader-col1,
+    &__loader-col2 {
+      width: 318px;
+      height: 219px;
+    }
+  }
 }
-
-.bg-2 {
-  background: $green-normal;
-  color: $text-color;
-}
-
-.fs-objects-info__title1 {
-  color: $text-color;
+@media (max-width: grid-width($tablet)) {
+  .fs-objects {
+    &__item,
+    &__loader-row2 {
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 30px;
+      align-self: stretch;
+    }
+    &__info {
+      width: 280px;
+    }
+    &__loader-row1 {
+      height: 40px;
+    }
+    &__loader-col1,
+    &__loader-col2 {
+      width: 280px;
+      height: 177px;
+    }
+  }
 }

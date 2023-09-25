@@ -6,7 +6,6 @@
     align-items: center;
     gap: 60px;
   }
-
   &__item {
     display: flex;
     flex-direction: column;
@@ -15,12 +14,10 @@
     align-self: stretch;
     gap: 30px;
   }
-
   &__item-heading {
     font-weight: 700;
     color: $text-primary;
   }
-
   &__item-row {
     display: flex;
     flex-direction: column;
@@ -29,8 +26,64 @@
     gap: 10px;
     // background: $background_1;
   }
-
   &__item-title {
     font-weight: 700;
+  }
+  &__loader {
+    display: flex;
+    flex-direction: column;
+    // align-self: stretch;
+    gap: 60px;
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+  }
+  &__loader-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+  &__loader-row {
+    display: flex;
+    flex-direction: column;
+    // align-items: flex-start;
+    row-gap: 10px;
+    // align-self: stretch;
+  }
+  &__loader-line1 {
+    position: relative;
+    overflow: hidden;
+    background-color: $background_1;
+    height: 31px;
+    width: 459px;
+    border-radius: 10px;
+    &:after {
+      @include loader-animation();
+    }
+  }
+  &__loader-line2 {
+    position: relative;
+    overflow: hidden;
+    background-color: $background_1;
+    height: 22px;
+    width: 100%;
+    border-radius: 10px;
+    &--width {
+      width: 109px;
+      height: 22px;
+    }
+    &:after {
+      @include loader-animation();
+    }
+  }
+}
+
+@media (max-width: grid-width($tablet)) {
+  .fs-common {
+    &__loader-line1 {
+      width: 230px;
+    }
   }
 }
