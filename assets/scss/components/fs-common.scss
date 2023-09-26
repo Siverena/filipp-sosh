@@ -41,9 +41,14 @@
     height: fit-content;
   }
   &__loader-wrapper {
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     row-gap: 30px;
+    &:after {
+      @include loader-animation();
+    }
   }
   &__loader-row {
     display: flex;
@@ -53,19 +58,12 @@
     // align-self: stretch;
   }
   &__loader-line1 {
-    position: relative;
-    overflow: hidden;
     background-color: $background_1;
     height: 31px;
     width: 459px;
-    border-radius: 10px;
-    &:after {
-      @include loader-animation();
-    }
+    border-radius: 10px;    
   }
   &__loader-line2 {
-    position: relative;
-    overflow: hidden;
     background-color: $background_1;
     height: 22px;
     width: 100%;
@@ -73,9 +71,6 @@
     &--width {
       width: 109px;
       height: 22px;
-    }
-    &:after {
-      @include loader-animation();
     }
   }
 }
