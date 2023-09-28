@@ -9,7 +9,9 @@
       </p>
     </div>
     <div class="fs-banner__btns">
-      <FsBtn class="fs-btn--green fs-banner__btn" @click="acceptCookies">Принять</FsBtn>
+      <FsBtn class="fs-btn--dark fs-banner__btn" @click="acceptCookies"
+        >Принять</FsBtn
+      >
     </div>
   </div>
 </template>

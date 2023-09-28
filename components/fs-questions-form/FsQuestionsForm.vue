@@ -97,7 +97,7 @@
             >
             .
           </p>
-          <button class="fs-btn fs-btn--green fs-questions-form__btn">
+          <button class="fs-btn fs-btn--dark fs-questions-form__btn">
             Отправить
           </button>
         </div>

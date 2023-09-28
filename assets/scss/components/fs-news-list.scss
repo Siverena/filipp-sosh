@@ -31,7 +31,7 @@
         height: 251px;
         display: flex;
         // align-items: flex-end;
-        background-color: $background_1;
+        background-color: $background-1;
         padding: 10px;
         border-radius: 10px;
         display: flex;
@@ -50,13 +50,13 @@
     &__loader-string {
         height: 23px;
         width: 196px;
-        background-color: $background_1;
+        background-color: $background-1;
         border-radius: 5px;
         &--2 {
             width: 112px;
         }
     }
-    &__loader-text-wrapper{
+    &__loader-text-wrapper {
         width: 100%;
         height: 100%;
         display: flex;
@@ -64,26 +64,26 @@
         justify-content: space-between;
         gap: 17px;
     }
-    &__loader-upper{
+    &__loader-upper {
         display: flex;
         flex-direction: column;
         gap: 17px;
     }
-    &__loader-text{
+    &__loader-text {
         height: 28px;
         width: 25%;
         background-color: $text-color;
         display: flex;
         flex-direction: column;
     }
-    &__loader-text1{
+    &__loader-text1 {
         height: 66px;
         width: 100%;
         background-color: $text-color;
         display: flex;
         flex-direction: column;
     }
-    &__loader-text2{
+    &__loader-text2 {
         height: 21px;
         width: 116px;
         background-color: $text-color;
@@ -100,7 +100,7 @@
     &__article {
         display: flex;
         column-gap: 20px;
-        background-color: $background_1;
+        background-color: $background-1;
         padding: 20px;
         border-radius: 10px;
     }

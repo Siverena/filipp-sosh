@@ -2,14 +2,16 @@
   <section class="fs-objects">
     <Head>
       <Title>
-        Материально-техническое обеспечение и оснащенность образовательного процесса | МКОУ ФИЛИППОВСКАЯ СОШ
+        Материально-техническое обеспечение и оснащенность образовательного
+        процесса | МКОУ ФИЛИППОВСКАЯ СОШ
       </Title>
     </Head>
     <div class="container">
       <div class="fs-objects__content">
         <FsSectionTitles>
           <template v-slot:main>
-            Материально-техническое обеспечение и оснащенность образовательного процесса
+            Материально-техническое обеспечение и оснащенность образовательного
+            процесса
           </template>
         </FsSectionTitles>
         <div class="fs-objects__loader" v-if="loading">
@@ -25,18 +27,28 @@
         <FsAccordeon v-if="!loading">
           <FsAccordeonTab :currentActive="currentActive" :index="true">
             <template v-slot:title>
-              Оборудованные учебные кабинеты, объекты для проведения практических занятий а так же приспособленных для
-              использования инвалидами и лицами с ограниченными возможностями здоровья
+              Оборудованные учебные кабинеты, объекты для проведения
+              практических занятий а так же приспособленных для использования
+              инвалидами и лицами с ограниченными возможностями здоровья
             </template>
             <template v-slot:content>
               <div class="fs-objects__content-wrapper">
                 <article v-for="(cabinet, key) in getObjects" :key="key">
-                  <div class="fs-objects__item" :class="{ 'fs-objects__item--rev': key % 2 }">
+                  <div
+                    class="fs-objects__item"
+                    :class="{ 'fs-objects__item--rev': key % 2 }"
+                  >
                     <div class="fs-objects__info">
-                      <div class="fs-h2 fs-objects__info-title" :class="{ 'fs-objects__info-title--rev': key % 2 }">
+                      <div
+                        class="fs-h2 fs-objects__info-title"
+                        :class="{ 'fs-objects__info-title--rev': key % 2 }"
+                      >
                         {{ cabinet.title }}
                       </div>
-                      <p class="fs-objects__info-text" v-html="cabinet.text"></p>
+                      <p
+                        class="fs-objects__info-text"
+                        v-html="cabinet.text"
+                      ></p>
                     </div>
                     <FsObjectsSlider :arrCabinet="cabinet" :inCabinet="key" />
                   </div>
@@ -51,8 +63,8 @@
 </template>
 
 <script>
-import { mapActions, mapState } from "pinia";
-import { useObjectsStore } from "@/stores/objectsStore.js";
+import { mapActions, mapState } from 'pinia';
+import { useObjectsStore } from '@/stores/objectsStore.js';
 
 export default {
   data() {
@@ -63,10 +75,10 @@ export default {
     };
   },
   computed: {
-    ...mapState(useObjectsStore, ["getObjects"]),
+    ...mapState(useObjectsStore, ['getObjects']),
   },
   methods: {
-    ...mapActions(useObjectsStore, ["fetchObjects"]),
+    ...mapActions(useObjectsStore, ['fetchObjects']),
     async loadData() {
       try {
         this.loading = true;
@@ -78,7 +90,6 @@ export default {
     },
     update(cnt) {
       this.current = cnt;
-      console.log(cnt);
     },
   },
   async created() {
