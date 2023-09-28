@@ -54,7 +54,7 @@
           </div>
         </template>
 
-        <button class="fs-btn fs-btn--green fs-auth__btn">Отправить</button>
+        <button class="fs-btn fs-btn--dark fs-auth__btn">Отправить</button>
 
         <div class="fs-auth__attention">
           <span class="fs-auth__star">*</span>Обязательное поле

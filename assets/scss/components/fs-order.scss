@@ -4,7 +4,7 @@
     flex-direction: column;
     gap: 40px;
     width: 644px;
-    background-color: $background_1;
+    background-color: $background-1;
     margin: auto;
     //
     position: absolute;
@@ -23,7 +23,7 @@
         right: 0;
     }
     &::-webkit-scrollbar-track {
-        background: $background_1;
+        background: $background-1;
     }
     &::-webkit-scrollbar-thumb {
         background-color: $green-normal;

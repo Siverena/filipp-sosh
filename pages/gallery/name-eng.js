@@ -49,9 +49,16 @@ export default {
     ...mapActions(useGalleryStore, ['fetchGalleryAlbom']),
     ...mapActions(useModalStore, ['openSlider']),
     async loadData() {
-      this.loading = true;
-      await this.fetchGalleryAlbom(this.$route.params.nameEng);
-      this.loading = false;
+      try {
+        this.loading = true;
+        await this.fetchGalleryAlbom(this.$route.params.nameEng);
+        this.loading = false;
+      } catch (e) {
+        showError({
+          statusCode: 404, //e.response.status,
+          message: 'Такой галереи не существует',
+        });
+      }
     },
     showSlider(key) {
       this.openSlider();
