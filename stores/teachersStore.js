@@ -11,8 +11,12 @@ export const useTeachersStore = defineStore('teachersStore', {
     };
   },
   getters: {
-    getNews(state) {
-      return state.teachers;
+    getTeachers(state) {
+      // return state.teachers;
+      return state.teachers.filter((link) => !link.isAdministration);
+    },
+    getTeachersAdmin(state) {
+      return state.teachers.filter((link) => link.isAdministration);
     },
     isLoading() {
       return Promise.resolve(this.fetchTeachers);
@@ -20,8 +24,8 @@ export const useTeachersStore = defineStore('teachersStore', {
   },
   actions: {
     //mutations
-    SET_TEACHERS(news) {
-      this.news = news;
+    SET_TEACHERS(teachers) {
+      this.teachers = teachers;
     },
     //actions
     async fetchTeachers() {

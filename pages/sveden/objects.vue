@@ -25,7 +25,7 @@
           </div>
         </div>
         <FsAccordeon v-if="!loading">
-          <FsAccordeonTab :currentActive="currentActive" :index="true">
+          <FsAccordeonTab :currentActive="currentActive" :index="false">
             <template v-slot:title>
               Оборудованные учебные кабинеты, объекты для проведения
               практических занятий а так же приспособленных для использования
@@ -39,16 +39,10 @@
                     :class="{ 'fs-objects__item--rev': key % 2 }"
                   >
                     <div class="fs-objects__info">
-                      <div
-                        class="fs-h2 fs-objects__info-title"
-                        :class="{ 'fs-objects__info-title--rev': key % 2 }"
-                      >
-                        {{ cabinet.title }}
+                      <div class="fs-h2 fs-objects__info-title" :class="{ 'fs-objects__info-title--rev': key % 2 }">
+                        {{ cabinet.name }}
                       </div>
-                      <p
-                        class="fs-objects__info-text"
-                        v-html="cabinet.text"
-                      ></p>
+                      <p class="fs-objects__info-text" v-html="cabinet.description"></p>
                     </div>
                     <FsObjectsSlider :arrCabinet="cabinet" :inCabinet="key" />
                   </div>
@@ -87,9 +81,6 @@ export default {
       } catch (e) {
         console.log(e);
       }
-    },
-    update(cnt) {
-      this.current = cnt;
     },
   },
   async created() {

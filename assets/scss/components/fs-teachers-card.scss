@@ -1,0 +1,177 @@
+.fs-teachers {
+  &__card {
+    // outline: 1px solid green;
+    display: flex;
+    background: $background_1;
+    &--adm {
+      flex-direction: column;
+      align-items: center;
+      align-self: stretch;
+      flex-shrink: 0;
+      width: 385px;
+      padding: 20px 10px;
+      row-gap: 14px;
+      // background: aqua;
+    }
+    &--thr {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: flex-start;
+      align-self: stretch;
+      flex-shrink: 0;
+      column-gap: 20px;
+      width: 590px;
+      padding: 5px;
+    }
+  }
+  &__image {
+    // outline: 1px solid red;
+    display: flex;
+    &--thr {
+      padding-top: 10px;
+      padding-right: 10px;
+    }
+    &-adm {
+      object-fit: cover;
+      width: 262px;
+      height: 262px;
+      border-radius: 50%;
+      background: rgba(211, 211, 211, 0.5);
+    }
+    &-thr {
+      display: flex;
+      width: 197px;
+      height: 197px;
+      object-fit: cover;
+      border-radius: 50%;
+      background: $background_1;
+    }
+  }
+  &__info {
+    // outline: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    align-self: stretch;
+    row-gap: 20px;
+    height: 100%;
+    //  background: aquamarine;
+    &-title {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 30px;
+      &--adm {
+        font-size: 26px;
+        text-align: center;
+        color: $ton-5;
+        & span:nth-child(1) {
+          display: block;
+          width: 100%;
+        }
+        & span:nth-child(3) {
+          padding-left: 5px;
+        }
+      }
+      &--thr {
+        font-size: 24px;
+        overflow-wrap: break-word;
+        color: $green-normal;
+      }
+    }
+    &-description {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+      height: 100%;
+      justify-content: space-between;
+    }
+    &-line {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      align-self: stretch;
+      gap: 5px;
+      & p:nth-child(1) {
+        font-family: Roboto;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 16px;
+        color: $text-secondary;
+      }
+      & p:nth-child(2) {
+        font-family: Roboto;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px;
+        color: #010101;
+      }
+    }
+  }
+}
+@media (max-width: grid-width($desktop)) {
+  .fs-teachers {
+    &__card--adm {
+      width: 477px;
+    }
+    &__card--thr {
+      width: 468px;
+    }
+    &__image-thr {
+      width: 144px;
+      height: 144px;
+    }
+  }
+}
+@media (max-width: grid-width($laptop)) {
+  .fs-teachers {
+    &__card--adm {
+      width: 334px;
+    }
+    &__info-title {
+      font-size: 22px;
+    }
+    &__info-line {
+      & p:nth-child(1) {
+        font-size: 12px;
+        line-height: 14px;
+      }
+      & p:nth-child(2) {
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+  }
+}
+@media (max-width: grid-width($tablet)) {
+  .fs-teachers {
+    &__card {
+      &--thr {
+        column-gap: 0;
+      }
+    }
+    &__image-adm {
+      width: 212px;
+      height: 212px;
+      line-height: 212px;
+    }
+    &__card--thr {
+      position: relative;
+      width: 320px;
+    }
+    &__image-thr {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      width: 101px;
+      height: 101px;
+    }
+    &__info-title--thr {
+      width: 190px;
+      // min-height: 90px;
+      word-spacing: 100vw
+    }
+  }
+}

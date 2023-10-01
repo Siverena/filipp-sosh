@@ -1,9 +1,9 @@
 <template>
   <div class="fs-objects-slider">
     <div class="fs-objects-slider__images">
-      <div v-for="(image, index) in arrCabinet.images" :key="index">
+      <div v-for="(image, index) in arrCabinet.photos" :key="index">
         <div class="fs-objects-slider__images-item" v-if="index === currentSlide">
-          <img :src="getStaticImageUrl(image)" alt="{{image}}" />
+          <img :src="image" alt="{{image}}" />
         </div>
       </div>
     </div>
@@ -28,12 +28,12 @@ export default {
 
   computed: {
     slidesCount() {
-      return this.arrCabinet.images.length;
+      return this.arrCabinet.photos.length;
     },
   },
   methods: {
     nextSlide() {
-      if (this.currentSlide === this.arrCabinet.images.length - 1) {
+      if (this.currentSlide === this.arrCabinet.photos.length - 1) {
         this.currentSlide = 0;
       } else {
         this.currentSlide += 1;
@@ -42,7 +42,7 @@ export default {
     prevSlide() {
       this.currentSlide -= 1;
       if (this.currentSlide < 0) {
-        this.currentSlide = this.arrCabinet.images.length - 1;
+        this.currentSlide = this.arrCabinet.photos.length - 1;
       }
     },
   },
