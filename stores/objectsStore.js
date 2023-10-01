@@ -1,13 +1,4 @@
-import objects from '@/stores/data/d-objects.js';
 import { defineStore } from 'pinia';
-
-async function API(id = null) {
-  if (id) {
-    return objects.find((el) => el.id === id);
-  } else {
-    return objects;
-  }
-}
 
 export const useObjectsStore = defineStore('ObjectsStore', {
   state: () => {
@@ -23,15 +14,19 @@ export const useObjectsStore = defineStore('ObjectsStore', {
   actions: {
     //mutations
     SET_OBJECTS(objects) {
-      this.objects = objects;
+      this.objects = objects.data;
     },
-    //actions
-    async fetchObjects(id = null) {
-      return API(id)
-        .then((data) => {
-          this.SET_OBJECTS(data);
+    async fetchObjects() {
+      const api = useNuxtApp().$api;
+      if (this.objects.length) {
+        return Promise.resolve();
+      }
+      return api
+      .get(`/cabinets/`)
+        .then((response) => {
+          this.SET_OBJECTS(response.data);
         })
-        .catch((e) => {
+        .catch(function (e) {
           console.log(e);
         });
     },
