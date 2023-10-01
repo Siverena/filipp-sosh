@@ -26,8 +26,24 @@ export const useTeachersStore = defineStore('teachersStore', {
     //mutations
     SET_TEACHERS(teachers) {
       this.teachers = teachers;
+      // this.teachers = teachers.data;
     },
     //actions
+    // async fetchTeachers() {
+    //   const api = useNuxtApp().$api;
+    //   if (this.teachers.length) {
+    //     return Promise.resolve();
+    //   }
+    //   return api
+    //   .get(`/teachers/`)
+    //     .then((response) => {
+    //       this.SET_TEACHERS(response.data);
+    //     })
+    //     .catch(function (e) {
+    //       console.log(e);
+    //     });
+    // },
+
     async fetchTeachers() {
       API()
         .then((data) => {

@@ -17,7 +17,7 @@
             <template v-slot:content>
               <section class="fs-employees__block">
                 <template v-for="(data, key) in getTeachersAdmin" :key="key">
-                  <FsTeachersCard :teacher="data" status="admin" />
+                  <FsTeachersCard :teacher="data" status="teacher" />
                 </template>
               </section>
             </template>
