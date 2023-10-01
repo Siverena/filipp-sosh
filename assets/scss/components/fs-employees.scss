@@ -25,7 +25,13 @@
 }
 @media (max-width: grid-width($laptop)) {
   .fs-employees {
-    &__block--thr {
+    // если карточки двух видов
+    // (вертикальной и горизонтальной формы)
+    // &__block--thr {
+    //   justify-content: center;
+    // }
+    // если карточки горизонтальной формы
+    &__block {
       justify-content: center;
     }
   }

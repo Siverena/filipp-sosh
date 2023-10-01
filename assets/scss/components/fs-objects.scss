@@ -23,6 +23,7 @@
     justify-content: space-between;
     align-self: stretch;
     padding: 20px;
+    border-radius: 10px;
     background: $background_1;
     &--rev {
       flex-direction: row-reverse;
