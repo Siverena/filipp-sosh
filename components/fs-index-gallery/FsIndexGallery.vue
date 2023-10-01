@@ -1,10 +1,27 @@
 <template>
-  <section class="fs-index-gallery" v-if="!loading">
+  <section class="fs-index-gallery">
     <div class="fs-index-gallery__content">
       <FsSectionTitles class="fs-index-gallery__title">
         <template v-slot:main>Галерея</template>
       </FsSectionTitles>
-      <div class="fs-index-gallery__layout">
+      <div class="fs-index-gallery__loader" v-if="loading">
+        <div class="fs-index-gallery__loader-col">
+          <div></div>
+          <div></div>
+        </div>
+        <div class="fs-index-gallery__loader-right">
+          <div class="fs-index-gallery__loader-cards">
+            <div
+              class="fs-index-gallery__loader-card"
+              v-for="key in 3"
+              :key="key"
+            >
+              <div class="fs-index-gallery__loader-title"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fs-index-gallery__layout" v-if="!loading">
         <div class="fs-index-gallery__info">
           <p class="fs-h2">Жизнь нашей школы в фотографиях</p>
 

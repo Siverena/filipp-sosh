@@ -1,5 +1,5 @@
 <template>
-  <section class="fs-news-list no-tab" v-if="!loading">
+  <section class="fs-news-list no-tab">
     <Head>
       <Title>Новости | МКОУ ФИЛИППОВСКАЯ СОШ</Title>
     </Head>
@@ -7,10 +7,22 @@
       <FsSectionTitles>
         <template v-slot:main> Новости </template>
       </FsSectionTitles>
+      <div class="fs-news-list__loader" v-if="loading">
+        <div class="fs-news-list__loader-item" v-for="item in 2">
+          <div class="fs-news-list__loader-info"></div>
+          <div class="fs-news-list__loader-text-wrapper">
+            <div class="fs-news-list__loader-upper">
+              <div class="fs-news-list__loader-text"></div>
+              <div class="fs-news-list__loader-text1"></div>
+            </div>
+            <div class="fs-news-list__loader-text2"></div>
+          </div>
+        </div>
+      </div>
       <div class="fs-news-list__content">
         <article
           class="fs-news-list__article"
-          v-for="(item, key) in getNews"
+          v-for="(item, key) in getNewsList"
           :key="key"
         >
           <div class="fs-news-list__article-image">
@@ -20,7 +32,7 @@
             <div class="fs-news-list__article-title">
               <h2 class="fs-h2">{{ item.title }}</h2>
               <span class="fs-news-list__article-date">
-                Опубликовано: {{ item.created_at }}
+                Опубликовано {{ new Date(item.created_at).toLocaleString() }}
               </span>
             </div>
             <div class="fs-news-list__article-preview">
@@ -41,38 +53,6 @@
     </div>
   </section>
 </template>
-<!-- <script>
-import { mapActions, mapState } from 'pinia';
-import { useNewsStore } from '@/stores/newsStore.js';
-import imageUrl from '@/utils/mixins/image-url.js';
-export default {
-  data() {
-    return {
-      loading: true,
-    };
-  },
-  mixins: [imageUrl],
-  computed: {
-    ...mapState(useNewsStore, ['getNews']),
-  },
-  methods: {
-    ...mapActions(useNewsStore, ['fetchNews']),
-    async loadData() {
-      try {
-        this.loading = true;
-        await this.fetchNews();
-        this.loading = false;
-      } catch (e) {
-        console.log(e);
-      }
-    },
-  },
-  async created() {
-    this.loadData();
-  },
-};
-</script> -->
-
 <script>
 import { mapActions, mapState } from 'pinia';
 import { useNewsStore } from '@/stores/newsStore.js';
@@ -84,14 +64,14 @@ export default {
     };
   },
   computed: {
-    ...mapState(useNewsStore, ['getNews']),
+    ...mapState(useNewsStore, ['getNewsList']),
   },
   methods: {
-    ...mapActions(useNewsStore, ['fetchNews']),
+    ...mapActions(useNewsStore, ['fetchNewsList']),
     async loadData() {
       try {
         this.loading = true;
-        await this.fetchNews();
+        await this.fetchNewsList();
         this.loading = false;
       } catch (e) {
         console.log(e);

@@ -24,7 +24,7 @@
         width: 390px;
         display: flex;
         padding: 20px;
-        background-color: $background_1;
+        background-color: $background-1;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
@@ -43,25 +43,10 @@
     &__link {
         font-weight: 700;
     }
-
     &__button-container {
         display: flex;
         justify-content: center;
         margin-top: 60px;
-        button {
-            display: flex;
-            justify-content: center;
-            border: none;
-            background-color: $green-normal;
-            color: #fff;
-            width: 225px;
-            align-self: center;
-            padding-left: 60px;
-            padding-right: 60px;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            border-radius: 10px;
-        }
     }
     &__title-wrapper {
         display: flex;

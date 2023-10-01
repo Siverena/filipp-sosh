@@ -3,7 +3,7 @@
     background-color: transparent;
     width: 60px;
     height: 60px;
-    background-color: $ton-4;
+    background-color: $ton-5;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,7 +13,7 @@
     }
 
     &:hover {
-        background-color: $ton-5;
+        background-color: $ton-2;
         path {
             transition: all 1s;
         }
@@ -22,7 +22,7 @@
         background-color: $ton-3;
     }
     &:focus {
-        background-color: $ton-5;
+        background-color: $ton-2;
         outline: none;
     }
 }
