@@ -9,7 +9,7 @@
         }
         path {
           transition: all 1s;
-          fill: $background_1;
+          fill: $background-1;
         }
       }
       &:hover {
@@ -20,7 +20,7 @@
           }
           path {
             transition: all 1s;
-            fill: $background_1;
+            fill: $background-1;
           }
         }
       }
@@ -43,12 +43,12 @@
       svg {
         rect {
           transition: all 1s;
-          fill: $background_1;
+          fill: $background-1;
         }
         path {
           transition: all 1s;
           fill: $green-normal;
-        } 
+        }
       }
       &:hover {
         svg {
@@ -60,7 +60,7 @@
           }
           path {
             transition: all 1s;
-            fill: $background_1;
+            fill: $background-1;
           }
         }
       }
@@ -82,7 +82,7 @@
           }
           path {
             transition: all 1s;
-            fill: $background_1;
+            fill: $background-1;
           }
         }
         outline: none;

@@ -58,7 +58,7 @@
             </span>
           </div>
         </template>
-        <button class="fs-btn fs-btn--green fs-order__btn">Отправить</button>
+        <button class="fs-btn fs-btn--dark fs-order__btn">Отправить</button>
         <p class="fs-order__info">
           Нажимая на кнопку, Вы принимаете
           <nuxt-link

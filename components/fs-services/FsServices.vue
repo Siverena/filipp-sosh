@@ -8,7 +8,7 @@
         </FsSectionTitles>
         <div class="fs-services__items">
           <a
-            class="fs-btn fs-btn--green fs-services__link fs-services__item"
+            class="fs-services__link fs-services__item"
             href="https://образование33.рф/elektronnyy-shkola/podat-zayavlenie/"
           >
             <FsSend />
@@ -16,7 +16,7 @@
           </a>
 
           <a
-            class="fs-btn fs-btn--green fs-services__link fs-services__item"
+            class="fs-services__link fs-services__item"
             href="https://образование33.рф/elektronnyy-shkola/proverka-statusa-zayavleniya/"
           >
             <FsCheckStatus />
@@ -24,7 +24,7 @@
           </a>
 
           <a
-            class="fs-btn fs-btn--green fs-services__link fs-services__item"
+            class="fs-services__link fs-services__item"
             href="https://образование33.рф/elektronnyy-shkola/informatsiya-ob-uchrezhdeniyakh/"
           >
             <FsInformation />
@@ -32,7 +32,7 @@
           </a>
 
           <a
-            class="fs-btn fs-btn--green fs-services__link fs-services__item"
+            class="fs-services__link fs-services__item"
             href="https://школа.образование33.рф/auth/login-page"
           >
             <FsDiary />
@@ -40,7 +40,7 @@
           </a>
 
           <a
-            class="fs-btn fs-btn--green fs-services__link fs-services__item"
+            class="fs-services__link fs-services__item"
             href="https://образование33.рф/elektronnyy-shkola/rezultaty-ege-oge/"
           >
             <FsResult />

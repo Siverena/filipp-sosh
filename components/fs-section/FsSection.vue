@@ -1,7 +1,7 @@
-<template>
+<template v-if="!loading">
   <div
     class="fs-section"
-    v-for="(section, key) in getContent.section"
+    v-for="(section, key) in getContent?.section"
     :key="key"
   >
     <h2 class="fs-h2" v-if="section.sectionTitle">

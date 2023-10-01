@@ -20,9 +20,10 @@
     }
     &__item {
         display: flex;
-        background-color: $ton-4;
+        // background-color: $ton-4;
         text-decoration: none;
         border-radius: 10px;
+        border: 1px solid transparent;
         // background: rgba(255, 255, 255, 0.1);
         a {
             text-decoration: none;
@@ -38,18 +39,19 @@
         &:hover {
             // outline: 3px solid orange;
             // background: rgba(174, 198, 112, 0.8);
-
+            border: 1px solid $ton-5;
             svg {
                 path {
-                    stroke: $text-color;
+                    stroke: $ton-5;
                     // stroke-width: 3px;
                 }
             }
         }
         &:focus {
+            border: 1px solid $ton-5;
             svg {
                 path {
-                    stroke: $text-color;
+                    stroke: $ton-5;
                     // stroke-width: 3px;
                 }
             }
@@ -57,7 +59,7 @@
         &:active {
             svg {
                 path {
-                    stroke: $text-color;
+                    stroke: $ton-5;
                     // stroke-width: 3px;
                 }
             }
@@ -77,21 +79,21 @@
 
         justify-content: flex-start;
         &:hover {
-            color: $text-color;
+            color: $ton-5;
             path {
-                stroke: $text-color;
+                stroke: $ton-5;
             }
         }
         &:focus {
-            color: $text-color;
+            color: $ton-5;
             path {
-                stroke: $text-color;
+                stroke: $ton-5;
             }
         }
         &:active {
-            color: $text-color;
+            color: $ton-5;
             path {
-                stroke: $text-color;
+                stroke: $ton-5;
             }
         }
     }

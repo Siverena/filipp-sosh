@@ -10,7 +10,7 @@
       <div class="fs-news__wrapper">
         <article
           class="fs-news__article"
-          v-for="item in getNews"
+          v-for="item in getLastNews"
           :key="item.id"
         >
           <div class="fs-news__title-wrapper">
@@ -31,11 +31,10 @@
               >
             </span>
           </div>
-          <!-- </div> -->
         </article>
       </div>
       <div class="fs-news__button-container">
-        <NuxtLink to="/news" class="fs-btn fs-btn--green">Все новости</NuxtLink>
+        <NuxtLink to="/news" class="fs-btn fs-btn--dark">Все новости</NuxtLink>
       </div>
     </div>
   </div>
