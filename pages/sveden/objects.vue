@@ -39,10 +39,16 @@
                     :class="{ 'fs-objects__item--rev': key % 2 }"
                   >
                     <div class="fs-objects__info">
-                      <div class="fs-h2 fs-objects__info-title" :class="{ 'fs-objects__info-title--rev': key % 2 }">
+                      <div
+                        class="fs-h2 fs-objects__info-title"
+                        :class="{ 'fs-objects__info-title--rev': key % 2 }"
+                      >
                         {{ cabinet.name }}
                       </div>
-                      <p class="fs-objects__info-text" v-html="cabinet.description"></p>
+                      <p
+                        class="fs-objects__info-text"
+                        v-html="cabinet.description"
+                      ></p>
                     </div>
                     <FsObjectsSlider :arrCabinet="cabinet" :inCabinet="key" />
                   </div>
@@ -51,6 +57,7 @@
             </template>
           </FsAccordeonTab>
         </FsAccordeon>
+        <FsSection slug="objects" />
       </div>
     </div>
   </section>

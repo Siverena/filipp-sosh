@@ -25,6 +25,7 @@
 @import "./elements/fs-btn-slides.scss";
 @import "./elements/fs-marker-square.scss";
 @import "./elements/fs-loader.scss";
+@import "./elements/fs-send-mail-loader.scss";
 
 /**********
 /* PLUGINS */
@@ -72,7 +73,10 @@
 @import "./components/fs-teachers-loader.scss";
 @import "./components/fs-section-slider.scss";
 @import "./components/fs-section.scss";
+@import "./components/fs-personal.scss";
+@import "./components/fs-notification.scss";
 @import "./components/fs-menu.scss";
+
 
 /**********
 /* PAGES */
