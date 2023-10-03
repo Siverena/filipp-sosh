@@ -1,8 +1,4 @@
-import teachersData from '@/stores/data/d-teachers.js';
 import { defineStore } from 'pinia';
-async function API() {
-  return teachersData;
-}
 
 export const useTeachersStore = defineStore('teachersStore', {
   state: () => {
@@ -25,31 +21,20 @@ export const useTeachersStore = defineStore('teachersStore', {
   actions: {
     //mutations
     SET_TEACHERS(teachers) {
-      this.teachers = teachers;
-      // this.teachers = teachers.data;
+      this.teachers = teachers.data;
     },
     //actions
-    // async fetchTeachers() {
-    //   const api = useNuxtApp().$api;
-    //   if (this.teachers.length) {
-    //     return Promise.resolve();
-    //   }
-    //   return api
-    //   .get(`/teachers/`)
-    //     .then((response) => {
-    //       this.SET_TEACHERS(response.data);
-    //     })
-    //     .catch(function (e) {
-    //       console.log(e);
-    //     });
-    // },
-
     async fetchTeachers() {
-      API()
-        .then((data) => {
-          this.SET_TEACHERS(data.data);
+      const api = useNuxtApp().$api;
+      if (this.teachers.length) {
+        return Promise.resolve();
+      }
+      return api
+      .get(`/teachers/`)
+        .then((response) => {
+          this.SET_TEACHERS(response.data);
         })
-        .catch((e) => {
+        .catch(function (e) {
           console.log(e);
         });
     },
