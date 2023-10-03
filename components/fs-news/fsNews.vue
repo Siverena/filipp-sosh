@@ -1,5 +1,5 @@
 <template>
-  <div class="fs-news" v-if="!loading">
+  <div class="fs-news">
     <div class="container">
       <FsSectionTitles>
         <template v-slot:main>Последние новости</template>
@@ -7,6 +7,33 @@
           >В нашей школе учаться только на четверки и пятерки
         </template>
       </FsSectionTitles>
+      <div class="fs-news__loader" v-if="loading">
+          <div class="fs-news__loader-item">
+            <div>
+              <div class="fs-news__loader-img"></div>
+              <div class="fs-news__loader-title"></div>
+              <div class="fs-news__loader-text"></div>
+            </div>
+
+            <div class="fs-news__loader-more"></div>
+          </div>
+          <div class="fs-news__loader-item">
+            <div>
+              <div class="fs-news__loader-img"></div>
+              <div class="fs-news__loader-title"></div>
+              <div class="fs-news__loader-text"></div>
+            </div>
+            <div class="fs-news__loader-more"></div>
+          </div>
+          <div class="fs-news__loader-item">
+            <div>
+              <div class="fs-news__loader-img"></div>
+              <div class="fs-news__loader-title"></div>
+              <div class="fs-news__loader-text"></div>
+            </div>
+            <div class="fs-news__loader-more"></div>
+          </div>
+      </div>
       <div class="fs-news__wrapper">
         <article
           class="fs-news__article"
