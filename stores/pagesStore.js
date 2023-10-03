@@ -18,15 +18,18 @@ export const usePagesStore = defineStore('pagesStore', {
   actions: {
     //mutations
     SET_CONTENT(data) {
-      this.content = data;
+      this.content = data.data[0];
     },
     //actions
+
     async fetchContent(path) {
-      API(path)
-        .then((data) => {
-          this.SET_CONTENT(data);
+      const api = useNuxtApp().$api;
+      return api
+        .get(`/chapter/${path}`)
+        .then((response) => {
+          this.SET_CONTENT(response.data);
         })
-        .catch((e) => {
+        .catch(function (e) {
           console.log(e);
         });
     },

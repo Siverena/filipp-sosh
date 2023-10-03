@@ -1,5 +1,4 @@
 .fs-sveden {
-
     &__list {
         display: flex;
         flex-direction: column;
@@ -16,7 +15,7 @@
         align-items: flex-start;
         align-self: stretch;
         padding: 10px;
-        background: $background_1;
+        background: $background-1;
     }
 
     &__link {
@@ -27,12 +26,12 @@
         text-decoration: none;
         color: $text-primary;
 
-        &:hover span{
+        &:hover span {
             text-decoration-line: underline;
         }
     }
 }
 
-.pi--style  {
-    font-size: 20px !important; 
+.pi--style {
+    font-size: 20px !important;
 }

@@ -12,6 +12,9 @@
           <FsCross />
         </div>
       </div>
+      <div class="fs-order__sending-error" v-if="sendingError">
+        Произошла ошибка отправки, пожалуйста, попробуйте позднее
+      </div>
       <form
         class="fs-order__content"
         @submit.prevent="submitForm"
@@ -58,7 +61,7 @@
             </span>
           </div>
         </template>
-        <button class="fs-btn fs-btn--green fs-order__btn">Отправить</button>
+        <button class="fs-btn fs-btn--dark fs-order__btn">Отправить</button>
         <p class="fs-order__info">
           Нажимая на кнопку, Вы принимаете
           <nuxt-link
@@ -74,6 +77,7 @@
           <span class="fs-order__star">*</span>Обязательное поле
         </div>
       </form>
+      <FsSendMailLoader v-if="sending" />
     </div>
   </div>
 </template>

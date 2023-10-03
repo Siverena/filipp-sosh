@@ -6,6 +6,8 @@ export const useModalStore = defineStore('modalStore', {
       isShowOrder: false,
       isShowSlider: false,
       isShowCookies: false,
+      isShowNotification: false,
+      notificationText: '',
     };
   },
   getters: {
@@ -20,6 +22,12 @@ export const useModalStore = defineStore('modalStore', {
     },
     getisShowCookies(state) {
       return state.isShowCookies;
+    },
+    getIsShowNotification(state) {
+      return state.isShowNotification;
+    },
+    getNotificationText(state) {
+      return state.notificationText;
     },
   },
   actions: {
@@ -42,7 +50,12 @@ export const useModalStore = defineStore('modalStore', {
     SET_IS_SHOWCOOKIES(data) {
       this.isShowCookies = data;
     },
+    SET_IS_SHOW_NOTIFICATION(data, text) {
+      this.isShowNotification = data;
+      this.notificationText = text;
+    },
     //actions
+
     openOrder() {
       this.SET_IS_SHOW_ORDER(true);
       this.deleteScroll();
@@ -82,6 +95,13 @@ export const useModalStore = defineStore('modalStore', {
       this.closeSlider();
       document.removeEventListener('keydown', this.escHandler);
     },
+    openNotification(text = '') {
+      this.SET_IS_SHOW_NOTIFICATION(true, text);
+    },
+    closeNotification() {
+      this.SET_IS_SHOW_NOTIFICATION(false);
+    },
+
     acceptCookies() {
       this.SET_IS_SHOWCOOKIES(false);
       this.addSession();

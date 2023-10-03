@@ -3,6 +3,7 @@ import { usePagesStore } from '@/stores/pagesStore.js';
 import currentUrl from '~/utils/mixins/current-url';
 
 export default {
+  props: ['slug'],
   data() {
     return {
       loading: true,
@@ -25,7 +26,8 @@ export default {
         this.loading = true;
         const arr = this.$route.fullPath.split('/');
         const path = arr[arr.length - 1];
-        await this.fetchContent(path);
+
+        await this.fetchContent(this.slug ?? path);
         this.loading = false;
       } catch (e) {
         console.log(e);

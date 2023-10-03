@@ -29,28 +29,24 @@ export const useGalleryStore = defineStore('GalleryStore', {
       if (this.gallery.length) {
         return Promise.resolve();
       }
-      return api
-        .get(`/albums/`)
-        .then((response) => {
-          this.SET_GALLERY(response.data);
-        })
-        .catch(function (e) {
-          console.log(e);
-        });
+      return api.get(`/albums/`).then((response) => {
+        this.SET_GALLERY(response.data);
+      });
+      // .catch(function (e) {
+      //   console.log(e);
+      // });
     },
     async fetchGalleryAlbom(nameEng) {
       const api = useNuxtApp().$api;
       if (this.galleryAlbom.nameEng === nameEng) {
         return Promise.resolve();
       }
-      return api
-        .get(`/albums/${nameEng}`)
-        .then((response) => {
-          this.SET_GALLERY_ALBOM(response.data);
-        })
-        .catch(function (e) {
-          console.log(e);
-        });
+      return api.get(`/albums/${nameEng}`).then((response) => {
+        this.SET_GALLERY_ALBOM(response.data);
+      });
+      // .catch(function (e) {
+      //   console.log(e);
+      // });
     },
   },
 });

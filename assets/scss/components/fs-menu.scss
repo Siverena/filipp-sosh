@@ -1,0 +1,16 @@
+.fs-menu {
+    &__wrapper {
+        display: flex;
+    }
+    &__item{
+        display: flex;
+        width: 50%;
+        gap: 10px;
+    }
+    &__image{
+        overflow: hidden;
+        border-radius: 100px;
+        min-height: max-content;
+        height: 170px;
+    }
+}

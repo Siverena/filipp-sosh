@@ -1,7 +1,97 @@
 .fs-news-list {
     display: flex;
     justify-content: center;
-
+    &__loader {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 100%);
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+        gap: 30px;
+        &:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(
+                110deg,
+                rgba(227, 227, 227, 0) 0%,
+                rgba(227, 227, 227, 0) 40%,
+                rgba(227, 227, 227, 0.5) 50%,
+                rgba(227, 227, 227, 0) 60%,
+                rgba(227, 227, 227, 0) 100%
+            );
+            animation: gradient-animation_2 1.2s linear infinite;
+        }
+    }
+    &__loader-item {
+        width: 100%;
+        height: 251px;
+        display: flex;
+        // align-items: flex-end;
+        background-color: $background-1;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        gap: 20px;
+    }
+    &__loader-info {
+        width: 25%;
+        height: 100%;
+        background-color: $text-color;
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    &__loader-string {
+        height: 23px;
+        width: 196px;
+        background-color: $background-1;
+        border-radius: 5px;
+        &--2 {
+            width: 112px;
+        }
+    }
+    &__loader-text-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 17px;
+    }
+    &__loader-upper {
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+    }
+    &__loader-text {
+        height: 28px;
+        width: 25%;
+        background-color: $text-color;
+        display: flex;
+        flex-direction: column;
+    }
+    &__loader-text1 {
+        height: 66px;
+        width: 100%;
+        background-color: $text-color;
+        display: flex;
+        flex-direction: column;
+    }
+    &__loader-text2 {
+        height: 21px;
+        width: 116px;
+        background-color: $text-color;
+        display: flex;
+        flex-direction: column;
+        align-self: flex-end;
+        justify-self: flex-end;
+    }
     &__content {
         display: flex;
         flex-direction: column;
@@ -10,7 +100,7 @@
     &__article {
         display: flex;
         column-gap: 20px;
-        background-color: $background_1;
+        background-color: $background-1;
         padding: 20px;
         border-radius: 10px;
     }
@@ -19,6 +109,7 @@
         flex-shrink: 0;
         border-radius: 10px;
         overflow: hidden;
+        max-height: 211px;
         img {
             width: 100%;
             height: 100%;
