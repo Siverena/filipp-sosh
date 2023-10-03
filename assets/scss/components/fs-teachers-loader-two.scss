@@ -1,0 +1,90 @@
+.fs-teachers__loader-two {
+  position: relative;
+  overflow: hidden;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 14px;
+  width: 590px;
+  padding: 20px 10px;
+  border-radius: 10px;
+  background: $background_1;
+  &:after {
+    @include loader-animation();
+  }
+  &-col1 {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 353px;
+  }
+  &-col2 {
+    display: flex;
+    flex-direction: column;
+  }
+  &-row1 {
+    height: 60px;
+    background-color: #fff;
+  }
+  &-row2 {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    height: 60px;
+  }
+  &-line1 {
+    width: 140px;
+    height: 16px;
+    background-color: #fff;
+  }
+  &-line2 {
+    width: 300px;
+    height: 44px;
+    background-color: #fff;
+  }
+  &-circle {
+    width: 197px;
+    height: 197px;
+    border-radius: 50%;
+    background: #fff;
+  }
+}
+@media (max-width: grid-width($desktop)) {
+  .fs-teachers__loader-two {
+    width: 468px;
+    &-circle {
+      width: 144px;
+      height: 144px;
+    }
+    &-line2 {
+      width: 254px;
+    }
+  }
+}
+@media (max-width: grid-width($laptop)) {
+  .fs-teachers__loader-two {
+    &:nth-child(2) {
+      display: none;
+    }
+  }
+}
+@media (max-width: grid-width($tablet)) {
+  .fs-teachers__loader-two {
+    position: relative;
+    width: 320px;
+    &-row1 {
+      width: 170px;
+      height: 80px;
+    }
+    &-line2 {
+      width: 100%;
+    }
+    &-circle {
+      position: absolute;
+      top: 20px;
+      right: 12px;
+      width: 101px;
+      height: 101px;
+    }
+  }
+}

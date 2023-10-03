@@ -31,7 +31,8 @@
     //   justify-content: center;
     // }
     // если карточки горизонтальной формы
-    &__block {
+    &__block,
+    &__loader {
       justify-content: center;
     }
   }
