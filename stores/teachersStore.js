@@ -34,7 +34,7 @@ export const useTeachersStore = defineStore('teachersStore', {
         .then((response) => {
           this.SET_TEACHERS(response.data);
         })
-        .catch(function (e) {
+        .catch((e) =>  {
           console.log(e);
         });
     },
