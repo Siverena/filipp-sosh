@@ -13,43 +13,47 @@
         <p class="fs-error__text" v-if="pageContent.text">
           {{ pageContent.text }}
         </p>
-        <NuxtLink to="/" class="fs-error__link fs-btn fs-btn--white"
+        <NuxtLink to="/" class="fs-error__link fs-btn fs-btn--dark"
           >Перейти на главную</NuxtLink
         >
       </div>
     </div>
   </section>
-  <FsFooter />
 </template>
 <script>
 import { mapState } from 'pinia';
 import { useModalStore } from '@/stores/modalStore.js';
-
 export default {
+  data() {
+    return {
+      defaultErrors: {
+        404: {
+          error: 'Страница не найдена',
+          text: ' Страница, которую вы ищите, не существует. Возможно она устарела, была удалена, или был введен неверный адрес в адресной строке.',
+        },
+        500: {
+          error: 'Internal Server Error',
+          text: 'Пожалуйста, обратитесь к разработчикам',
+        },
+      },
+    };
+  },
   computed: {
     ...mapState(useModalStore, ['getIsShowMob']),
     statusCode() {
       return this.$attrs.error.statusCode;
     },
-
     pageContent() {
-      if (this.statusCode === 404) {
-        return {
-          code: 404,
-          error: 'Страница не найдена',
-          text: ' Страница, которую вы ищите, не существует. Возможно она устарела, была удалена, или был введен неверный адрес в адресной строке.',
-        };
-      }
-      if (this.statusCode === 500) {
-        return {
-          code: 500,
-          error: '',
-          text: '',
-        };
-      }
+      return {
+        code: this.statusCode,
+        error:
+          this.$attrs.error.message ??
+          this.defaultErrors[this.statusCode].error ??
+          '',
+        text: this.defaultErrors[this.statusCode].text ?? '',
+      };
     },
   },
-
   methods: {
     getBodyClass() {
       if (this.$attrs.error.statusCode) {
