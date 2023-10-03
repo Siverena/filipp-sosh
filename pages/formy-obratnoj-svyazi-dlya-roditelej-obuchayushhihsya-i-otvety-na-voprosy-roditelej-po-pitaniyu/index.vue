@@ -13,7 +13,7 @@
           родителей по питанию
         </template>
       </FsSectionTitles>
-
+      <FsMenuDaily />
       <FsFaq />
       <FsQuestionsForm />
     </div>

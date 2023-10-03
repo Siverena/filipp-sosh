@@ -22,13 +22,14 @@ export const useFaqStore = defineStore('faqStore', {
     },
     //actions
     async fetchQuestions() {
-      return API()
-        .then((data) => {
-          this.SET_QUESTIONS(data.data);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
+      const api = useNuxtApp().$api;
+      if (Object.keys(this.questions).length) {
+        return Promise.resolve();
+      }
+      return api.get(`/questions`).then((response) => {
+        this.SET_QUESTIONS(response.data);
+      });
+
     },
   },
 });
