@@ -8,7 +8,7 @@
         <template v-slot:main> Руководство. Педагогический состав </template>
       </FsSectionTitles>
       <div class="fs-employees__loader" v-if="loading">
-        <FsTeachersLoader v-for="n in 3" :key="n" />
+        <FsTeachersLoaderTwo v-for="n in 2" :key="n" />
       </div>
       <div class="fs-employees__content" v-if="!loading">
         <FsAccordeon>
