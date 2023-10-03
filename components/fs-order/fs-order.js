@@ -1,13 +1,14 @@
 import { mapActions, mapState } from 'pinia';
 import { useModalStore } from '@/stores/modalStore.js';
+import { useOrderStore } from '@/stores/orderStore.js';
 
 export default {
   data() {
     return {
       agreementError: false,
       validationSuccess: true,
-      // question: '',
-      // questionError: '',
+      sending: false,
+      sendingError: false,
       fields: [
         {
           name: 'name',
@@ -54,7 +55,8 @@ export default {
     },
   },
   methods: {
-    ...mapActions(useModalStore, ['closeOrder']),
+    ...mapActions(useModalStore, ['closeOrder', 'openNotification']),
+    ...mapActions(useOrderStore, ['sendOrder']),
     validateName() {
       if (this.name.length < 0) {
         this.errors.name = 'Поле ';
@@ -106,7 +108,8 @@ export default {
         }
       });
     },
-    submitForm() {
+    async submitForm() {
+      this.sendingError = false;
       this.checkForm();
       if (this.validationSuccess) {
         this.fields.forEach((field) => {
@@ -114,8 +117,19 @@ export default {
             this.formData[field.name] = field.value;
           }
         });
-        console.log(this.formData);
-        this.closeOrder();
+
+        this.sending = true;
+        this.sendOrder(this.formData)
+          .then(() => {
+            this.openNotification('Ваш вопрос отправлен руководителю');
+            this.sending = false;
+            this.closeOrder();
+          })
+          .catch((e) => {
+            this.sending = false;
+            console.log(e);
+            this.sendingError = true;
+          });
       }
     },
   },

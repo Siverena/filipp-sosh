@@ -18,6 +18,7 @@
   </div>
   <FsMobMenu v-if="getIsShowMob" />
   <FsOrder v-if="getIsShowOrder" />
+  <FsNotification v-if="getIsShowNotification" />
 </template>
 
 <script>
@@ -34,6 +35,7 @@ export default {
       'getIsSubscription',
       'getIsShowMob',
       'getisShowCookies',
+      'getIsShowNotification',
     ]),
 
     html() {
