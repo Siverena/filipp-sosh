@@ -46,12 +46,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #0000005e;
+    background-color: rgba(255, 255, 255, 0.73);
+    z-index: 50;
     &__item {
         border-style: solid;
         box-sizing: border-box;
         border-width: 40px 60px 30px 60px;
-        border-color: #3760c9 #96ddfc #96ddfc #36bbf7;
+        border-color: #22333b #c6ac8f #b3997c #5e503f;
         animation: envFloating 1s ease-in infinite alternate;
         &:after {
             content: "";
@@ -60,8 +61,8 @@
             top: -40px;
             height: 70px;
             width: 50px;
-            background-image: linear-gradient(#fff 45px, transparent 0), linear-gradient(#fff 45px, transparent 0),
-                linear-gradient(#fff 45px, transparent 0);
+            background-image: linear-gradient(#000000 45px, transparent 0), linear-gradient(#000000 45px, transparent 0),
+                linear-gradient(#000000 45px, transparent 0);
             background-repeat: no-repeat;
             background-size: 30px 4px;
             background-position:

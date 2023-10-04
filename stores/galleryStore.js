@@ -14,6 +14,9 @@ export const useGalleryStore = defineStore('GalleryStore', {
     getGalleryAlbom(state) {
       return state.galleryAlbom;
     },
+    getGalleryLoading(state) {
+      return Promise.all([this.fetchGallery, this.fetchGalleryAlbom]);
+    },
   },
   actions: {
     //mutations
@@ -39,6 +42,7 @@ export const useGalleryStore = defineStore('GalleryStore', {
     async fetchGalleryAlbom(nameEng) {
       const api = useNuxtApp().$api;
       if (this.galleryAlbom.nameEng === nameEng) {
+        console.log('тот же альбом');
         return Promise.resolve();
       }
       return api.get(`/albums/${nameEng}`).then((response) => {

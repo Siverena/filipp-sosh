@@ -18,17 +18,23 @@ export const useMenuStore = defineStore('menuStore', {
   actions: {
     //mutations
     SET_MENU(menu) {
-      this.menu = menu;
+      this.menu = menu.data;
     },
     //actions
+
     async fetchMenu() {
-        return API()
-          .then((data) => {
-            this.SET_MENU(data.data);
-          })
-          .catch((e) => {
-            console.log(e);
-          });
-      },
+      const api = useNuxtApp().$api;
+      if (this.menu.length) {
+        return Promise.resolve();
+      }
+      return api
+        .get(`/menu/`)
+        .then((response) => {
+          this.SET_MENU(response.data);
+        })
+        .catch(function (e) {
+          console.log(e);
+        });
+    },
   },
 });

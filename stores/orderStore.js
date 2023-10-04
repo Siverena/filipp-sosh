@@ -6,22 +6,18 @@ export const useOrderStore = defineStore('orderStore', {
       orderData: {},
     };
   },
-  getters: {
-    // getTeachers(state) {
-    //   return state.teachers.filter((link) => !link.isAdministration);
-    // },
-  },
+  getters: {},
   actions: {
     //mutations
-    // SET_TEACHERS(teachers) {
-    //   this.teachers = teachers;
-    // },
+
     //actions
     async sendOrder(data) {
       const api = useNuxtApp().$api;
-      return api.post('/question_director', data).then((response) => {
-        console.log(response);
-      });
+      return api.post('/question_director', data).then((response) => {});
+    },
+    async sendQuestionFood(data) {
+      const api = useNuxtApp().$api;
+      return api.post('/question_food', data).then((response) => {});
     },
   },
 });

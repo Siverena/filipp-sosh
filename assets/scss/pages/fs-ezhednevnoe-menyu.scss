@@ -1,0 +1,28 @@
+.fs-ezhednevnoe-menyu {
+    &__content {
+        display: flex;
+        flex-direction: column;
+        row-gap: 160px;
+    }
+}
+@media (max-width: grid-width($desktop)) {
+    .fs-ezhednevnoe-menyu {
+        &__content {
+            row-gap: 120px;
+        }
+    }
+}
+@media (max-width: grid-width($laptop)) {
+    .fs-ezhednevnoe-menyu {
+        &__content {
+            row-gap: 100px;
+        }
+    }
+}
+@media (max-width: grid-width($tablet)) {
+    .fs-ezhednevnoe-menyu {
+        &__content {
+            row-gap: 80px;
+        }
+    }
+}

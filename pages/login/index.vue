@@ -59,21 +59,21 @@
         <div class="fs-auth__attention">
           <span class="fs-auth__star">*</span>Обязательное поле
         </div>
-        <nuxt-link
-          to="/registration"
-          class="fs-link fs-link--base fs-auth__link-reg"
-          >Зарегистрироваться</nuxt-link
-        >
       </form>
     </div>
   </section>
 </template>
 <script>
+import { mapActions, mapState } from 'pinia';
+import { useModalStore } from '@/stores/modalStore.js';
+import { useUserStore } from '@/stores/userStore.js';
 export default {
   data() {
     return {
       agreementError: false,
       validationSuccess: true,
+      sending: false,
+      sendingError: false,
       fields: [
         {
           name: 'login',
@@ -108,6 +108,8 @@ export default {
     },
   },
   methods: {
+    ...mapActions(useModalStore, ['closeOrder', 'openNotification']),
+    ...mapActions(useUserStore, ['auth']),
     validateName() {
       if (this.name.length < 0) {
         this.errors.name = 'Поле ';
@@ -160,6 +162,7 @@ export default {
       });
     },
     submitForm() {
+      this.sendingError = false;
       this.checkForm();
       if (this.validationSuccess) {
         this.fields.forEach((field) => {
@@ -167,7 +170,18 @@ export default {
             this.formData[field.name] = field.value;
           }
         });
-        console.log(this.formData);
+        this.sending = true;
+
+        this.auth(this.formData)
+          .then((response) => {
+            this.sending = false;
+          })
+          .catch((e) => {
+            this.openNotification('Неверный пароль');
+            this.sending = false;
+            console.log(e);
+            this.sendingError = true;
+          });
       }
     },
   },

@@ -1,12 +1,14 @@
 import { mapActions, mapState } from 'pinia';
 import { useMenuStore } from '@/stores/menuStore.js';
+import imageUrl from '~/utils/mixins/image-url';
 
-    export default {
+export default {
   data() {
     return {
       loading: true,
     };
   },
+  mixins: [imageUrl],
   computed: {
     ...mapState(useMenuStore, ['getMenu']),
   },
@@ -20,10 +22,6 @@ import { useMenuStore } from '@/stores/menuStore.js';
       } catch (e) {
         this.loading = false;
         console.log(e);
-        throw createError({
-          statusCode: e.status,
-          statusMessage: e.statusText,
-        });
       }
     },
   },
