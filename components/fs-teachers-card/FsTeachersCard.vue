@@ -18,7 +18,7 @@
           'fs-teachers-card__image-adm': status === 'admin',
           'fs-teachers-card__image-thr': status === 'teacher',
         }"
-        :src="getStaticImageUrl(teacher.photo)"
+        :src="teacher.photo"
         alt=" "
         @error="errorImg"
       />
