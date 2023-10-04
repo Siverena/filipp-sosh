@@ -108,17 +108,10 @@ export const useNavLinksStore = defineStore('NavLinksStore', {
             },
 
             {
-              name: 'Школьное питание',
+              name: 'Организация питания в образовательной организации',
               link: '/ezhednevnoe-menyu',
               visibleInMenu: false,
               visibleInSvedenMenu: true,
-            },
-
-            {
-              name: 'Формы обратной связи для родителей обучающихся и ответы на вопросы родителей по питанию',
-              link: '/formy-obratnoj-svyazi-dlya-roditelej-obuchayushhihsya-i-otvety-na-voprosy-roditelej-po-pitaniyu',
-              visibleInMenu: false,
-              visibleInSvedenMenu: false,
             },
           ],
         },

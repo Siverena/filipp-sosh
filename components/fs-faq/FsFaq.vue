@@ -1,6 +1,13 @@
 <template>
   <div class="fs-faq">
     <h2 class="fs-h2 fs-faq__title">Часто задаваемые вопросы по питанию</h2>
+    <div class="fs-schedule__loader" v-if="loading">
+      <div class="fs-schedule__loader-wrapper">
+        <div class="fs-schedule__loader-line"></div>
+        <div class="fs-schedule__loader-line"></div>
+        <div class="fs-schedule__loader-line"></div>
+      </div>
+    </div>
     <FsAccordeon v-if="!loading">
       <FsAccordeonTab
         v-for="(item, key) in getQuestions"
@@ -10,9 +17,7 @@
         <template v-slot:title> {{ item.question }} </template>
         <template v-slot:content>
           <div class="fs-faq__answer">
-            <p v-for="(text, key) in item.answer" :key="key">
-              {{ text }}
-            </p>
+            <p>{{ item.answer }}</p>
           </div>
         </template>
       </FsAccordeonTab>

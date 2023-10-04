@@ -1,8 +1,4 @@
-import faqData from '@/stores/data/d-faq.js';
 import { defineStore } from 'pinia';
-async function API() {
-  return faqData;
-}
 
 export const useFaqStore = defineStore('faqStore', {
   state: () => {
@@ -18,18 +14,17 @@ export const useFaqStore = defineStore('faqStore', {
   actions: {
     //mutations
     SET_QUESTIONS(questions) {
-      this.questions = questions;
+      this.questions = questions.data;
     },
     //actions
     async fetchQuestions() {
       const api = useNuxtApp().$api;
-      if (Object.keys(this.questions).length) {
+      if (this.questions.length) {
         return Promise.resolve();
       }
       return api.get(`/questions`).then((response) => {
         this.SET_QUESTIONS(response.data);
       });
-
     },
   },
 });
