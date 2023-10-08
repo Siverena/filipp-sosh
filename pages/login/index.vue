@@ -66,7 +66,7 @@
                 </div>
             </form>
         </div>
-        <!-- <div class="fs-loader" v-if="sending">
+        <div class="fs-auth__loader fs-loader" v-if="sending">
             <div class="fs-loader__bg"></div>
             <div class="fs-loader__items">
                 <div class="fs-loader__item">
@@ -244,7 +244,7 @@
                     </svg>
                 </div>
             </div>
-        </div> -->
+        </div>
     </section>
 </template>
 <script>
@@ -359,9 +359,9 @@ export default {
                 this.auth(this.formData)
                     .then((meta) => {
                         this.sending = false;
-                        if (Object.keys(this.getUser).length) {
-                            this.$router.push(`/personal`);
-                        }
+                        // if (Object.keys(this.getUser).length) {
+                        this.$router.push(`/personal`);
+                        // }
                     })
                     .catch((e) => {
                         this.openNotification(e.response.data.data.message);

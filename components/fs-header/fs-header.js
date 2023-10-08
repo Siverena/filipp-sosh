@@ -11,7 +11,7 @@ export default {
             'widthComputed',
             'isMobileVersion',
         ]),
-        ...mapState(useUserStore, ['getUser']),
+        ...mapState(useUserStore, ['getUser', 'getIsAuthChecked']),
     },
     methods: {
         ...mapActions(useModalStore, ['openMobMenu', 'openOrder']),

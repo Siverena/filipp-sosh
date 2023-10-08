@@ -1,4 +1,4 @@
-import { mapActions } from 'pinia';
+import { mapActions, mapState } from 'pinia';
 import { useUserStore } from '@/stores/userStore.js';
 export default {
     data() {
@@ -6,14 +6,17 @@ export default {
             isMenuOpen: false,
         };
     },
+    computed: {
+        ...mapState(useUserStore, ['getUser']),
+    },
     methods: {
-        ...mapActions(useUserStore, ['deleteUser']),
+        ...mapActions(useUserStore, ['deleteUser', 'logout']),
         toggleMenu() {
             this.isMenuOpen = !this.isMenuOpen;
         },
         exit() {
+            this.logout();
             localStorage.removeItem('Bearer');
-            // localStorage.clear();
             this.deleteUser();
             this.$router.push('/login');
         },
