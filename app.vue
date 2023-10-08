@@ -79,11 +79,11 @@ export default {
         this.setHtmlClass();
     },
 
-    async mounted() {
+    async beforeMount() {
         if (!('test' in sessionStorage)) this.showCookies();
-        if ('Bearer' in localStorage) {
-            this.loadData();
-        }
+        // if ('Bearer' in localStorage) {
+        await this.checkAuth();
+        // }
     },
     async created() {},
 };

@@ -12,9 +12,10 @@
                 >
                     Задать вопрос
                 </p>
-                <FsUserNav v-if="Object.keys(getUser).length" />
-                <FsLogin v-else class="fs-header__login" />
-
+                <div v-if="getIsAuthChecked" class="fs-header__auth-wrapper">
+                    <FsUserNav v-if="Object.keys(getUser).length" />
+                    <FsLogin v-else class="fs-header__login" />
+                </div>
                 <FsBurger
                     class="fs-header__burger"
                     tabindex="0"
