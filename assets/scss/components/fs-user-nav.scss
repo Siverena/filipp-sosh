@@ -1,0 +1,43 @@
+.fs-user-nav {
+    &__photo {
+        width: 50px;
+        height: 50px;
+        background-color: $ton-4;
+        // background-image: url(@/assets/img/fs-user-nav/user.svg);
+        border-radius: 50%;
+        overflow: hidden;
+        margin-left: 20px;
+        cursor: pointer;
+        position: relative;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__menu {
+        padding: 8px;
+        border-radius: 10px;
+
+        background-color: $ton-2;
+        position: absolute;
+        right: 40px;
+        margin-top: 10px;
+    }
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+    }
+    &__link {
+        color: $text-color;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+}
