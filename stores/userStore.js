@@ -4,7 +4,8 @@ export const useUserStore = defineStore('userStore', {
     state: () => {
         return {
             user: {},
-            isAuthChecked: false,
+            isAuthChecked: true,
+            userData: {},
         };
     },
     getters: {
@@ -27,6 +28,7 @@ export const useUserStore = defineStore('userStore', {
             const api = useNuxtApp().$api;
             return api.post('/login', data).then((response) => {
                 this.SET_USER(response.data);
+                this.fetchUserData(this.user.id);
                 localStorage.setItem(
                     response.data.data.token_type,
                     response.data.data.access_token
@@ -38,6 +40,9 @@ export const useUserStore = defineStore('userStore', {
         SET_IS_AUTH_CHECKED(checked = true) {
             this.isAuthChecked = checked;
         },
+        SET_USER_DATA(data) {
+            this.userData = data;
+        },
         //methods
         deleteUser() {
             this.DELETE_USER();
@@ -46,26 +51,19 @@ export const useUserStore = defineStore('userStore', {
         async logout() {
             const api = useNuxtApp().$api;
             return api
-                .post('/logout', {
+                .get('/logout', {
                     headers: {
                         Authorization: `Bearer${localStorage.getItem(
                             'Bearer'
                         )}`,
                     },
                 })
-                .then((response) => {
-                    // this.SET_USER(response.data);
-                    // localStorage.setItem(
-                    //     response.data.data.token_type,
-                    //     response.data.data.access_token
-                    // );
-                    // localStorage.name = response.data.data.token_type;
-                    // localStorage.value = response.data.data.access_token;
-                });
+                .then((response) => {});
         },
 
         async checkAuth() {
             const api = useNuxtApp().$api;
+            this.SET_IS_AUTH_CHECKED(false);
             return api
                 .get('/user', {
                     headers: {
@@ -77,13 +75,20 @@ export const useUserStore = defineStore('userStore', {
                 .then((response) => {
                     this.SET_USER(response.data);
                     this.SET_IS_AUTH_CHECKED(true);
-                    // localStorage.setItem(
-                    //     response.data.data.token_type,
-                    //     response.data.data.access_token
-                    // );
-                    // localStorage.name = response.data.data.token_type;
-                    // localStorage.value = response.data.data.access_token;
+                })
+                .catch((e) => {
+                    this.SET_IS_AUTH_CHECKED();
+                    console.log(e);
                 });
+        },
+        async fetchUserData(id) {
+            const api = useNuxtApp().$api;
+            if (Object.keys(this.userData).length) {
+                return Promise.resolve();
+            }
+            return api.get(`/profile/${id}`).then((response) => {
+                this.SET_USER_DATA(response.data);
+            });
         },
     },
 });
