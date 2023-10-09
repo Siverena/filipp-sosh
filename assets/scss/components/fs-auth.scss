@@ -3,6 +3,10 @@
     flex-direction: column;
     gap: 40px;
     margin: auto;
+    position: relative;
+    &__loader {
+        position: absolute;
+    }
     &__title {
         margin-bottom: 60px;
         text-align: center;
