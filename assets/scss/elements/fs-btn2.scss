@@ -1,0 +1,75 @@
+.fs-btn2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: fit-content;
+  box-sizing: border-box;
+  font-style: normal;
+  // line-height: 22px;
+  // border: none;
+  &--dark {
+    background-color: $ton-5;
+    color: $text-color;
+    transition: background-color 0.5s;
+    &:hover {
+      background-color: $ton-6;
+    }
+    &:active {
+      background-color: $ton-5;
+    }
+    &:focus-visible {
+      background-color: $ton-6;
+      outline: none;
+    }
+    &:disabled {
+      background-color: $text-disabled;
+    }
+  }
+  &--white {
+    background-color: #fff;
+    transition: all 0.5s;
+    &:hover {
+      background-color: $ton-6;
+      color: $text-color;
+    }
+    &:active {
+      background-color: $ton-5;
+    }
+    &:focus-visible {
+      background-color: $ton-6;
+      color: $text-color;
+      outline: none;
+    }
+    &:disabled {
+      background-color: $text-disabled;
+    }
+  }
+  &-small {
+    font-weight: 400;
+    padding: 10px 20px;
+  }
+  &-big {
+    font-weight: 400;
+    padding: 16px 60px;
+    border-radius: 10px;
+  }
+  &-group {
+    &:first-child {
+      border-radius: 10px 0px 0px 10px;
+    }
+    &:last-child {
+      border-radius: 0px 10px 10px 0px;
+    }
+    &:not(:first-child) {
+      border-left: none;
+    }
+  }
+  &-group-one {
+    &:first-child {
+      border-radius: 10px 0px 0px 10px;
+    }
+    &:last-child {
+      border-radius: 0px 10px 10px 0px;
+    }
+  }
+}
