@@ -77,14 +77,12 @@ export default {
             this.updateWidth();
         });
         this.setHtmlClass();
+        if (!('test' in sessionStorage)) this.showCookies();
+        if ('Bearer' in localStorage) {
+            await this.checkAuth();
+        }
     },
 
-    async beforeMount() {
-        if (!('test' in sessionStorage)) this.showCookies();
-        // if ('Bearer' in localStorage) {
-        await this.checkAuth();
-        // }
-    },
     async created() {},
 };
 </script>
