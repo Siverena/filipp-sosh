@@ -23,7 +23,7 @@
         <article
           class="fs-news-list__article"
           v-for="(item, key) in getNewsList"
-          :key="key"
+          :key="item.id"
         >
           <div class="fs-news-list__article-image">
             <img :src="item.mainImg" alt="foto" />
@@ -50,28 +50,47 @@
           </div>
         </article>
       </div>
+      {{ $route.query }}
+      <FsPagination />
     </div>
+
   </section>
 </template>
 <script>
 import { mapActions, mapState } from 'pinia';
 import { useNewsStore } from '@/stores/newsStore.js';
+import { ref } from 'vue';
 export default {
   data() {
     return {
-      loading: true,
+      loading: false,
       currentActive: false,
+      // route1: this.$route.query,
+      count: this.$route.query.page
     };
   },
   computed: {
     ...mapState(useNewsStore, ['getNewsList']),
+    route1 () {
+      return this.$route.query;
+    }
+  },
+  watch: {
+    route1() {
+      console.log('load');
+      this.loadData();
+      this.loading = false;
+    }
   },
   methods: {
     ...mapActions(useNewsStore, ['fetchNewsList']),
     async loadData() {
+      console.log(1111);
+      // count = ref(this.$route.query.page);
       try {
         this.loading = true;
-        await this.fetchNewsList();
+        await this.fetchNewsList(this.count);
+        console.log('pass');
         this.loading = false;
       } catch (e) {
         console.log(e);
@@ -81,5 +100,7 @@ export default {
   async created() {
     this.loadData();
   },
+
+
 };
 </script>
