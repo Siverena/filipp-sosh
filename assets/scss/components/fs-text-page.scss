@@ -1,0 +1,12 @@
+.fs-text-page {
+    &__content {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+    }
+    &__block {
+        p {
+            margin-bottom: 20px;
+        }
+    }
+}
