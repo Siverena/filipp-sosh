@@ -28,6 +28,7 @@ export const useNewsStore = defineStore('NewsStore', {
       this.lastNews = data.data;
     },
     SET_NEWS_LIST(data) {
+      console.log(777);
       this.newsList = data.data;
     },
     //actions
@@ -49,12 +50,16 @@ export const useNewsStore = defineStore('NewsStore', {
         this.SET_LAST_NEWS(response.data);
       });
     },
-    async fetchNewsList() {
+    async fetchNewsList(page1) {
+      console.log(2222);
       const api = useNuxtApp().$api;
-      if (this.newsList.length) {
-        return Promise.resolve();
-      }
-      return api.get(`/news/`).then((response) => {
+      console.log(5555);
+      // if (this.newsList.length) {
+
+      //   return Promise.resolve();
+      // }
+      return api.get(`/news/?page=${page1}`).then((response) => {
+
         this.SET_NEWS_LIST(response.data);
       });
     },
