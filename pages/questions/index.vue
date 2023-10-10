@@ -155,7 +155,6 @@ export default {
   },
   watch: {
     path() {
-      console.log("ИЗМЕНЕНИЯ");
       this.loadData();
     },
   },
@@ -165,12 +164,12 @@ export default {
       "setStatus",
       "setAppealCategory",
     ]),
-
     async loadData() {
       try {
         this.loading = true;
         await this.fetchQuestions(this.path);
         this.loading = false;
+        this.setText();
       } catch (e) {
         console.log(e);
       }
@@ -192,9 +191,6 @@ export default {
   },
   async created() {
     this.loadData();
-  },
-  mounted() {
-    this.setText();
   },
 };
 </script>
