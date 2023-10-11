@@ -18,7 +18,12 @@ export default {
             this.logout();
             localStorage.removeItem('Bearer');
             this.deleteUser();
-            this.$router.push('/login');
+            if (
+                this.$route.name === 'personal' ||
+                this.$route.name === 'questions'
+            ) {
+                this.$router.push('/login');
+            }
         },
     },
 };

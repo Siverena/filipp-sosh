@@ -118,6 +118,12 @@ export const useNavLinksStore = defineStore('NavLinksStore', {
                     ],
                 },
                 {
+                    name: 'Организация питания в образовательной организации',
+                    link: '/ezhednevnoe-menyu',
+                    visibleInMenu: false,
+                    visibleInSvedenMenu: false,
+                },
+                {
                     name: 'Контакты',
                     link: '/contacts',
                     visibleInMenu: true,
@@ -134,6 +140,14 @@ export const useNavLinksStore = defineStore('NavLinksStore', {
                     link: '/personal',
                     visibleInMenu: false,
                     visibleInSvedenMenu: false,
+                    child: [
+                        {
+                            name: 'Вопросы',
+                            link: '/personal/questions',
+                            visibleInMenu: false,
+                            visibleInSvedenMenu: false,
+                        },
+                    ],
                 },
                 {
                     name: 'Авторизация',
