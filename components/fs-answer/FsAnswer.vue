@@ -15,11 +15,7 @@
           :id="id">
         </textarea>
         <span class="fs-answer__error" v-if="field.error">{{ field.error }}</span>
-        <div class="fs-answer__checkbox">
-          <input type="checkbox" v-model.trim="field.sendEmail" :name="'checkbox-' + id" :id="'checkbox-' + id" />
-          <label :for="'checkbox-' + id">Отправить ответ по почте</label>
-        </div>
-        <div class="fs-answer__row">
+         <div class="fs-answer__row">
           <p class="fs-answer__notice">Обязательное поле</p>
           <div class="fs-answer__btn">
             <button type="button" class="fs-btn2 fs-btn2-big fs-btn2--white" @click="closeAnswer">Отменить</button>
@@ -27,8 +23,9 @@
           </div>
         </div>
       </form>
+      <FsSendMailLoader v-if="sending" />
     </template>
-  </div>
+  </div> 
 </template>
 
 <script>
@@ -67,7 +64,6 @@ export default {
       field.error = "";
       if (field.required && field.value.length == 0) {
         field.error = `Заполните поле ${field.label}`;
-        console.log(field.error);
         return false;
       }
       return true;
@@ -79,7 +75,6 @@ export default {
       }
     },
     async submitForm() {
-      console.log(this.field.value);
       this.sendingError = false;
       this.checkForm();
       if (this.validationSuccess) {
@@ -88,7 +83,7 @@ export default {
         this.sending = true;
         this.sendAnswer(this.formData)
           .then((response) => {
-            console.log(response);
+            // console.log(response);
             this.openNotification(response.data.message);
             this.fetchQuestions(this.path);
             this.sending = false;
