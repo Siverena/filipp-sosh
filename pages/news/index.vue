@@ -22,7 +22,7 @@
       <div class="fs-news-list__content">
         <article
           class="fs-news-list__article"
-          v-for="(item, key) in getNewsList"
+          v-for="(item, key) in getNewsList.data"
           :key="item.id"
         >
           <div class="fs-news-list__article-image">
@@ -50,8 +50,7 @@
           </div>
         </article>
       </div>
-      {{ $route.query }}
-      <FsPagination />
+      <FsPagination :countPages="countPages" />
     </div>
 
   </section>
@@ -65,36 +64,53 @@ export default {
     return {
       loading: false,
       currentActive: false,
+      // perpage: +getNewsList.meta.per_page
       // route1: this.$route.query,
-      count: this.$route.query.page
     };
   },
   computed: {
     ...mapState(useNewsStore, ['getNewsList']),
     route1 () {
       return this.$route.query;
+    },
+    count () {
+      return this.$route.query.page;
+    },
+    loading () {
+      return this.loading=false;
+    },
+    countPages (store) {
+      if (this.getNewsList.meta){
+        if(Math.ceil(+this.getNewsList.meta.total / +this.getNewsList.meta.per_page) < 7 ) {
+          return Math.ceil(+this.getNewsList.meta.total / +this.getNewsList.meta.per_page);
+        }
+        return 7;
+      }
+        // return 10;
     }
   },
   watch: {
     route1() {
+      this.loading = true;
       console.log('load');
       this.loadData();
-      this.loading = false;
+      this.loading = true;
+      this.$forceUpdate();
     }
   },
   methods: {
     ...mapActions(useNewsStore, ['fetchNewsList']),
     async loadData() {
       console.log(1111);
-      // count = ref(this.$route.query.page);
       try {
-        this.loading = true;
         await this.fetchNewsList(this.count);
+        this.loading = true;
         console.log('pass');
         this.loading = false;
       } catch (e) {
         console.log(e);
       }
+
     },
   },
   async created() {

@@ -5,11 +5,19 @@
     display: flex;
     justify-content: flex-end;
     button{
-        width: 60px;
-        height: 60px;
-        border-radius: 8px;
-        border: none;
-        background-color: aquamarine;
+        // width: 60px;
+        // height: 60px;
+        // border-radius: 8px;
+        // border: none;
+        // background-color: aquamarine;
+    }
+    &__abnormal-count-pages{
+        display: flex;
+        gap: 16px;
+        align-items: center;
+    }
+    &__more-pages {
+        gap: 0px !important;
     }
     &__active{
         font-weight: 700;
@@ -35,7 +43,6 @@
     }
 }
 .fs-pagination__active{
-    // background-color: black;
     font-weight: 700 !important;
 
 }
