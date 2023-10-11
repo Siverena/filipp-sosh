@@ -181,13 +181,31 @@
 </template>
 <script setup>
 import { useUiStore } from '@/stores/uiStore.js';
+import { onMounted, onUpdated } from 'vue';
 const uiStore = useUiStore();
 const nuxtApp = useNuxtApp();
 
 nuxtApp.hook('page:finish', () => {
-  if (useUiStore().$state.pageLoader === true) {
+  // if (useUiStore().$state.pageLoader === true) {
     useUiStore().setPageLoader(false);
-  }
+  // }
 });
 const loading = computed(() => uiStore.pageLoader);
+
+// onUpdated(() => {
+//   if (window.location.pathname === '/news'){
+// const loading = computed(() => uiStore.pageLoader = false);
+// }
+// console.log(window.location.pathname);
+// })
+
+watch(loading, () => {
+  if (window.location.pathname === '/news'){
+
+    uiStore.pageLoader = false;
+  }
+})
+
+
+
 </script>
