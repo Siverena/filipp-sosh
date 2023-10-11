@@ -51,16 +51,14 @@ export const useNewsStore = defineStore('NewsStore', {
       });
     },
     async fetchNewsList(page1) {
-      console.log(2222);
       const api = useNuxtApp().$api;
-      console.log(5555);
-      // if (this.newsList.length) {
-
-      //   return Promise.resolve();
-      // }
       return api.get(`/news/?page=${page1}`).then((response) => {
         this.SET_NEWS_LIST(response.data);
       });
+
+    },
+    clearNews() {
+        this.SET_NEWS({ data: {} });
     },
   },
 });

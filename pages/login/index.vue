@@ -294,7 +294,7 @@ export default {
     },
     methods: {
         ...mapActions(useModalStore, ['closeOrder', 'openNotification']),
-        ...mapActions(useUserStore, ['auth']),
+        ...mapActions(useUserStore, ['auth', 'fetchUserData']),
         validateName() {
             if (this.name.length < 0) {
                 this.errors.name = 'Поле ';
@@ -360,18 +360,34 @@ export default {
                     .then((meta) => {
                         this.sending = false;
                         // if (Object.keys(this.getUser).length) {
-                        this.$router.push(`/personal`);
+                        if (this.$route.name === 'login') {
+                            this.$router.push(`/personal`);
+                        }
+
                         // }
                     })
                     .catch((e) => {
-                        this.openNotification(e.response.data.data.message);
-
                         this.sending = false;
+                        let errorMessage = '';
+                        if (e.response.status === 419) {
+                            errorMessage = e.response?.data?.message;
+                        } else {
+                            errorMessage = e.response?.data?.data.message;
+                        }
+                        this.openNotification(errorMessage);
                         console.log(e);
                         this.sendingError = true;
                     });
             }
         },
+    },
+    mounted() {
+        //костыль на случай отсутствия xsrf токена на странице логина (например, почистили куки и перезагрузили /login)
+        if (!useCookie('XSRF-TOKEN').value) {
+            try {
+                this.fetchUserData();
+            } catch (e) {}
+        }
     },
 };
 </script>

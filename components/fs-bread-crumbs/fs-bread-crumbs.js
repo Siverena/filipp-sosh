@@ -21,6 +21,7 @@ export default {
         ...mapState(useGalleryStore, {
             getGalleryAlbom: 'getGalleryAlbom',
             galleryLoading: 'isLoading',
+            getGalleryAlbomName: 'getGalleryAlbomName',
         }),
         ...mapState(useNewsStore, ['getNews', 'getNewsLoading']),
 
@@ -29,18 +30,29 @@ export default {
         },
     },
     watch: {
-        currentUrl() {
+        async currentUrl() {
             console.log('currentUrl updated: ', this.currentUrl);
-            this.loadData();
+            this.links.splice(0);
+            this.clearGalleryAlbom();
+            this.clearNews();
+            await this.loadData();
+            this.getLinks();
+        },
+        getGalleryAlbomName() {
+            console.log('store has been changed');
+            this.getLinks();
+        },
+        getNews() {
+            this.getLinks();
         },
     },
     methods: {
-        ...mapActions(useGalleryStore, ['fetchGallery']),
+        ...mapActions(useGalleryStore, ['fetchGallery', 'clearGalleryAlbom']),
         ...mapActions(useNavLinksStore, [
             'setCurrentFirstElem',
             'setCurrentSecondElem',
         ]),
-
+        ...mapActions(useNewsStore, ['clearNews']),
         getLinks() {
             this.links.splice(0);
             const arr = this.$route.fullPath.split('/').slice(1);
@@ -52,7 +64,7 @@ export default {
             if (arr[1]) {
                 if (arr[0] === 'gallery') {
                     this.links.push({
-                        name: this.getGalleryAlbom.name,
+                        name: this.getGalleryAlbomName,
                         link: arr[1],
                     });
                 }
@@ -67,6 +79,14 @@ export default {
                     this.links.push({
                         name: this.getSvedenLink.name,
                         link: arr[1],
+                    });
+                }
+                if (arr[0] === 'personal') {
+                    // this.setCurrentFirstElem('personal');
+                    // this.setCurrentSecondElem('questions');
+                    this.links.push({
+                        name: 'Вопросы',
+                        link: 'questions',
                     });
                 }
             }
