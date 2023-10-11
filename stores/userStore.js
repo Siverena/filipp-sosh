@@ -24,19 +24,6 @@ export const useUserStore = defineStore('userStore', {
         DELETE_USER() {
             this.user = {};
         },
-        async auth(data) {
-            const api = useNuxtApp().$api;
-            return api.post('/login', data).then((response) => {
-                this.SET_USER(response.data);
-                this.fetchUserData(this.user.id);
-                localStorage.setItem(
-                    response.data.data.token_type,
-                    response.data.data.access_token
-                );
-                // localStorage.name = response.data.data.token_type;
-                // localStorage.value = response.data.data.access_token;
-            });
-        },
         SET_IS_AUTH_CHECKED(checked = true) {
             this.isAuthChecked = checked;
         },
@@ -48,6 +35,17 @@ export const useUserStore = defineStore('userStore', {
             this.DELETE_USER();
         },
 
+        async auth(data) {
+            const api = useNuxtApp().$api;
+            return api.post('/login', data).then((response) => {
+                this.SET_USER(response.data);
+                // this.fetchUserData(this.user.id);
+                localStorage.setItem(
+                    response.data.data.token_type,
+                    response.data.data.access_token
+                );
+            });
+        },
         async logout() {
             const api = useNuxtApp().$api;
             return api

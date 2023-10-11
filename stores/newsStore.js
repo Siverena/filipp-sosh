@@ -110,5 +110,8 @@ export const useNewsStore = defineStore('NewsStore', {
                 this.SET_NEWS_LIST(response.data);
             });
         },
+        clearNews() {
+            this.SET_NEWS({ data: {} });
+        },
     },
 });

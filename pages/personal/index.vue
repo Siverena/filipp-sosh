@@ -13,9 +13,21 @@
                     <div class="fs-personal__photo">
                         <img src="@/assets/img/fs-person/person.png" alt="" />
                     </div>
+                    <p>
+                        <input
+                            type="file"
+                            name="f"
+                            accept="image/*"
+                            id="input"
+                            v-on:change="handleFileUpload()"
+                        />
+                        <input type="submit" value="Отправить" />
+                    </p>
                 </div>
                 <div class="fs-personal__col-right">
-                    <div class="fs-personal__name">{{ getUser.name }}</div>
+                    <div class="fs-personal__name">
+                        {{ getUser.name }}
+                    </div>
                     <div class="fs-personal__info-block">
                         <div class="fs-personal__field">
                             <div class="fs-personal__field-name">Email</div>
@@ -30,6 +42,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <FsCallSchedule class="fs-personal__shedule" />
+                <div class="fs-personal__admin-links">
+                    <nuxt-link to="/personal/questions">Вопросы</nuxt-link>
                 </div>
             </div>
             <div class="fs-personal__shedule">
@@ -93,6 +109,8 @@ export default {
     data() {
         return {
             loading: true,
+            file: '',
+            formData: new FormData(),
         };
     },
     computed: {
@@ -100,7 +118,7 @@ export default {
         ...mapState(useUserStore, ['getUser']),
     },
     methods: {
-        ...mapActions(useScheduleStore, ['fetchSchedule']),
+        ...mapActions(useScheduleStore, ['fetchSchedule', 'changePhoto']),
         async loadData() {
             try {
                 this.loading = true;
@@ -111,6 +129,14 @@ export default {
             } catch (e) {
                 console.log(e);
             }
+        },
+        getImg() {},
+        handleFileUpload() {
+            this.file = this.$refs.file.files[0];
+        },
+        submitFile() {
+            this.formData.append('file', this.file);
+            this.changePhoto(this.formData);
         },
     },
     async created() {
