@@ -15,6 +15,9 @@ export const useUserStore = defineStore('userStore', {
         getIsAuthChecked() {
             return this.isAuthChecked;
         },
+        getUserData(state) {
+            return state.userData;
+        },
     },
     actions: {
         //mutations
@@ -39,7 +42,6 @@ export const useUserStore = defineStore('userStore', {
             const api = useNuxtApp().$api;
             return api.post('/login', data).then((response) => {
                 this.SET_USER(response.data);
-                // this.fetchUserData(this.user.id);
                 localStorage.setItem(
                     response.data.data.token_type,
                     response.data.data.access_token
@@ -72,6 +74,7 @@ export const useUserStore = defineStore('userStore', {
                 })
                 .then((response) => {
                     this.SET_USER(response.data);
+                    this.fetchUserData(response.data.data.user.id);
                     this.SET_IS_AUTH_CHECKED(true);
                 })
                 .catch((e) => {
@@ -84,9 +87,15 @@ export const useUserStore = defineStore('userStore', {
             if (Object.keys(this.userData).length) {
                 return Promise.resolve();
             }
-            return api.get(`/profile/${id}`).then((response) => {
+            return api.get(`/profile?id=${id}`).then((response) => {
                 this.SET_USER_DATA(response.data);
             });
+        },
+        async changePhoto(data) {
+            const api = useNuxtApp().$api;
+            return api
+                .post(`/avatar-update?id=${this.getUser.id}`, data)
+                .then((response) => {});
         },
     },
 });

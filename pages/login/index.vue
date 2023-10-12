@@ -359,12 +359,9 @@ export default {
                 this.auth(this.formData)
                     .then((meta) => {
                         this.sending = false;
-                        // if (Object.keys(this.getUser).length) {
                         if (this.$route.name === 'login') {
                             this.$router.push(`/personal`);
                         }
-
-                        // }
                     })
                     .catch((e) => {
                         this.sending = false;

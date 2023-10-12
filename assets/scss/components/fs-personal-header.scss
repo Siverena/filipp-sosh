@@ -1,0 +1,116 @@
+.fs-personal-header {
+    &__info {
+        display: flex;
+        column-gap: 16px;
+        margin-bottom: 160px;
+    }
+    &__col-left {
+        flex-grow: 0;
+    }
+    &__user-content {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__photo {
+        width: 320px;
+        height: 320px;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: $background-1;
+        position: relative;
+        margin-bottom: 30px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        &:hover {
+            .fs-personal-header__add-photo--user {
+                display: flex;
+            }
+        }
+    }
+
+    &__add-photo {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background-color: #ffffff65;
+        border-radius: 10px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: calc(100% - 10px);
+        height: calc(100% - 10px);
+
+        &--user {
+            display: none;
+        }
+        #input {
+            display: none;
+        }
+    }
+    &__col-right {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+    }
+    &__name {
+        color: $ton-2;
+        font-size: 42px;
+        line-height: 48px;
+    }
+    &__info-block {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        row-gap: 20px;
+    }
+    &__field {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        row-gap: 5px;
+    }
+    &__field-name {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 16px;
+        color: $text-secondary;
+    }
+    &__field-value {
+        font-size: 18px;
+
+        font-weight: 400;
+        line-height: 22px;
+        color: $text-primary;
+    }
+
+    &__shedule {
+        margin-bottom: 160px;
+        // .fs-call-schedule {
+        //     &__list {
+        //         background-color: $background-1;
+        //         border-radius: 10px;
+        //         padding: 10px;
+        //         border: none;
+        //         max-width: 320px;
+        //     }
+        //     &__title {
+        //         display: none;
+        //     }
+        //     &__loader {
+        //         display: none;
+        //     }
+        // }
+    }
+}

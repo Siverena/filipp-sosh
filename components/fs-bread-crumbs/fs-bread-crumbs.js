@@ -82,8 +82,6 @@ export default {
                     });
                 }
                 if (arr[0] === 'personal') {
-                    // this.setCurrentFirstElem('personal');
-                    // this.setCurrentSecondElem('questions');
                     this.links.push({
                         name: 'Вопросы',
                         link: 'questions',
@@ -94,22 +92,14 @@ export default {
         async loadData() {
             try {
                 this.loading = true;
-                // console.dir(this.galleryLoading);
                 Promise.allSettled([
                     this.galleryLoading,
                     this.getNewsLoading,
                 ]).then((res) => {
-                    console.log('resolved');
-                    console.log(res);
                     this.getLinks();
                     this.loading = false;
                 });
                 this.getNewsLoading;
-                this.getNewsLoading.then(() => {
-                    console.log('getNewsLoading');
-                    console.log(this.getNewsLoading);
-                    console.log(this.getNews);
-                });
             } catch (e) {
                 console.log(e);
             }
