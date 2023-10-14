@@ -18,6 +18,27 @@ export const useUserStore = defineStore('userStore', {
         getUserData(state) {
             return state.userData;
         },
+        getStudentInfo(state) {
+            let info = state.userData.data?.info.find(
+                (el) => el.role === 'Студент'
+            );
+            return info;
+            // return state.userData.data.info.find((el) => el.role === 'Студент');
+        },
+        getParentInfo(state) {
+            let info = state.userData.data?.info.find(
+                (el) => el.role === 'Родитель'
+            );
+            return info;
+            // return state.userData.data.info.find((el) => el.role === 'Студент');
+        },
+        getTeacherInfo(state) {
+            let info = state.userData.data?.info.find(
+                (el) => el.role === 'Учитель'
+            );
+            return info;
+            // return state.userData.data.info.find((el) => el.role === 'Студент');
+        },
     },
     actions: {
         //mutations
@@ -42,6 +63,7 @@ export const useUserStore = defineStore('userStore', {
             const api = useNuxtApp().$api;
             return api.post('/login', data).then((response) => {
                 this.SET_USER(response.data);
+                this.fetchUserData(response.data.data.user.id);
                 localStorage.setItem(
                     response.data.data.token_type,
                     response.data.data.access_token
@@ -84,9 +106,6 @@ export const useUserStore = defineStore('userStore', {
         },
         async fetchUserData(id) {
             const api = useNuxtApp().$api;
-            if (Object.keys(this.userData).length) {
-                return Promise.resolve();
-            }
             return api.get(`/profile?id=${id}`).then((response) => {
                 this.SET_USER_DATA(response.data);
             });

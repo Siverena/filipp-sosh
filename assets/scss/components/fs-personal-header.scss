@@ -1,8 +1,8 @@
 .fs-personal-header {
+    margin-bottom: 160px;
     &__info {
         display: flex;
         column-gap: 16px;
-        margin-bottom: 160px;
     }
     &__col-left {
         flex-grow: 0;
@@ -66,6 +66,9 @@
         color: $ton-2;
         font-size: 42px;
         line-height: 48px;
+        &--mob {
+            display: none;
+        }
     }
     &__info-block {
         display: flex;
@@ -112,5 +115,23 @@
         //         display: none;
         //     }
         // }
+    }
+}
+@media (max-width: grid-width($tablet)) {
+    .fs-personal-header {
+        &__info {
+            flex-direction: column;
+        }
+        &__name {
+            display: none;
+            margin-bottom: 30px;
+            &--mob {
+                display: block;
+            }
+        }
+        &__photo {
+            // width: 100px;
+            // height: 100px;
+        }
     }
 }
