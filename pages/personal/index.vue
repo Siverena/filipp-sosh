@@ -5,28 +5,28 @@
         </Head>
         <div class="container">
             <FsPersonalHeader />
-            <FsCallSchedule
-                v-if="!getUserData.isTeacher"
+            <!-- <FsCallSchedule
+                v-if="getUser.isParent || getUser.isStudent"
                 class="fs-personal-header__shedule"
-            />
-            <Accordion>
-                <AccordionTab>
-                    <template v-slot:title> 1Б класс (213каб) </template>
-                    <template v-slot:content>
-                        <div class="fs-students-list">
-                            <ul class="fs-students-list__list">
-                                <li class="fs-students-list__item">
-                                    <p class="fs-students-list__name">
-                                        Иванов Иван Иванович
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-                    </template>
-                </AccordionTab>
-            </Accordion>
+            /> -->
+            <div class="fs-personal__content" v-if="!loading">
+                <div
+                    class="fs-personal-header__student"
+                    v-if="getUser.isStudent"
+                >
+                    <FsStudentContent :getStudentInfo="getStudentInfo" />
+                </div>
+                <div class="fs-personal-header__parent" v-if="getUser.isParent">
+                    <FsParentContent :getParentInfo="getParentInfo" />
+                </div>
+                <div
+                    class="fs-personal-header__teacher"
+                    v-if="getUser.isTeacher"
+                >
+                    <FsTeacherContent :getTeacherInfo="getTeacherInfo" />
+                </div>
+            </div>
         </div>
-        <FsNews />
     </section>
 </template>
 <script>
@@ -39,20 +39,24 @@ export default {
         };
     },
     computed: {
-        ...mapState(useUserStore, ['getUser', 'getDataLoading', 'getUserData']),
+        ...mapState(useUserStore, [
+            'getUser',
+            'getUserData',
+            'getStudentInfo',
+            'getTeacherInfo',
+            'getParentInfo',
+        ]),
     },
     watch: {
         getUserData() {
             this.loading = false;
         },
     },
-    methods: {
-        ...mapActions(useUserStore, [
-            'fetchUserData',
-            'auth',
-            'logout',
-            'checkAuth',
-        ]),
+    methods: {},
+    created() {
+        if (Object.keys(this.getUserData).length) {
+            this.loading = false;
+        }
     },
 };
 </script>

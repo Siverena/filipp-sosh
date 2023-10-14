@@ -1,13 +1,18 @@
 <template>
     <div class="fs-user-nav">
         <div class="fs-user-nav__photo" @click="toggleMenu">
-            <!-- <img src="@/assets/img/fs-person/person.png" alt="" /> -->
+            <img v-if="getUser.avatar" :src="getUser.avatar" alt="" />
         </div>
-        <div class="fs-user-nav__menu" v-if="isMenuOpen">
+        <div class="fs-user-nav__menu" v-if="isMenuOpen" @click="toggleMenu">
             <ul class="fs-user-nav__list">
                 <li class="fs-user-nav__item">
                     <NuxtLink to="/personal" class="fs-user-nav__link"
                         >Личный кабинет</NuxtLink
+                    >
+                </li>
+                <li class="fs-user-nav__item" v-if="getUser.isTeacher">
+                    <NuxtLink to="/personal/questions" class="fs-user-nav__link"
+                        >Вопросы администрации</NuxtLink
                     >
                 </li>
                 <li class="fs-user-nav__item">
