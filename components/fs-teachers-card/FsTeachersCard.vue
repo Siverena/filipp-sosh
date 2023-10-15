@@ -25,44 +25,44 @@
     </div>
     <div class="fs-teachers-card__info">
       <div
-        class="fs-teachers-card__info-title"
+        class="fs-teachers-card__info-heading"
         :class="{
-          'fs-teachers-card__info-title--adm': status === 'admin',
-          'fs-teachers-card__info-title--thr': status === 'teacher',
+          'fs-teachers-card__info-heading--adm': status === 'admin',
+          'fs-teachers-card__info-heading--thr': status === 'teacher',
         }"
       >
-        <p>
+        <p class="fs-teachers-card__info-name">
           <span v-for="(name, key) in getNameThr(teacher.name)" :key="key">{{ name }}</span>
         </p>
       </div>
       <div class="fs-teachers-card__info-description">
-        <div class="fs-teachers-card__info-line" v-if="teacher.post">
-          <p>Должность:</p>
-          <p>{{ teacher.post }}</p>
+        <div class="fs-teachers-card__info-row" v-if="teacher.post">
+          <p class="fs-teachers-card__info-title">Должность:</p>
+          <p class="fs-teachers-card__info-text">{{ teacher.post }}</p>
         </div>
-        <div class="fs-teachers-card__info-line" v-if="teacher.speciality">
-          <p>Специальность:</p>
-          <p>{{ teacher.speciality }}</p>
+        <div class="fs-teachers-card__info-row" v-if="teacher.speciality">
+          <p class="fs-teachers-card__info-title">Специальность:</p>
+          <p class="fs-teachers-card__info-text">{{ teacher.speciality }}</p>
         </div>
-        <div class="fs-teachers-card__info-line" v-if="teacher.totalExperience">
-          <p>Образование:</p>
-          <p>{{ teacher.education }}</p>
+        <div class="fs-teachers-card__info-row" v-if="teacher.totalExperience">
+          <p class="fs-teachers-card__info-title">Образование:</p>
+          <p class="fs-teachers-card__info-text">{{ teacher.education }}</p>
         </div>
-        <div class="fs-teachers-card__info-line" v-if="teacher.totalExperience">
-          <p>Общий стаж:</p>
-          <p>{{ teacher.totalExperience }}</p>
+        <div class="fs-teachers-card__info-row" v-if="teacher.totalExperience">
+          <p class="fs-teachers-card__info-title">Общий стаж:</p>
+          <p class="fs-teachers-card__info-text">{{ teacher.totalExperience }}</p>
         </div>
-        <div class="fs-teachers-card__info-line" v-if="teacher.generalTeachingExperience">
-          <p>Общий педагогический стаж:</p>
-          <p>{{ teacher.generalTeachingExperience }}</p>
+        <div class="fs-teachers-card__info-row" v-if="teacher.generalTeachingExperience">
+          <p class="fs-teachers-card__info-title">Общий педагогический стаж:</p>
+          <p class="fs-teachers-card__info-text">{{ teacher.generalTeachingExperience }}</p>
         </div>
-        <div class="fs-teachers-card__info-line" v-if="teacher.tel">
-          <p>Телефон:</p>
-          <p>{{ teacher.tel }}</p>
+        <div class="fs-teachers-card__info-row" v-if="teacher.tel">
+          <p class="fs-teachers-card__info-title">Телефон:</p>
+          <p class="fs-teachers-card__info-text">{{ teacher.tel }}</p>
         </div>
-        <div class="fs-teachers-card__info-line" v-if="teacher.email">
-          <p>Электронная почта:</p>
-          <p>{{ teacher.email }}</p>
+        <div class="fs-teachers-card__info-row" v-if="teacher.email">
+          <p class="fs-teachers-card__info-title">Электронная почта:</p>
+          <p class="fs-teachers-card__info-text">{{ teacher.email }}</p>
         </div>
       </div>
     </div>
