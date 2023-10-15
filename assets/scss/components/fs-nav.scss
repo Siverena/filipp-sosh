@@ -7,7 +7,6 @@
     list-style: none;
     margin: 0;
     padding: 0;
-
     &__item {
         font-size: 16px;
         position: relative;
@@ -83,6 +82,9 @@
         margin-left: 10px;
         transition: transform linear 0.3s;
         cursor: pointer;
+        border: 1px solid $ton-5;
+        border-radius: 4px;
+        outline: none;
         &--open {
             transform: rotateX(-180deg);
             transition: transform linear 0.3s;
@@ -93,6 +95,18 @@
         }
         path {
             fill: $text-primary;
+        }
+        &:hover {
+               border-color: $ton-4;
+            path {
+                fill: $ton-4;
+            }
+        }
+        &:focus {
+            border-color: $ton-4;
+            path {
+                 fill: $ton-4;
+            }
         }
     }
 }

@@ -58,10 +58,10 @@
         }
         &:active {
             path {
-                fill: $green-active;
+                fill: $ton-6;
             }
         }
-        &:focus-visible {
+        &:focus {
             outline: 1px solid $ton-2;
             border-radius: 10px;
             path {

@@ -23,6 +23,18 @@
     }
     &__link {
         color: inherit;
+        outline: none;
+        border: none;
+        &:hover {
+            color: $ton-4;
+        }
+        &:focus {
+            color: $ton-4;
+            outline: none;
+        }
+        &:active {
+            color: $ton-6;
+        }
     }
 }
 @media (max-width: grid-width($desktop)) {
