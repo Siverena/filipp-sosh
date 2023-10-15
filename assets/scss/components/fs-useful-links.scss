@@ -1,0 +1,17 @@
+.fs-useful-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    gap: 60px;
+    &__items {
+        height: 110px;
+        position: relative;
+        span {
+            position: absolute;
+            content: '';
+            left: 8px;
+            top: 8px;
+            pointer-events: none;
+        }
+    }
+}
