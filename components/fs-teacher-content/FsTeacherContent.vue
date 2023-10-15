@@ -4,7 +4,9 @@
             <p class="fs-h2 fs-teacher-content__main-title">
                 Персональная информация
             </p>
-            <div class="fs-teachers-card__info-description">
+            <div
+                class="fs-teachers-card__info-description fs-teacher-content__description"
+            >
                 <div
                     class="fs-teachers-card__info-line"
                     v-if="getTeacherInfo.profile.positions"
@@ -20,8 +22,8 @@
                             {{
                                 getTeacherInfo.profile.positions.length - 1 ===
                                 key
-                                    ? ','
-                                    : ''
+                                    ? ''
+                                    : ', '
                             }}</span
                         >
                     </p>
@@ -58,7 +60,10 @@
                 </div>
             </div>
         </div>
-        <div class="fs-teacher-content__classwork">
+        <div
+            class="fs-teacher-content__classwork"
+            v-if="getTeacherInfo.listClassrooms.length"
+        >
             <p class="fs-h2 fs-teacher-content__main-title">
                 Классное руководство
             </p>
@@ -120,5 +125,10 @@
 <script>
 export default {
     props: ['getTeacherInfo'],
+    data() {
+        return {
+            currentActive: 0,
+        };
+    },
 };
 </script>

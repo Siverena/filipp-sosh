@@ -1,6 +1,11 @@
 .fs-teacher-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 160px;
     &__main-title {
         margin-bottom: 30px;
+    }
+    &__personal {
     }
     &__wrap {
         padding: 30px 0;
@@ -28,6 +33,7 @@
     }
     &__parents-contacts-title {
         font-weight: 700;
+        margin-bottom: 10px;
     }
     &__parents-contacts {
         display: flex;
@@ -36,6 +42,35 @@
     }
     &__parents-contact {
     }
+    &__description {
+        // flex-direction: row;
+        // flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 320px);
+        row-gap: 30px;
+    }
+}
+@media (max-width: grid-width($desktop)) {
+    .fs-teacher-content {
+        row-gap: 120px;
+        &__personal {
+        }
+    }
+}
+@media (max-width: grid-width($laptop)) {
+    .fs-teacher-content {
+        row-gap: 100px;
+        &__personal {
+        }
+    }
 }
 @media (max-width: grid-width($tablet)) {
+    .fs-teacher-content {
+        row-gap: 80px;
+        &__personal {
+        }
+        &__description {
+            row-gap: 20px;
+        }
+    }
 }

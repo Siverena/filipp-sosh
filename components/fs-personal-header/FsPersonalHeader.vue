@@ -21,7 +21,7 @@
                         class="fs-personal-header__add-photo"
                         :class="{
                             'fs-personal-header__add-photo--user':
-                                getUser.avatar,
+                                getUser.avatar || fileUrl,
                         }"
                     >
                         <FsAddPhoto />
@@ -78,7 +78,7 @@ export default {
     computed: {
         ...mapState(useUserStore, ['getUser', 'getUserData']),
         fileUrl() {
-            return URL.createObjectURL(this.file);
+            return this.file ? URL.createObjectURL(this.file) : '';
         },
     },
     watch: {
@@ -92,7 +92,7 @@ export default {
         getImg() {},
         handleFileUpload() {
             this.file = input.files[0];
-            const reader = new FileReader();
+            // const reader = new FileReader();
             this.submitFile();
         },
         async submitFile() {

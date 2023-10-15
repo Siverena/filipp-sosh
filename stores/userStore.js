@@ -23,21 +23,21 @@ export const useUserStore = defineStore('userStore', {
                 (el) => el.role === 'Студент'
             );
             return info;
-            // return state.userData.data.info.find((el) => el.role === 'Студент');
         },
         getParentInfo(state) {
             let info = state.userData.data?.info.find(
                 (el) => el.role === 'Родитель'
             );
             return info;
-            // return state.userData.data.info.find((el) => el.role === 'Студент');
         },
         getTeacherInfo(state) {
             let info = state.userData.data?.info.find(
                 (el) => el.role === 'Учитель'
             );
             return info;
-            // return state.userData.data.info.find((el) => el.role === 'Студент');
+        },
+        isAuthenticated(state) {
+            return state.getUser && Object.keys(state.getUser).length;
         },
     },
     actions: {
@@ -84,8 +84,20 @@ export const useUserStore = defineStore('userStore', {
         },
 
         async checkAuth() {
-            const api = useNuxtApp().$api;
             this.SET_IS_AUTH_CHECKED(false);
+            this.fetchUser()
+                .then((response) => {
+                    this.fetchUserData(this.user.id);
+                    // this.fetchUserData(response.data.data.user.id);
+                    this.SET_IS_AUTH_CHECKED(true);
+                })
+                .catch((e) => {
+                    this.SET_IS_AUTH_CHECKED();
+                    console.log(e);
+                });
+        },
+        async fetchUser() {
+            const api = useNuxtApp().$api;
             return api
                 .get('/user', {
                     headers: {
@@ -96,12 +108,6 @@ export const useUserStore = defineStore('userStore', {
                 })
                 .then((response) => {
                     this.SET_USER(response.data);
-                    this.fetchUserData(response.data.data.user.id);
-                    this.SET_IS_AUTH_CHECKED(true);
-                })
-                .catch((e) => {
-                    this.SET_IS_AUTH_CHECKED();
-                    console.log(e);
                 });
         },
         async fetchUserData(id) {
@@ -114,7 +120,11 @@ export const useUserStore = defineStore('userStore', {
             const api = useNuxtApp().$api;
             return api
                 .post(`/avatar-update?id=${this.getUser.id}`, data)
-                .then((response) => {});
+                .then((response) => {
+                    this.fetchUser().catch((e) => {
+                        console.log(e);
+                    });
+                });
         },
     },
 });
