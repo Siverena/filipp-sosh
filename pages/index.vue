@@ -8,6 +8,9 @@
       <div class="container">
         <FsHistorySchool />
       </div>
+      <div class="container">
+        <FsUsefulLinks />
+      </div>
       <FsAchievements />
       <div class="container">
         <clientOnly>

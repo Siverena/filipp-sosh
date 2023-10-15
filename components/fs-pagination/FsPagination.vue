@@ -64,7 +64,7 @@
         if(!currentP.value){
             currentP.value = 1;
         }
-        navigateTo({ path: '/news', query: {page: currentP.value} });
         currentP.value--;
+        navigateTo({ path: '/news', query: {page: currentP.value} });
     }
 </script>
