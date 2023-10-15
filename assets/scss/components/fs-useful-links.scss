@@ -4,7 +4,8 @@
     width: 100%;
     gap: 60px;
     &__items {
-        height: 110px;
+        max-width: 253px;
+            max-height: 110px;
         position: relative;
         span {
             position: absolute;
@@ -13,5 +14,46 @@
             top: 8px;
             pointer-events: none;
         }
+        img {
+            max-width: 253px;
+            max-height: 110px;
+            width: 100%;
+        }
+    }
+}
+@media (max-width: grid-width($laptop)) {
+    .fs-useful-links {
+        gap: 14px;
+    }
+}
+@media (max-width: grid-width($tablet)) {
+    .fs-useful-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+        gap: 14px;
+    }
+    span {
+        display: none;
+    }
+}
+
+@media (max-width: grid-width($mobile)) {
+    .fs-useful-links {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 30px;
+        &__items {
+            max-width: unset;
+        }
+    }
+    span {
+        display: block;
+    }
+    img {
+        max-width: unset !important;
+        max-height: 141px !important;
+        width: 100%;
     }
 }
