@@ -12,16 +12,31 @@
             <div class="fs-personal__content" v-if="!loading">
                 <div
                     class="fs-personal-header__student"
-                    v-if="getUser.isStudent"
+                    v-if="
+                        getUser.isStudent &&
+                        getStudentInfo &&
+                        Object.keys(getStudentInfo).length
+                    "
                 >
                     <FsStudentContent :getStudentInfo="getStudentInfo" />
                 </div>
-                <div class="fs-personal-header__parent" v-if="getUser.isParent">
+                <div
+                    class="fs-personal-header__parent"
+                    v-if="
+                        getUser.isParent &&
+                        getParentInfo &&
+                        Object.keys(getParentInfo).length
+                    "
+                >
                     <FsParentContent :getParentInfo="getParentInfo" />
                 </div>
                 <div
                     class="fs-personal-header__teacher"
-                    v-if="getUser.isTeacher"
+                    v-if="
+                        getUser.isTeacher &&
+                        getTeacherInfo &&
+                        Object.keys(getTeacherInfo).length
+                    "
                 >
                     <FsTeacherContent :getTeacherInfo="getTeacherInfo" />
                 </div>
