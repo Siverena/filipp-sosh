@@ -1,54 +1,53 @@
 <template>
     <section class="fs-document">
-      <Head>
-        <Title></Title>
-      </Head>
-      <div class="container">
-        <FsSectionTitles>
-          <template v-slot:main> {{ element.bannerTitle }} </template>
-        </FsSectionTitles>
-        <div class="fs-page__content">
-          <FsSection />
+        <Head>
+            <Title>{{ getTitle }}</Title>
+        </Head>
+        <div class="container">
+            <FsSectionTitles>
+                <template v-slot:main> {{ getTitle }} </template>
+            </FsSectionTitles>
+            <div class="fs-page__content">
+                <FsSection />
+            </div>
         </div>
-      </div>
     </section>
-  </template>
-  <script>
+</template>
+<script>
 import { mapActions, mapState } from 'pinia';
-import { useUsefulStore } from '@/stores/usefulLinksStore';
+import { usePagesStore } from '@/stores/pagesStore';
+import currentUrl from '~/utils/mixins/current-url';
 
 export default {
-
-data() {
-  return {
-    loading: true,
-    currentActive: false,
-  };
-},
-
-computed: {
-  ...mapState(useUsefulStore, ['getLinks']),
-  route1 () {
-      return this.$route;
+    data() {
+        return {
+            loading: false,
+            currentActive: false,
+        };
     },
-element () {
-    return this.getLinks.find((item) => item.slug === this.$route.params.slug)
-}
-},
-methods: {
-  ...mapActions(useUsefulStore, ['fetchLinks']),
-  async loadData() {
-    try {
-      this.loading = true;
-      await this.fetchLinks();
-      this.loading = false;
-    } catch (e) {
-      console.log(e);
-    }
-  },
-},
-async created() {
-  this.loadData();
-},
+    mixins: [currentUrl],
+    computed: {
+        ...mapState(usePagesStore, ['getTitle']),
+    },
+    watch: {
+        getTitle() {
+            this.loading = false;
+        },
+    },
+    // methods: {
+    //     ...mapActions(useUsefulLinksStore, ['fetchContent']),
+    //     async loadData() {
+    //         try {
+    //             this.loading = true;
+    //             await this.fetchLinks();
+    //             this.loading = false;
+    //         } catch (e) {
+    //             console.log(e);
+    //         }
+    //     },
+    // },
+    // async created() {
+    //     this.loadData();
+    // },
 };
 </script>
