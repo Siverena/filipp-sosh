@@ -1,12 +1,13 @@
 .fs-useful-links {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: rgba(234, 224, 213, 0.46);
     width: 100%;
-    gap: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
     &__items {
         max-width: 253px;
-            max-height: 110px;
+        max-height: 110px;
         position: relative;
+        border-radius: 10px;
         span {
             position: absolute;
             content: '';
@@ -20,16 +21,23 @@
             width: 100%;
         }
     }
+
 }
+.fs-useful-links__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    // width: 100%;
+    gap: 60px;
+    }
 @media (max-width: grid-width($laptop)) {
-    .fs-useful-links {
+    .fs-useful-links__wrapper {
         gap: 14px;
     }
 }
 @media (max-width: grid-width($tablet)) {
-    .fs-useful-links {
+    .fs-useful-links__wrapper {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr !important;
         width: 100%;
         gap: 14px;
     }
@@ -39,14 +47,18 @@
 }
 
 @media (max-width: grid-width($mobile)) {
-    .fs-useful-links {
+    .fs-useful-links__wrapper {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         width: 100%;
+        gap: 30px !important;
+
+    }
+    .fs-useful-links__items {
+        max-width: unset;
+        height: 141px;
+        max-height: 141px !important;
         gap: 30px;
-        &__items {
-            max-width: unset;
-        }
     }
     span {
         display: block;
@@ -54,6 +66,12 @@
     img {
         max-width: unset !important;
         max-height: 141px !important;
+        height: 141px;
         width: 100%;
+
+    }
+    a {
+        max-height: 141px !important;
     }
 }
+
