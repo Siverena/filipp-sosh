@@ -19,7 +19,7 @@
           </div>
         </div>
       </div>
-      <div class="fs-news-list__content">
+      <div class="fs-news-list__content" v-if="!loading">
         <article
           class="fs-news-list__article"
           v-for="(item, key) in getNewsList.data"
@@ -49,8 +49,9 @@
             </div>
           </div>
         </article>
+         <FsPagination :countPages="countPages" />
       </div>
-      <FsPagination :countPages="countPages" />
+      <!-- <FsPagination :countPages="countPages" /> -->
     </div>
 
   </section>
@@ -76,9 +77,9 @@ export default {
     count () {
       return this.$route.query.page;
     },
-    loading () {
-      return this.loading=false;
-    },
+    // loading () {
+    //   return this.loading=false;
+    // },
     countPages (store) {
       if (this.getNewsList.meta){
         if(Math.ceil(+this.getNewsList.meta.total / +this.getNewsList.meta.per_page) < 7 ) {
@@ -101,22 +102,17 @@ export default {
   methods: {
     ...mapActions(useNewsStore, ['fetchNewsList']),
     async loadData() {
-      console.log(1111);
       try {
-        await this.fetchNewsList(this.count);
         this.loading = true;
-        console.log('pass');
+        await this.fetchNewsList(this.count);        
         this.loading = false;
       } catch (e) {
         console.log(e);
       }
-
     },
   },
   async created() {
     this.loadData();
   },
-
-
 };
 </script>

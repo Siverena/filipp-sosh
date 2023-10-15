@@ -8,7 +8,7 @@
         <FsSectionTitles>
           <template v-slot:main> Основные сведения </template>
         </FsSectionTitles>
-        <div class="fs-page__content">
+        <div class="fs-common__page">
           <FsSection />
         </div>
       </div>

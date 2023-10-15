@@ -53,7 +53,7 @@
             width: 44px;
             height: 44px;
             path {
-                fill: $green-normal;
+                fill: $ton-5;
             }
         }
         &:active {
@@ -61,16 +61,16 @@
                 fill: $green-active;
             }
         }
-        &:focus {
-            outline: 1px solid $green-hover;
+        &:focus-visible {
+            outline: 1px solid $ton-2;
             border-radius: 10px;
             path {
-                fill: $green-hover;
+                fill: $ton-2;
             }
         }
         &:hover {
             path {
-                fill: $green-hover;
+                fill: $ton-2;
             }
         }
     }

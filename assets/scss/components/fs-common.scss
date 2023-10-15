@@ -6,6 +6,11 @@
     align-items: center;
     gap: 60px;
   }
+  &__page {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+  }
   &__item {
     display: flex;
     flex-direction: column;
@@ -74,7 +79,6 @@
     }
   }
 }
-
 @media (max-width: grid-width($tablet)) {
   .fs-common {
     &__loader-line1 {
