@@ -2,6 +2,7 @@ import { mapState, mapActions } from 'pinia';
 import { useGalleryStore } from '~/stores/galleryStore.js';
 import { useNavLinksStore } from '@/stores/navLinksStore.js';
 import { useNewsStore } from '@/stores/newsStore.js';
+import { usePagesStore } from '@/stores/pagesStore.js';
 import currentUrl from '@/utils/mixins/current-url';
 
 export default {
@@ -24,6 +25,7 @@ export default {
             getGalleryAlbomName: 'getGalleryAlbomName',
         }),
         ...mapState(useNewsStore, ['getNews', 'getNewsLoading']),
+        ...mapState(usePagesStore, ['getContent', 'getTitle']),
 
         showBreadcrumbs() {
             return this.currentUrl !== 'index';
@@ -31,7 +33,6 @@ export default {
     },
     watch: {
         async currentUrl() {
-            console.log('currentUrl updated: ', this.currentUrl);
             this.links.splice(0);
             this.clearGalleryAlbom();
             this.clearNews();
@@ -39,10 +40,12 @@ export default {
             this.getLinks();
         },
         getGalleryAlbomName() {
-            console.log('store has been changed');
             this.getLinks();
         },
         getNews() {
+            this.getLinks();
+        },
+        getContent() {
             this.getLinks();
         },
     },
@@ -56,11 +59,23 @@ export default {
         getLinks() {
             this.links.splice(0);
             const arr = this.$route.fullPath.split('/').slice(1);
+            console.log(arr);
             this.setCurrentFirstElem(arr[0]);
-            this.links.push({
-                name: this.getLink.name,
-                link: `/${arr[0]}`,
-            });
+            let name = this.getLink?.name;
+            console.log(name);
+            if (name) {
+                this.links.push({
+                    name: this.getLink.name,
+                    link: `/${arr[0]}`,
+                });
+            } else {
+                this.links.push({
+                    name: this.getTitle,
+                    link: `/${arr[0]}`,
+                });
+            }
+
+            console.log(this.links);
             if (arr[1]) {
                 if (arr[0] === 'gallery') {
                     this.links.push({
