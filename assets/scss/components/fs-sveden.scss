@@ -29,6 +29,10 @@
         &:hover span {
             text-decoration-line: underline;
         }
+        &:focus span {
+            text-decoration-line: underline;
+        }
+
     }
 }
 

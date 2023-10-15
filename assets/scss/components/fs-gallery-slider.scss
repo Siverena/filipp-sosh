@@ -33,13 +33,13 @@
         }
         &:hover {
             svg {
-                fill: $green-hover;
+                fill: $ton-4;
             }
         }
         &:focus {
             outline: none;
             svg {
-                fill: $green-hover;
+                fill: $ton-4;
             }
         }
     }
@@ -62,26 +62,36 @@
         align-items: center;
     }
     &__image {
-        width: 100%;
+        // width: 100%;
         height: 100%;
         margin: 0 auto;
         object-fit: contain;
+        border-radius: 10px;
+        overflow: hidden;
     }
     &__small {
         width: 147px;
         height: 105px;
         margin-right: 16px;
         display: flex;
+        border-radius: 5px;
+        overflow: hidden;
+        filter: brightness(90%);
+        transition: filter 3ms;
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
         &--active {
-            border: 1px solid $green-active;
+            border: 1px solid $ton-6;
+        }
+        &:hover {
+            filter: brightness(100%);
+            transition: filter 3ms;
         }
         &:focus {
-            outline: 4px solid $green-normal;
+            outline: 4px solid $ton-4;
         }
     }
     &__nav {
@@ -119,13 +129,13 @@
         }
         &:hover {
             svg {
-                fill: $green-hover;
+                fill: $ton-4;
             }
         }
         &:focus {
             outline: none;
             svg {
-                fill: $green-hover;
+                fill: $ton-4;
             }
         }
     }
