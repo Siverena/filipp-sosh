@@ -2,7 +2,7 @@
     <clientOnly>
         <header class="fs-header no-tab">
             <div class="fs-header__top container">
-                <FsLogotype class="fs-header__logo" />
+                <FsLogotype class="fs-header__logo" tabindex="0" />
                 <FsNav class="fs-header__nav" />
                 <p
                     class="fs-header__btn fs-link fs-link--base"

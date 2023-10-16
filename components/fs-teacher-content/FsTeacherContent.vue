@@ -122,13 +122,4 @@
         </div>
     </div>
 </template>
-<script>
-export default {
-    props: ['getTeacherInfo'],
-    data() {
-        return {
-            currentActive: 0,
-        };
-    },
-};
-</script>
+<script src="./fs-teacher-content.js"></script>

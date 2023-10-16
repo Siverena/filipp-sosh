@@ -2,7 +2,6 @@
     <footer class="fs-footer">
         <div class="container">
             <FsLogotype class="fs-footer__logo" :isFooter="isFooter" />
-
             <div class="fs-footer__row">
                 <div class="fs-footer__col fs-footer__contacts">
                     <div class="fs-footer__contact">
@@ -40,9 +39,7 @@
                         </p>
                     </div>
                 </div>
-
                 <FsNavColumn class="fs-footer__nav" :class="'fs-footer__col'" />
-
                 <div class="fs-footer__col fs-footer__links">
                     <NuxtLink
                         to="/agree"

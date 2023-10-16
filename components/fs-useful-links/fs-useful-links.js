@@ -7,7 +7,6 @@ export default {
             loading: true,
         };
     },
-
     computed: {
         ...mapState(useUsefulLinksStore, ['getLinks']),
     },

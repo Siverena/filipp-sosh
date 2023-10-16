@@ -26,7 +26,6 @@ export default {
         }),
         ...mapState(useNewsStore, ['getNews', 'getNewsLoading']),
         ...mapState(usePagesStore, ['getContent', 'getTitle']),
-
         showBreadcrumbs() {
             return this.currentUrl !== 'index';
         },
@@ -59,10 +58,8 @@ export default {
         getLinks() {
             this.links.splice(0);
             const arr = this.$route.fullPath.split('/').slice(1);
-            console.log(arr);
             this.setCurrentFirstElem(arr[0]);
             let name = this.getLink?.name;
-            console.log(name);
             if (name) {
                 this.links.push({
                     name: this.getLink.name,
@@ -74,8 +71,6 @@ export default {
                     link: `/${arr[0]}`,
                 });
             }
-
-            console.log(this.links);
             if (arr[1]) {
                 if (arr[0] === 'gallery') {
                     this.links.push({
