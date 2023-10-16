@@ -52,6 +52,15 @@
         fill: $green-normal;
         stroke: $green-normal;
         width: 150px;
+        &:hover {
+            fill: $ton-4;
+            stroke: $ton-4;
+        }
+        &:focus {
+            fill: $ton-4;
+            stroke: $ton-4;
+            outline: none;
+        }
     }
     &__close {
         width: 30px;
@@ -68,6 +77,17 @@
         }
         path {
             fill: $text-primary;
+        }
+        &:hover {
+            path {
+                fill: $ton-4;
+            }
+        }
+        &:focus {
+            outline: none;
+            path {
+                fill: $ton-4;                
+            }
         }
     }
     hr {

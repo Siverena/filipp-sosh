@@ -19,6 +19,7 @@
         position: relative;
         line-height: 17px;
         font-size: 14px;
+        width: 75%;
         &:hover {
             opacity: 0.5;
         }
@@ -114,17 +115,39 @@
             font-size: 16px;
             color: $text-primary;
             &.router-link-active {
-                color: $green-active;
+                color: $ton-5;
                 line-height: 20px;
                 font-size: 16px;
+            }
+            &:hover {
+                color: $ton-4;
+                opacity: 1;
+            }
+            &:focus {
+                color: $ton-4;
+                opacity: 1;
+                outline: none;
             }
         }
         &__child-link {
             color: $text-primary;
         }
         &__arrow {
+            border: 1px solid $ton-5;
             path {
-                fill: $green-active;
+                fill: $text-primary;
+            }
+            &:hover {
+                border-color: $ton-4;
+                path {
+                    fill: $ton-4;
+                }
+            }
+            &:focus {
+                border-color: $ton-4;
+                path {
+                     fill: $ton-4;
+                }
             }
         }
     }
