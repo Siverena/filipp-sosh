@@ -105,13 +105,4 @@
         </FsAccordeon>
     </div>
 </template>
-<script>
-export default {
-    props: ['getParentInfo'],
-    data() {
-        return {
-            currentActive: 0,
-        };
-    },
-};
-</script>
+<script src="./fs-parent-content.js"></script>

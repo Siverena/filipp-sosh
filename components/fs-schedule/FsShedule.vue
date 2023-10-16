@@ -17,8 +17,4 @@
         </div>
     </div>
 </template>
-<script>
-export default {
-    props: ['item'],
-};
-</script>
+<script src="./fs-shedule.js"></script>

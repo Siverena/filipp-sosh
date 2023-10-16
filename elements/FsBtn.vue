@@ -1,5 +1,5 @@
 <template>
-  <button class="fs-btn">
-    <slot></slot>
-  </button>
+    <button class="fs-btn">
+        <slot></slot>
+    </button>
 </template>

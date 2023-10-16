@@ -9,7 +9,6 @@
             class="fs-breadcrumbs__item"
         >
             <div class="fs-breadcrumbs__delimiter"></div>
-
             <NuxtLink
                 class="fs-breadcrumbs__link"
                 v-if="key !== links.length - 1"

@@ -1,8 +1,6 @@
 import { mapActions, mapState } from 'pinia';
 import { usePagesStore } from '@/stores/pagesStore.js';
-import { useUsefulLinksStore } from '@/stores/usefulLinksStore.js';
 import currentUrl from '~/utils/mixins/current-url';
-
 export default {
     data() {
         return {
@@ -21,7 +19,6 @@ export default {
     },
     methods: {
         ...mapActions(usePagesStore, ['fetchContent']),
-
         async loadData() {
             try {
                 this.loading = true;

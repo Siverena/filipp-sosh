@@ -23,9 +23,7 @@ import Divider from 'primevue/divider'; import Divider from 'primevue/divider';
                 </div>
             </div>
         </div>
-
         <FsShedule :item="getStudentInfo" />
-
         <div class="fs-student-content__classmates">
             <div class="fs-student-content__field">
                 <div class="fs-student-content__field-name">Одноклассники</div>
@@ -47,8 +45,4 @@ import Divider from 'primevue/divider'; import Divider from 'primevue/divider';
         </div>
     </div>
 </template>
-<script>
-export default {
-    props: ['getStudentInfo'],
-};
-</script>
+<script src="./fs-student-content.js"></script>

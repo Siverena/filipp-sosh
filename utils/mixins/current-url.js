@@ -1,7 +1,7 @@
 export default {
-  computed: {
-    currentUrl() {
-      return this.$route.name;
+    computed: {
+        currentUrl() {
+            return this.$route.name;
+        },
     },
-  },
 };

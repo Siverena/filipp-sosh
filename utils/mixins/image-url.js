@@ -1,10 +1,10 @@
 export default {
-  methods: {
-    getStaticImageUrl(src) {
-      return `${this.$config.app.baseURL}images/${src}`;
+    methods: {
+        getStaticImageUrl(src) {
+            return `${this.$config.app.baseURL}images/${src}`;
+        },
+        getImageUrl(src) {
+            return `${this.$config.app.baseURL}assets/img/${src}`;
+        },
     },
-    getImageUrl(src) {
-      return `${this.$config.app.baseURL}assets/img/${src}`;
-    },
-  },
 };

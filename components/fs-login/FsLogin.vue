@@ -1,12 +1,12 @@
 <template>
-  <div class="fs-login">
-    <nuxt-link
-      to="/login"
-      class="fs-login__link fs-link fs-link--base"
-      alt="На главную"
-    >
-      <p class="fs-login__text">Войти</p>
-      <FsLoginIcon class="fs-login__icon" />
-    </nuxt-link>
-  </div>
+    <div class="fs-login">
+        <nuxt-link
+            to="/login"
+            class="fs-login__link fs-link fs-link--base"
+            alt="На главную"
+        >
+            <p class="fs-login__text">Войти</p>
+            <FsLoginIcon class="fs-login__icon" />
+        </nuxt-link>
+    </div>
 </template>
