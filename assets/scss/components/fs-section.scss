@@ -1,7 +1,7 @@
 .fs-section {
     display: flex;
     flex-direction: column;
-    row-gap: 40px;
+    row-gap: 30px;
     &__wrapper {
         display: flex;
         flex-direction: column;
@@ -117,3 +117,26 @@
         }
     }
 }
+
+@media (max-width: grid-width($desktop)) {
+    .fs-section {
+        &__wrapper {
+            row-gap: 120px;
+        }
+    }
+}
+@media (max-width: grid-width($laptop)) {
+    .fs-section {
+        &__wrapper {
+            row-gap: 100px;
+        }
+    }
+}
+@media (max-width: grid-width($tablet)) {
+    .fs-section {
+        &__wrapper {
+            row-gap: 80px;
+        }
+    }
+}
+
