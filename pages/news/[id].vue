@@ -36,7 +36,7 @@
                         Опубликовано
                         {{ new Date(getNews.created_at).toLocaleString() }}
                     </p>
-                    <p>{{ getNews.text }}</p>
+                    <p v-html="getNews.text"></p>
                 </div>
                 <div class="fs-news-slider">
                     <div class="fs-news-slider__slides">
