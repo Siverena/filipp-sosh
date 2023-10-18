@@ -18,7 +18,6 @@
     &__menu {
         padding: 8px;
         border-radius: 10px;
-
         background-color: $ton-2;
         position: absolute;
         right: 40px;
@@ -38,6 +37,13 @@
         cursor: pointer;
         &:hover {
             opacity: 0.5;
+        }
+    }
+}
+@media (max-width: grid-width($desktop)) {
+    .fs-user-nav {
+        &__menu {
+            right: 80px;
         }
     }
 }
