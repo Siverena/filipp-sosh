@@ -15,6 +15,14 @@
                         >Вопросы администрации</NuxtLink
                     >
                 </li>
+                <li class="fs-user-nav__item" v-if="getUser.isTeacher">
+                    <NuxtLink
+                        to="http://localhost:7777/admin/login"
+                        class="fs-user-nav__link"
+                        target="_blank"
+                        >Администрирование</NuxtLink
+                    >
+                </li>
                 <li class="fs-user-nav__item">
                     <span class="fs-user-nav__link" @click="exit">Выход</span>
                 </li>

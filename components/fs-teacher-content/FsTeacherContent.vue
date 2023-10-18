@@ -11,8 +11,8 @@
                     class="fs-teachers-card__info-line"
                     v-if="getTeacherInfo.profile.positions"
                 >
-                    <p>Должность:</p>
-                    <p>
+                    <p class="fs-teachers-card__info-title">Должность:</p>
+                    <p class="fs-teachers-card__info-text">
                         <span
                             v-for="(post, key) in getTeacherInfo.profile
                                 .positions"
@@ -32,29 +32,37 @@
                     class="fs-teachers-card__info-line"
                     v-if="getTeacherInfo.profile.speciality"
                 >
-                    <p>Специальность:</p>
-                    <p>{{ getTeacherInfo.profile.speciality }}</p>
+                    <p class="fs-teachers-card__info-title">Специальность:</p>
+                    <p class="fs-teachers-card__info-text">
+                        {{ getTeacherInfo.profile.speciality }}
+                    </p>
                 </div>
                 <div
                     class="fs-teachers-card__info-line"
                     v-if="getTeacherInfo.profile.education"
                 >
-                    <p>Образование:</p>
-                    <p>{{ getTeacherInfo.profile.education }}</p>
+                    <p class="fs-teachers-card__info-title">Образование:</p>
+                    <p class="fs-teachers-card__info-text">
+                        {{ getTeacherInfo.profile.education }}
+                    </p>
                 </div>
                 <div
                     class="fs-teachers-card__info-line"
                     v-if="getTeacherInfo.profile.totalExperience"
                 >
-                    <p>Общий стаж:</p>
-                    <p>{{ getTeacherInfo.profile.totalExperience }}</p>
+                    <p class="fs-teachers-card__info-title">Общий стаж:</p>
+                    <p class="fs-teachers-card__info-text">
+                        {{ getTeacherInfo.profile.totalExperience }}
+                    </p>
                 </div>
                 <div
                     class="fs-teachers-card__info-line"
                     v-if="getTeacherInfo.profile.generalTeachingExperience"
                 >
-                    <p>Общий педагогический стаж:</p>
-                    <p>
+                    <p class="fs-teachers-card__info-title">
+                        Общий педагогический стаж:
+                    </p>
+                    <p class="fs-teachers-card__info-text">
                         {{ getTeacherInfo.profile.generalTeachingExperience }}
                     </p>
                 </div>
